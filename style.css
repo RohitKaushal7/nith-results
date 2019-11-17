@@ -39,7 +39,7 @@ body {
 }
 
 .ctrl {
-  height: 6rem;
+  height: 4rem;
   text-align: center;
   padding: 1rem 2rem;
 }
@@ -417,11 +417,35 @@ select {
     width: 15%;
     text-align: center;
   }
+  .ctrl {
+    padding: 0.5rem;
+  }
+  [type=search] {
+    width: 72%;
+  }
   #batch {
-    width: 10%;
+    width: 8%;
   }
   .you > div > div {
     margin: 0 0.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .container > div {
+    height: 8rem;
+    width: 12rem;
+    margin: 0.3rem 0.2rem;
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .container > div {
+    height: 7.5rem;
+    width: 11rem;
+    margin: 0.3rem 0.2rem;
+    padding: 0.5rem 0.5rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
