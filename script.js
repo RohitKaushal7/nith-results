@@ -86,14 +86,14 @@ function create(stud){
     if(branch == 'FULL_COLLEGE'){
         let Branch  = document.createElement('div'); Branch.className = "Branch"; Branch.innerText = stud.Branch; 
         let Year = document.createElement('div'); Year.className = "Year"; Year.innerText = stud.Year; 
-        node.append(Rank,Name,Rollno,Branch,Year,Sgpa,Cgpa);
+        node.append(Rank,Name,Rollno,Branch,Year,Points,Sgpa,Cgpa);
     }
     else if(branch == 'FULL_YEAR'){
         let Branch  = document.createElement('div'); Branch.className = "Branch"; Branch.innerText = stud.Branch;
-        node.append(Rank,Name,Rollno,Branch,Sgpa,Cgpa);
+        node.append(Rank,Name,Rollno,Branch,Points,Sgpa,Cgpa);
     }
     else{
-        node.append(Rank,Name,Rollno,Sgpa,Cgpa);
+        node.append(Rank,Name,Rollno,Points,Sgpa,Cgpa);
     }
     
     container.appendChild(node);
