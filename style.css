@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Source+Sans+Pro|ZCOOL+KuaiLe&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  margin: 0;
+  padding: 0;
+  font-family: "roboto";
+}
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  height: auto;
+}
+
+.header {
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.5rem 2rem;
+  color: #888;
+}
+
+.header > * {
+  font-family: "ZCOOL KuaiLe";
+}
+
+.ctrl {
+  height: 6rem;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+[type="search"] {
+  height: 2.5rem;
+  width: 60%;
+  display: inline-block;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  letter-spacing: 1.1px;
+  -webkit-box-shadow: 0 3px 5px 0px #0003;
+          box-shadow: 0 3px 5px 0px #0003;
+  border-radius: 5px;
+  background: #fff;
+}
+
+select,
+option {
+  height: 2.5rem;
+  display: inline-block;
+  width: 15%;
+  padding: 0rem 1rem;
+  text-align: center;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  letter-spacing: 1.1px;
+  -webkit-box-shadow: 0 3px 5px 0px #0003;
+          box-shadow: 0 3px 5px 0px #0003;
+  border-radius: 5px;
+  background: #fff;
+}
+
+#batch {
+  width: 5%;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+
+::-webkit-input-placeholder {
+  opacity: 0.3;
+}
+
+:-ms-input-placeholder {
+  opacity: 0.3;
+}
+
+::-ms-input-placeholder {
+  opacity: 0.3;
+}
+
+::placeholder {
+  opacity: 0.3;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-perspective: 400px;
+          perspective: 400px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  cursor: default;
+  height: auto;
+}
+
+.container > div {
+  width: 16rem;
+  height: 10rem;
+  background: #eee9;
+  margin: 1rem 2rem;
+  padding: 1.5rem 2rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  -webkit-animation: pop 0.3s;
+          animation: pop 0.3s;
+}
+
+.container > div:hover {
+  -webkit-box-shadow: 0px 3px 7px 1px #0003;
+          box-shadow: 0px 3px 7px 1px #0003;
+}
+
+.container > div:nth-child(1) {
+  background: #ffd700;
+}
+
+.container > div:nth-child(1) > .Rank {
+  position: relative;
+}
+
+.container > div:nth-child(1) > .Rank::before {
+  content: "1";
+  position: absolute;
+  right: -0.5rem;
+  color: #ababab;
+  mix-blend-mode: color-burn;
+  top: -2.7rem;
+  font-size: 5rem;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+.container > div:nth-child(2) {
+  background: silver;
+}
+
+.container > div:nth-child(2) > .Rank {
+  position: relative;
+}
+
+.container > div:nth-child(2) > .Rank::before {
+  content: "2";
+  position: absolute;
+  right: -0.5rem;
+  color: #ababab;
+  mix-blend-mode: color-burn;
+  top: -2.7rem;
+  font-size: 5rem;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+.container > div:nth-child(3) {
+  background: #ca780088;
+}
+
+.container > div:nth-child(3) > .Rank {
+  position: relative;
+}
+
+.container > div:nth-child(3) > .Rank::before {
+  content: "3";
+  position: absolute;
+  right: -0.5rem;
+  color: #ababab;
+  mix-blend-mode: color-burn;
+  top: -2.7rem;
+  font-size: 5rem;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+.Name {
+  font-size: 1.1rem;
+}
+
+.Rank {
+  font-size: 2rem;
+  color: #673ab7;
+}
+
+.Rank::first-letter {
+  font-size: 1.2rem;
+  color: #9c27b0;
+}
+
+.Rollno,
+.Branch,
+.Year {
+  color: #666;
+  display: inline-block;
+  margin-right: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.Cgpa {
+  display: inline-block;
+  width: 50px;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.Sgpa,
+.Points {
+  display: inline-block;
+  position: absolute;
+}
+
+.Sgpa {
+  bottom: 1.2rem;
+  right: 4.7rem;
+  opacity: 0;
+  font-size: 0.8rem;
+  color: #795548;
+}
+
+.container > div:hover .Sgpa {
+  opacity: 1;
+}
+
+@-webkit-keyframes pop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0, 15px);
+            transform: translate(0, 15px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0px);
+            transform: translate(0, 0px);
+  }
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0, 15px);
+            transform: translate(0, 15px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0px);
+            transform: translate(0, 0px);
+  }
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  height: 2rem;
+}
+
+.nav > div {
+  margin: 0.5rem 2rem;
+  cursor: pointer;
+  color: #777;
+  position: relative;
+}
+
+.nav > div:hover {
+  color: #e0129c;
+}
+
+.nav > div::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.2rem;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: #fdef2bbd;
+}
+
+.nav > div:hover::before {
+  height: 1rem;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  bottom: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  color: #333;
+}
+
+#ref {
+  font-size: 0.7rem;
+  color: #777;
+}
+
+@media (max-width: 980px) {
+  :root {
+    font-size: 14px;
+  }
+  .container > div {
+    height: 8rem;
+    width: 13rem;
+    margin: 0.5rem 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+  select {
+    padding: 0.1rem 0.2rem;
+    width: 15%;
+    text-align: center;
+  }
+  #batch {
+    width: 10%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
