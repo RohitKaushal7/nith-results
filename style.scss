@@ -201,8 +201,19 @@ select {
   font-size: 0.8rem;
   color: #795548;
 }
+.Points{
+  bottom: 1.1rem;
+  right: 6.7rem;
+  opacity: 0;
+  color: #795548;
+}
+
 .container > div:hover .Sgpa {
   opacity: 1;
+}
+
+.container > div:hover .Points {
+    opacity: 1;
 }
 
 @keyframes pop {
@@ -259,6 +270,11 @@ select {
   font-size: 0.8rem;
   padding: 0.5rem;
   color: #333;
+  
+  & a{
+    color: inherit;
+    text-decoration: none;
+  }
 }
 #ref {
   font-size: 0.7rem;
