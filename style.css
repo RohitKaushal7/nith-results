@@ -133,8 +133,8 @@ select {
 }
 
 .container > div:hover {
-  /* -webkit-box-shadow: 0px 3px 7px 1px #0003;
-          box-shadow: 0px 3px 7px 1px #0003; */
+  -webkit-box-shadow: 0px 3px 7px 1px #0003;
+          box-shadow: 0px 3px 7px 1px #0003;
 }
 
 .container > div:nth-child(1) {
