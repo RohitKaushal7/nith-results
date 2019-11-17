@@ -15,6 +15,7 @@
 body {
   min-height: 100vh;
   height: auto;
+  width: 100vw;
 }
 
 .header {
@@ -259,6 +260,36 @@ select {
   }
 }
 
+#you_ip{
+  margin: 0 auto;
+}
+
+.you{
+  display: flex;
+  padding: 1rem 3rem;
+  margin: 0 auto 1rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  > div {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    // background: #eee;
+    > div{
+      margin: 0 1rem;
+    }
+    & > .Cgpa,.Sgpa,.Points{
+      position: static;
+      opacity: 1;
+
+    }
+  }
+}
+
+
 .footer {
   display: flex;
   // position: absolute;
@@ -298,5 +329,10 @@ select {
   }
   #batch {
     width: 10%;
+  }
+  .you{
+    &>div>div{
+      margin: 0 0.5rem;
+    }
   }
 }

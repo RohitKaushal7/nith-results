@@ -6,7 +6,25 @@ var batch = '18';
 var data;
 var xhr;
 
+var you = document.querySelector('#you');
+var you_id = localStorage.getItem('you_id') | '';
+
 var limit = 500;
+
+if(you_id){
+    // document.querySelector('#rem').style.display = 'none';
+    document.querySelector('#rem').innerText = "Hi," + you_id; 
+
+}
+
+function save(){
+    tmp = prompt("Enter Your Roll No. to Remember you on this device. Tip- you can always change roll no by clicking on your info.");
+    you_id = tmp != ''? tmp: you_id;
+    localStorage.setItem('you_id',you_id);
+    change();
+}
+
+
 
 function change(){
     limit = 500;
@@ -40,9 +58,17 @@ function change(){
                 }
 
                 let i =0;
+                let f=0;
                 for (const stud of data) {
-                    create(stud);
+                    container.append(create(stud));
+                    if(you_id == stud.Rollno){
+                        you.innerHTML = "";
+                        you.appendChild(create(stud));
+                        f=1;
+                    }
                     i++;
+                    if(!f)
+                        you.innerHTML = "";
                     if(i>limit) break;
                 }
 
@@ -96,7 +122,8 @@ function create(stud){
         node.append(Rank,Name,Rollno,Points,Sgpa,Cgpa);
     }
     
-    container.appendChild(node);
+    return node;
+    // container.appendChild(node);
 }
 
 function next(){
@@ -104,7 +131,7 @@ function next(){
     limit +=500;
     limit = (limit>data.length)?data.length:limit;
     for(i=Math.max(0,limit-500);i<limit;++i){
-        create(data[i]);
+        container.appendChild(create(data[i]));
     }
 }
 
@@ -113,6 +140,6 @@ function prev(){
     limit -=500;
     limit = limit<500? 500: limit;
     for(i=Math.max(0,limit-500);i<limit;++i){
-        create(data[i]);
+        container.appendChild(create(data[i]));
     }
 }

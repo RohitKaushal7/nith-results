@@ -16,6 +16,7 @@
 body {
   min-height: 100vh;
   height: auto;
+  width: 100vw;
 }
 
 .header {
@@ -325,6 +326,51 @@ select {
   height: 1rem;
 }
 
+#you_ip {
+  margin: 0 auto;
+}
+
+.you {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem 3rem;
+  margin: 0 auto 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.you > div {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.you > div > div {
+  margin: 0 1rem;
+}
+
+.you > div > .Cgpa, .you > div .Sgpa, .you > div .Points {
+  position: static;
+  opacity: 1;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -373,6 +419,9 @@ select {
   }
   #batch {
     width: 10%;
+  }
+  .you > div > div {
+    margin: 0 0.5rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
