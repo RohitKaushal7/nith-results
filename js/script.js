@@ -8,6 +8,7 @@ var xhr;
 
 var you = document.querySelector('#you');
 var you_id = localStorage.getItem('you_id') | '';
+var your_res;
 
 var limit = 500;
 
@@ -25,6 +26,7 @@ function save(){
 }
 
 
+setTimeout(change,5000);
 
 function change(){
     limit = 500;
@@ -59,16 +61,20 @@ function change(){
 
                 let i =0;
                 let f=0;
+
+                your_res =  data.filter(obj => obj.Rollno == you_id )[0];
+                if(your_res){
+                    you.innerHTML ='';
+                    you.appendChild(create(your_res));
+                }
+                else{
+                    you.innerHTML = "<span id ='rem'>You are not Here..!</span>"   
+                }
+            
+
                 for (const stud of data) {
                     container.append(create(stud));
-                    if(you_id == stud.Rollno){
-                        you.innerHTML = "";
-                        you.appendChild(create(stud));
-                        f=1;
-                    }
                     i++;
-                    if(!f)
-                        you.innerHTML = "";
                     if(i>limit) break;
                 }
 
