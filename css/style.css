@@ -20,7 +20,7 @@ body {
 }
 
 .header {
-  height: 3rem;
+  height: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,52 +32,107 @@ body {
           justify-content: center;
   padding: 0.5rem 2rem;
   color: #888;
+  font-size: 1.2rem;
+}
+
+.header img {
+  width: 3rem;
 }
 
 .header > * {
-  font-family: "ZCOOL KuaiLe";
+  font-family: "Source Sans Pro","Open Sans","ZCOOL KuaiLe";
 }
 
 .ctrl {
   height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
   padding: 1rem 2rem;
 }
 
-[type="search"] {
-  height: 2.5rem;
+.ctrl > div {
+  margin: 0 0.2rem;
+}
+
+.ser {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   width: 60%;
-  display: inline-block;
-  padding: 1rem;
+  -webkit-box-shadow: 0 3px 5px 0px #0003;
+          box-shadow: 0 3px 5px 0px #0003;
+  border-radius: 5px;
+  padding: 0.5rem;
+  background: #fff;
+  position: relative;
+  height: 3rem;
+}
+
+.ser img {
+  width: 1rem;
+}
+
+.ser:focus-within img {
+  width: 0;
+}
+
+.ser:focus-within [type="search"] {
+  width: 100%;
+}
+
+[type="search"] {
+  height: 2rem;
+  width: 93%;
+  display: block;
+  padding: 0.5rem;
   border: none;
   outline: none;
   font-size: 1rem;
   letter-spacing: 1.1px;
+}
+
+.branch-con,
+.batch-con {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 12%;
+  height: 3rem;
+  text-align: center;
   -webkit-box-shadow: 0 3px 5px 0px #0003;
           box-shadow: 0 3px 5px 0px #0003;
   border-radius: 5px;
   background: #fff;
+  text-align: center;
+  overflow: hidden;
 }
 
-select,
-option {
-  height: 2.5rem;
-  display: inline-block;
-  width: 15%;
-  padding: 0rem 1rem;
+.batch-con {
+  width: 5%;
+}
+
+select {
+  width: 100%;
+  padding: 1rem 1rem;
+  color: inherit;
+  font-weight: bold;
   text-align: center;
   border: none;
   outline: none;
   font-size: 1rem;
   letter-spacing: 1.1px;
-  -webkit-box-shadow: 0 3px 5px 0px #0003;
-          box-shadow: 0 3px 5px 0px #0003;
-  border-radius: 5px;
-  background: #fff;
+  background: transparent;
 }
 
-#batch {
-  width: 5%;
+option {
+  color: black;
 }
 
 select {
@@ -286,6 +341,36 @@ select {
   }
 }
 
+@-webkit-keyframes wave {
+  0% {
+    -webkit-transform-origin: 0% 70%;
+            transform-origin: 0% 70%;
+    opacity: 1;
+    -webkit-transform: rotateZ(10deg);
+            transform: rotateZ(10deg);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+}
+
+@keyframes wave {
+  0% {
+    -webkit-transform-origin: 0% 70%;
+            transform-origin: 0% 70%;
+    opacity: 1;
+    -webkit-transform: rotateZ(10deg);
+            transform: rotateZ(10deg);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+}
+
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -334,8 +419,10 @@ select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  max-width: 500px;
   padding: 1rem 3rem;
-  margin: 0 auto 1rem;
+  margin: 1rem auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -366,7 +453,9 @@ select {
   margin: 0 1rem;
 }
 
-.you > div > .Cgpa, .you > div .Sgpa, .you > div .Points {
+.you > div > .Cgpa,
+.you > div .Sgpa,
+.you > div .Points {
   position: static;
   opacity: 1;
 }
@@ -412,19 +501,22 @@ select {
     margin: 0.5rem 0.5rem;
     padding: 0.5rem 1rem;
   }
-  select {
-    padding: 0.1rem 0.2rem;
+  .batch-con,
+  .branch-con {
     width: 15%;
     text-align: center;
+  }
+  select {
+    padding: 0.1rem 0.4rem;
   }
   .ctrl {
     padding: 0.5rem;
   }
-  [type=search] {
-    width: 72%;
+  .ser {
+    width: 70%;
   }
-  #batch {
-    width: 8%;
+  .batch-con {
+    width: 10%;
   }
   .you > div > div {
     margin: 0 0.5rem;
@@ -435,7 +527,7 @@ select {
   .container > div {
     height: 8rem;
     width: 12rem;
-    margin: 0.3rem 0.2rem;
+    margin: 0.3rem 0.3rem;
     padding: 0.5rem 0.5rem;
   }
 }

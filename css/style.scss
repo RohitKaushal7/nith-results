@@ -19,56 +19,100 @@ body {
 }
 
 .header {
-  height: 3rem;
+  height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.5rem 2rem;
   color: #888;
+  font-size: 1.2rem;
+  & img{
+    width: 3rem;
+  }
 
-  & > *{
-    font-family: "ZCOOL KuaiLe";
+  & > * {
+    font-family: "Source Sans Pro","Open Sans","ZCOOL KuaiLe";
   }
 }
 
 .ctrl {
   height: 4rem;
+  display: flex;
+  justify-content: center;
   text-align: center;
   padding: 1rem 2rem;
+
+  & > div {
+    margin: 0 0.2rem;
+  }
 }
-[type="search"] {
-  height: 2.5rem;
+
+.ser {
+  display: inline-flex;
+  justify-content: space-around;
   width: 60%;
-  display: inline-block;
+  box-shadow: 0 3px 5px 0px #0003;
+  border-radius: 5px;
+  padding: 0.5rem;
+  background: #fff;
+  position: relative;
+  height: 3rem;
+  & img {
+    width: 1rem;
+  }
+  &:focus-within img {
+    width: 0;
+  }
+  &:focus-within [type="search"] {
+    width: 100%;
+  }
+}
+
+[type="search"] {
+  height: 2rem;
+  width: 93%;
+  display: block;
   // margin: 0 4rem;
-  padding: 1rem;
+  padding: 0.5rem;
   border: none;
   outline: none;
   font-size: 1rem;
   letter-spacing: 1.1px;
+}
+
+.branch-con,
+.batch-con {
+  display: inline-flex;
+  width: 12%;
+  height: 3rem;
+  text-align: center;
   box-shadow: 0 3px 5px 0px #0003;
   border-radius: 5px;
   background: #fff;
+  text-align: center;
+  overflow: hidden;
+  // color: white;
+}
+.batch-con {
+  width: 5%;
 }
 
-select,
-option {
-  height: 2.5rem;
-  display: inline-block;
-  width: 15%;
+select{
+  // display: inline-block;
+  width: 100%;
   // margin: 0 1rem;
-  padding: 0rem 1rem;
+  padding: 1rem 1rem;
+  color: inherit;
+  font-weight: bold;
   text-align: center;
   border: none;
   outline: none;
   font-size: 1rem;
   letter-spacing: 1.1px;
-  box-shadow: 0 3px 5px 0px #0003;
-  border-radius: 5px;
-  background: #fff;
+  background: transparent;
 }
-#batch {
-  width: 5%;
+option{
+  color:black;
 }
 
 select {
@@ -202,7 +246,7 @@ select {
   font-size: 0.8rem;
   color: #795548;
 }
-.Points{
+.Points {
   bottom: 1.1rem;
   right: 6.7rem;
   opacity: 0;
@@ -214,7 +258,7 @@ select {
 }
 
 .container > div:hover .Points {
-    opacity: 1;
+  opacity: 1;
 }
 
 @keyframes pop {
@@ -225,6 +269,17 @@ select {
   100% {
     opacity: 1;
     transform: translate(0, 0px);
+  }
+}
+@keyframes wave {
+  0% {
+    transform-origin: 0% 70%;
+    opacity: 1;
+    transform: rotateZ(10deg);
+  }
+  70% {
+    opacity: 1;
+    transform: rotateZ(0deg);
   }
 }
 
@@ -260,14 +315,16 @@ select {
   }
 }
 
-#you_ip{
+#you_ip {
   margin: 0 auto;
 }
 
-.you{
+.you {
   display: flex;
+  width: 100%;
+  max-width: 500px;
   padding: 1rem 3rem;
-  margin: 0 auto 1rem;
+  margin: 1rem auto;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -278,17 +335,17 @@ select {
     justify-content: center;
     align-items: center;
     // background: #eee;
-    > div{
+    > div {
       margin: 0 1rem;
     }
-    & > .Cgpa,.Sgpa,.Points{
+    & > .Cgpa,
+    .Sgpa,
+    .Points {
       position: static;
       opacity: 1;
-
     }
   }
 }
-
 
 .footer {
   display: flex;
@@ -301,8 +358,8 @@ select {
   font-size: 0.8rem;
   padding: 0.5rem;
   color: #333;
-  
-  & a{
+
+  & a {
     color: inherit;
     text-decoration: none;
   }
@@ -322,36 +379,39 @@ select {
     margin: 0.5rem 0.5rem;
     padding: 0.5rem 1rem;
   }
-  select {
-    padding: 0.1rem 0.2rem;
+  .batch-con,
+  .branch-con {
     width: 15%;
     text-align: center;
   }
-  .ctrl{
+  select{
+    padding: 0.1rem 0.4rem;
+  }
+  .ctrl {
     padding: 0.5rem;
   }
-  [type=search]{
-    width: 72%;
+  .ser {
+    width: 70%;
   }
-  #batch{
-    width: 8%;
+  .batch-con {
+    width: 10%;
   }
-  .you{
-    &>div>div{
+  .you {
+    & > div > div {
       margin: 0 0.5rem;
     }
   }
 }
 
-@media (max-width: 400px){
+@media (max-width: 400px) {
   .container > div {
     height: 8rem;
     width: 12rem;
-    margin: 0.3rem 0.2rem;
+    margin: 0.3rem 0.3rem;
     padding: 0.5rem 0.5rem;
   }
 }
-@media (max-width: 320px){
+@media (max-width: 320px) {
   .container > div {
     height: 7.5rem;
     width: 11rem;

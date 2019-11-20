@@ -4,44 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="pics/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>NITH Results</title>
 </head>
 <body>
     <div class="header">
-        <span>NITH Results</span>
+        <img src="./pics/favicon.png" alt=""><span>NITH Results</span>
     </div>
     <div class="ctrl" onchange="change()">
-        <input type="search" placeholder="Search RollNo, Name, cgpi, #_Rank">
-        <select name="branch" id="branch" title="Branch">
-            <option value="Architecture">Architecture</option>
-            <option value="Chemical">Chemical</option>
-            <option value="Civil">Civil</option>
-            <option value="Cse">Cse</option>
-            <option value="Cse_dual">Cse_dual</option>
-            <option value="Cse_una">Cse_una</option>
-            <option value="Ece">Ece</option>
-            <option value="Ece_dual">Ece_dual</option>
-            <option value="Ece_una">Ece_una</option>
-            <option value="Electrical">Electrical</option>
-            <option value="Material">Material</option>
-            <option value="Mechanical">Mechanical</option>
-            <option value="FULL_YEAR">FULL_YEAR</option>
-            <option value="FULL_COLLEGE">FULL_COLLEGE</option>
-            <option value="IT_una">IT_una</option>
-        </select>
-        <select name="batch" id="batch" title="Batch" onchange="change()">
-                <option value="18">18</option>
-                <option value="17">17</option>
-                <option value="16">16</option>
-                <option value="15">15</option>
-        </select>
+        <div class="ser">
+            <img src="pics/search.svg" alt="">
+            <input type="search" placeholder="Search RollNo, Name, cgpi, #_Rank">
+        </div>
+        <div class="branch-con">
+                <select name="branch" id="branch" title="Branch">
+                        <option value="Architecture">Architecture</option>
+                        <option value="Chemical">Chemical</option>
+                        <option value="Civil">Civil</option>
+                        <option value="Cse">Cse</option>
+                        <option value="Cse_dual">Cse_dual</option>
+                        <option value="Cse_una">Cse_una</option>
+                        <option value="Ece">Ece</option>
+                        <option value="Ece_dual">Ece_dual</option>
+                        <option value="Ece_una">Ece_una</option>
+                        <option value="Electrical">Electrical</option>
+                        <option value="Material">Material</option>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="FULL_YEAR">FULL_YEAR</option>
+                        <option value="FULL_COLLEGE">FULL_COLLEGE</option>
+                        <option value="IT_una">IT_una</option>
+                    </select>
+        </div>
+        <div class="batch-con">
+                <select name="batch" id="batch" title="Batch" onchange="change()">
+                        <option value="18">18</option>
+                        <option value="17">17</option>
+                        <option value="16">16</option>
+                        <option value="15">15</option>
+                </select>
+        </div>
     </div>
     
     <div class="you" id="you" onclick="save()" title=" your Score Info : Click to change your roll no.">
-        <span id="rem" style="font-size: 0.7rem; color: #555;"> Click to Remember You by Roll No.*</span>
+        <span id="rem" style="font-size: 0.7rem; color: #2196f3;"> <img src="pics/rem.svg" valign="middle" width="12" alt=""> Click to Remember You by Roll No.*</span>
     </div>
 
     <div class="container">
@@ -61,6 +68,6 @@
 
 
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
