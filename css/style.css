@@ -158,6 +158,24 @@ select {
   opacity: 0.3;
 }
 
+#res_cnt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem 3rem;
+  margin: 1rem auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.7rem;
+  color: #2196f3;
+}
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -193,15 +211,15 @@ select {
           box-shadow: 0px 3px 7px 1px #0003;
 }
 
-.container > div:nth-child(1) {
+.container > div[data-rank="1"] {
   background: #ffd700;
 }
 
-.container > div:nth-child(1) > .Rank {
+.container > div[data-rank="1"] > .Rank {
   position: relative;
 }
 
-.container > div:nth-child(1) > .Rank::before {
+.container > div[data-rank="1"] > .Rank::before {
   content: "1";
   position: absolute;
   right: -0.5rem;
@@ -213,15 +231,15 @@ select {
   opacity: 0.9;
 }
 
-.container > div:nth-child(2) {
+.container > div[data-rank="2"] {
   background: silver;
 }
 
-.container > div:nth-child(2) > .Rank {
+.container > div[data-rank="2"] > .Rank {
   position: relative;
 }
 
-.container > div:nth-child(2) > .Rank::before {
+.container > div[data-rank="2"] > .Rank::before {
   content: "2";
   position: absolute;
   right: -0.5rem;
@@ -233,15 +251,15 @@ select {
   opacity: 0.9;
 }
 
-.container > div:nth-child(3) {
+.container > div[data-rank="3"] {
   background: #ca780088;
 }
 
-.container > div:nth-child(3) > .Rank {
+.container > div[data-rank="3"] > .Rank {
   position: relative;
 }
 
-.container > div:nth-child(3) > .Rank::before {
+.container > div[data-rank="3"] > .Rank::before {
   content: "3";
   position: absolute;
   right: -0.5rem;

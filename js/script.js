@@ -10,6 +10,8 @@ var you = document.querySelector('#you');
 var you_id = localStorage.getItem('you_id') | '';
 var your_res;
 
+var res_cnt = document.querySelector('#res_cnt');
+
 var limit = 500;
 
 if(you_id){
@@ -20,13 +22,15 @@ if(you_id){
 
 function save(){
     tmp = prompt("Enter Your Roll No. to Remember you on this device. Tip- you can always change roll no by clicking on your info.");
-    you_id = tmp != ''? tmp: you_id;
+    console.log(tmp);
+    
+    you_id = tmp != '' && tmp != null ? tmp: you_id;
     localStorage.setItem('you_id',you_id);
     change();
 }
 
 
-setTimeout(change,5000);
+setTimeout(change,3000);
 
 function change(){
     limit = 500;
@@ -85,16 +89,37 @@ function change(){
 }
 
 document.addEventListener('keyup', function(e){
-    let divs = document.querySelectorAll('.container > div');
     let ip = String(document.querySelector('input[type=search]').value).toUpperCase();
-
-    for (var div of divs) {
-        str = String(div.innerText).toUpperCase();
-        if(str.indexOf(ip) > -1){
-            div.style.display = "block";
+    let divs = document.querySelectorAll('.container > div');
+    res_cnt.innerHTML = '';
+    
+    if(branch == 'FULL_COLLEGE' || branch == 'FULL_YEAR'){
+        res = data.filter(obj => JSON.stringify(obj).toUpperCase().indexOf(ip) != -1 );
+        if( !ip && divs.length < 100 ){
+            change();
         }
-        else{
-            div.style.display = "none";
+        else if(ip){
+            clear();
+            if(res){
+                if( res.length<500){
+                    res_cnt.innerHTML = res.length + ' results found...';
+                    for(stud of res){
+                        container.appendChild(create(stud));
+                    }
+                }
+            }
+        }
+
+    }
+    else{
+        for (var div of divs) {
+            str = String(div.innerText).toUpperCase();
+            if(str.indexOf(ip) > -1){
+                div.style.display = "block";
+            }
+            else{
+                div.style.display = "none";
+            }
         }
     }
 });
@@ -127,6 +152,8 @@ function create(stud){
     else{
         node.append(Rank,Name,Rollno,Points,Sgpa,Cgpa);
     }
+
+    node.setAttribute('data-rank',stud.Rank);
     
     return node;
     // container.appendChild(node);

@@ -126,6 +126,18 @@ select {
   opacity: 0.3;
 }
 
+#res_cnt{
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem 3rem;
+  margin: 1rem auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  color: #2196f3;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -150,7 +162,7 @@ select {
       box-shadow: 0px 3px 7px 1px #0003;
     }
 
-    &:nth-child(1) {
+    &[data-rank="1"] {
       background: #ffd700;
       > .Rank {
         position: relative;
@@ -167,7 +179,7 @@ select {
         }
       }
     }
-    &:nth-child(2) {
+    &[data-rank="2"] {
       background: silver;
       > .Rank {
         position: relative;
@@ -184,7 +196,7 @@ select {
         }
       }
     }
-    &:nth-child(3) {
+    &[data-rank="3"] {
       background: #ca780088;
       > .Rank {
         position: relative;
