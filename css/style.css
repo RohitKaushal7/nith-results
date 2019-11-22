@@ -176,6 +176,7 @@ select {
   color: #2196f3;
 }
 
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -513,6 +514,10 @@ select {
   font-size: 0.7rem;
   color: #777;
 }
+/*
+.serInput {
+  height: 10px;
+}*/
 
 @media (max-width: 980px) {
   :root {
