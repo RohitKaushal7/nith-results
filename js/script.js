@@ -1,6 +1,5 @@
 
 var container = document.querySelector('.container');
-
 var branch;
 var batch;
 var data;
@@ -16,8 +15,10 @@ if(you_id){
     document.querySelector('#rem').innerText = "Hi," + you_id; 
 }
 
-setTimeout(change,3000);
+// auto full year in 3 sec.
+setTimeout(change,3000); 
 
+// change branch or year.
 function change(){
     limit = 500;
     clear();
@@ -42,6 +43,7 @@ function change(){
                 data = JSON.parse(xhr.responseText);
                 limit =  (limit < data.length)?limit:data.length;
 
+                // enable page buttons if data exceeds 500
                 if(data.length > 500){
                     document.querySelector('.nav').style.display = 'flex';
                 }
@@ -49,9 +51,8 @@ function change(){
                     document.querySelector('.nav').style.display = 'none';
                 }
 
-                let i =0;
-                let f=0;
 
+                // find your result
                 your_res =  data.filter(obj => obj.Rollno == you_id )[0];
                 if(your_res){
                     you.innerHTML ='';
@@ -61,9 +62,9 @@ function change(){
                     you.innerHTML = "<span id ='rem'>You are not Here..!</span>"   
                 }
             
-
+                let i =0;
                 for (const stud of data) {
-                    container.append(create(stud));
+                    renderSmooth(stud,i,20);
                     i++;
                     if(i>limit) break;
                 }
@@ -72,14 +73,25 @@ function change(){
     }
 }
 
+// Search 
 document.addEventListener('keyup', function(e){
+
+    if([13,8,32,48,49,50,51,52,53,54,55,56,57,...[...Array(26).keys()].map(x=> 65+x)].indexOf(e.keyCode)==-1){
+        // console.log(e.keyCode,'skipped');
+        return;
+        
+    }
+    // console.log(e.keyCode,'passed');
+    
     let ip = String(document.querySelector('input[type=search]').value).toUpperCase();
     let divs = document.querySelectorAll('.container > div');
     res_cnt.innerHTML = '';
     
-    if(branch == 'FULL_COLLEGE' || branch == 'FULL_YEAR'){
+    // in FULL SEARCH -search in the data[] instead of divs to find every result.
+    if(branch == 'FULL_COLLEGE' || branch == 'FULL_YEAR'){ 
         res = data.filter(obj => JSON.stringify(obj).toUpperCase().indexOf(ip) != -1 );
-        if( !ip && divs.length < 100 ){
+    
+        if( !ip && divs.length < 100 ){ // refresh / clear the search when input is empty 
             change();
         }
         else if(ip){
@@ -87,12 +99,14 @@ document.addEventListener('keyup', function(e){
             if(res){
                 res_cnt.innerHTML = res.length + ' results found...';
                 
-                for(let i =0 ;i<500;++i){
-                    container.appendChild(create(res[i]));
+                for(let i =0 ;i<Math.min(500,res.length);++i){
+                    renderSmooth(res[i],i);
                 }
             }
         }
     }
+
+    // search in DOM divs to avoid clearing the whole DOM.
     else{
         for (var div of divs) {
             str = String(div.innerText).toUpperCase();
@@ -141,6 +155,18 @@ function create(stud){
     // container.appendChild(node);
 }
 
+function renderSmooth(div,i,n=50){
+    if(i<n){ // animations delay for some first divs
+        anim_div=create(div);
+        anim_div.style.animationDelay=i/50+'s';
+        container.appendChild(anim_div);
+    }
+    else{
+        container.appendChild(create(div));
+    }
+}
+
+
 function next(){
     clear();
     limit +=500;
@@ -158,6 +184,7 @@ function prev(){
         container.appendChild(create(data[i]));
     }
 }
+
 function save(){
     tmp = prompt("Enter Your Roll No. to Remember you on this device. Tip- you can always change roll no by clicking on your info.");
     console.log(tmp);

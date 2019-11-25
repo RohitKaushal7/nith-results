@@ -1,5 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Source+Sans+Pro|ZCOOL+KuaiLe&display=swap");
 
+$card-color:#eee9;
+$rank-color: #673ab7;
+$hash-color: #9c27b0;
+$primary-color: #000;
+$light-color: #777;
+$info-color:#2196f3;
+
+
+$c1st:#ffd700;
+$c2nd:#c0c0c0;
+$c3rd:#ca780088;
+
+$c-hidden:#795548;
+
+
 * {
   box-sizing: border-box;
   transition: all 0.3s;
@@ -12,10 +27,25 @@
   font-size: 16px;
 }
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+  background:transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(20, 130, 255);
+  border-radius: 2px 0 0 2px;
+}
+
+::-webkit-scrollbar-track {
+  background:transparent;
+}
+
+
 body {
   min-height: 100vh;
   height: auto;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 .header {
@@ -24,7 +54,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0.5rem 2rem;
-  color: #888;
+  color: $light-color;
   font-size: 1.2rem;
   & img{
     width: 3rem;
@@ -150,20 +180,22 @@ select {
   > div {
     width: 16rem;
     height: 10rem;
-    background: #eee9;
+    background: $card-color;
     margin: 1rem 2rem;
     padding: 1.5rem 2rem;
     overflow: hidden;
     position: relative;
     border-radius: 5px;
-    animation: pop 0.3s;
+    animation: pop 0.3s forwards;
+    opacity: 0;
+    transform: translate(0,15px);
 
     &:hover {
       box-shadow: 0px 3px 7px 1px #0003;
     }
 
     &[data-rank="1"] {
-      background: #ffd700;
+      background: $c1st;
       > .Rank {
         position: relative;
         &::before {
@@ -180,7 +212,7 @@ select {
       }
     }
     &[data-rank="2"] {
-      background: silver;
+      background: $c2nd;
       > .Rank {
         position: relative;
         &::before {
@@ -197,7 +229,7 @@ select {
       }
     }
     &[data-rank="3"] {
-      background: #ca780088;
+      background: $c3rd;
       > .Rank {
         position: relative;
         &::before {
@@ -222,16 +254,16 @@ select {
 
 .Rank {
   font-size: 2rem;
-  color: #673ab7;
+  color: $rank-color;
   &::first-letter {
     font-size: 1.2rem;
-    color: #9c27b0;
+    color: $hash-color;
   }
 }
 .Rollno,
 .Branch,
 .Year {
-  color: #666;
+  color: $light-color;
   display: inline-block;
   margin-right: 0.5rem;
   text-transform: uppercase;
@@ -256,13 +288,13 @@ select {
   right: 4.7rem;
   opacity: 0;
   font-size: 0.8rem;
-  color: #795548;
+  color: $c-hidden;
 }
 .Points {
   bottom: 1.1rem;
   right: 6.7rem;
   opacity: 0;
-  color: #795548;
+  color: $c-hidden;
 }
 
 .container > div:hover .Sgpa {
@@ -305,7 +337,7 @@ select {
 .nav > div {
   margin: 0.5rem 2rem;
   cursor: pointer;
-  color: #777;
+  color: $light-color;
   position: relative;
 
   &:hover {
@@ -329,7 +361,7 @@ select {
 
 #rem{
   font-size: 0.7rem;
-  color: #2196f3;
+  color: $info-color;
 }
 
 #you_ip {
@@ -383,7 +415,7 @@ select {
 }
 #ref {
   font-size: 0.7rem;
-  color: #777;
+  color: $light-color;
 }
 
 @media (max-width: 980px) {

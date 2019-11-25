@@ -13,10 +13,25 @@
   font-size: 16px;
 }
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1482ff;
+  border-radius: 2px 0 0 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 body {
   min-height: 100vh;
   height: auto;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 .header {
@@ -31,7 +46,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0.5rem 2rem;
-  color: #888;
+  color: #777;
   font-size: 1.2rem;
 }
 
@@ -202,8 +217,11 @@ select {
   overflow: hidden;
   position: relative;
   border-radius: 5px;
-  -webkit-animation: pop 0.3s;
-          animation: pop 0.3s;
+  -webkit-animation: pop 0.3s forwards;
+          animation: pop 0.3s forwards;
+  opacity: 0;
+  -webkit-transform: translate(0, 15px);
+          transform: translate(0, 15px);
 }
 
 .container > div:hover {
@@ -232,7 +250,7 @@ select {
 }
 
 .container > div[data-rank="2"] {
-  background: silver;
+  background: #c0c0c0;
 }
 
 .container > div[data-rank="2"] > .Rank {
@@ -288,7 +306,7 @@ select {
 .Rollno,
 .Branch,
 .Year {
-  color: #666;
+  color: #777;
   display: inline-block;
   margin-right: 0.5rem;
   text-transform: uppercase;
