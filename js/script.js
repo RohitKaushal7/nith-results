@@ -186,11 +186,39 @@ function prev(){
     }
 }
 
-function save(){
-    tmp = prompt("Enter Your Roll No. to Remember you on this device. Tip- you can always change roll no by clicking on your info.");
-    console.log(tmp);
+
+var popup = document.querySelector('.popup');
+popup.style.display = 'none';
+function togglePopup(){
     
+    if(popup.style.display == 'none'){
+        popup.style.display = 'flex';
+        popup.style.transform = "scale(1)";
+        popup.style.opacity = 1;
+        popup.querySelector('input').focus();
+    }
+    else{
+        setTimeout(()=>{
+            popup.style.display = 'none';
+        },1000);
+        popup.style.transform = "scale(1.1)";
+        popup.style.opacity = 0;
+    }
+}
+
+popup.addEventListener('keydown', function(e){
+    if(e.keyCode == 27) 
+        togglePopup();
+});
+
+document.querySelector('#form_you_inp').addEventListener('submit', function(e){
+    // tmp = prompt("Enter Your Roll No. to Remember you on this device. Tip- you can always change roll no by clicking on your info.");
+    e.preventDefault(e);
+    tmp = document.querySelector('#you_inp').value;
+    console.log(tmp);
     you_id = tmp != '' && tmp != null ? tmp: you_id;
     localStorage.setItem('you_id',you_id);
     change();
-}
+    togglePopup();
+});
+    

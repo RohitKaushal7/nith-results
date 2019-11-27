@@ -36,8 +36,10 @@ body {
 
 .popup {
   position: fixed;
-  height: 100vh;
-  width: 100vw;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,19 +54,33 @@ body {
       -ms-flex-align: center;
           align-items: center;
   z-index: 10;
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-animation: fade-in 0.7s;
+          animation: fade-in 0.7s;
 }
 
 .popup .title {
   font-size: 6rem;
 }
 
-.popup .desc {
+.popup .desc, .popup .tip {
   color: #333;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   background: #fffa;
   border-radius: 5px;
+}
+
+.popup .tip {
+  position: absolute;
+  bottom: 1rem;
+}
+
+.popup form {
+  width: 100%;
+  text-align: center;
 }
 
 .popup .inp {
@@ -396,6 +412,32 @@ select {
 
 .container > div:hover .Points {
   opacity: 1;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 @-webkit-keyframes pop {
