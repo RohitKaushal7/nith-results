@@ -670,4 +670,10 @@ select {
     padding: 0.5rem 0.5rem;
   }
 }
+
+@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .popup {
+    background: white;
+  }
+}
 /*# sourceMappingURL=style.css.map */
