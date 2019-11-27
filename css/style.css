@@ -34,6 +34,53 @@ body {
   overflow-x: hidden;
 }
 
+.popup {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+
+.popup .title {
+  font-size: 6rem;
+}
+
+.popup .desc {
+  color: #333;
+  padding: 0.5rem 1rem;
+  background: #fffa;
+  border-radius: 5px;
+}
+
+.popup .inp {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #fff;
+  outline: none;
+  border: none;
+  height: 4rem;
+  width: 90%;
+  max-width: 700px;
+  background: #000e;
+}
+
 .header {
   height: 5rem;
   display: -webkit-box;

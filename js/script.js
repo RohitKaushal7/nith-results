@@ -16,8 +16,8 @@ if(you_id){
 }
 
 // auto full year in 3 sec.
-setTimeout(change,3000); 
-
+// setTimeout(change,3000); 
+setTimeout(change,0); 
 // change branch or year.
 function change(){
     limit = 500;
@@ -74,7 +74,8 @@ function change(){
 }
 
 // Search 
-document.addEventListener('keyup', function(e){
+var ser = document.querySelector('input[type="search"]');
+ser.addEventListener('keyup', function(e){
 
     if([13,8,32,48,49,50,51,52,53,54,55,56,57,...[...Array(26).keys()].map(x=> 65+x)].indexOf(e.keyCode)==-1){
         // console.log(e.keyCode,'skipped');
