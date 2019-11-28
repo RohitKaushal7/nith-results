@@ -17,7 +17,7 @@ $c-hidden:#795548;
 
 * {
   box-sizing: border-box;
-  transition: all 0.3s;
+  transition: all 0.2s;
   margin: 0;
   padding: 0;
   font-family: "roboto";
@@ -46,6 +46,57 @@ body {
   height: auto;
   width: 100vw;
   overflow-x: hidden;
+}
+
+.popup{
+  position: fixed;
+  top:0%;
+  bottom: 0%;
+  left: 0%;
+  right:0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  display: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+  animation: fade-in 0.7s;
+  .title{
+    font-size: 6rem;
+  }
+  .desc{
+    color: #333;
+    padding: 0.5rem 2rem;
+    background:#fffa;
+    border-radius: 5px;
+    // font-weight: bold;
+  }
+  .tip{
+    @extend .desc;
+    position: absolute;
+    bottom: 1rem;
+    // font-style: italic;
+    font-variant-caps: all-small-caps;
+  }
+  form{
+    width: 100%;
+    text-align: center;
+  }
+  .inp{
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    outline: none;
+    border: none;
+    height: 4rem;
+    width: 90%;
+    max-width: 700px;
+    background: #000e;
+  }
 }
 
 .header {
@@ -305,6 +356,17 @@ select {
   opacity: 1;
 }
 
+@keyframes fade-in {
+  0%{
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @keyframes pop {
   0% {
     opacity: 0;
@@ -466,5 +528,11 @@ select {
     width: 11rem;
     margin: 0.3rem 0.2rem;
     padding: 0.5rem 0.5rem;
+  }
+}
+
+@supports not (backdrop-filter: blur(10px)){
+  .popup{
+    background: white;
   }
 }
