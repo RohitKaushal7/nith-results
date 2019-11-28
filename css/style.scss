@@ -17,7 +17,7 @@ $c-hidden:#795548;
 
 * {
   box-sizing: border-box;
-  transition: all 0.3s;
+  transition: all 0.2s;
   margin: 0;
   padding: 0;
   font-family: "roboto";
@@ -59,6 +59,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 10;
+  display: none;
   backdrop-filter: blur(10px);
   transition: all 0.3s;
   animation: fade-in 0.7s;
@@ -76,6 +77,8 @@ body {
     @extend .desc;
     position: absolute;
     bottom: 1rem;
+    // font-style: italic;
+    font-variant-caps: all-small-caps;
   }
   form{
     width: 100%;

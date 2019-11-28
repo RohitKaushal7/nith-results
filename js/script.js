@@ -4,23 +4,31 @@ var branch;
 var batch;
 var data;
 var xhr;
-var limit = 500;
+var n_elem = 200;
+var limit = n_elem;
+var res;
+
 
 var you = document.querySelector('#you');
 var res_cnt = document.querySelector('#res_cnt');
 var your_res;
 
-var you_id = localStorage.getItem('you_id') | '';
-if(you_id){
-    document.querySelector('#rem').innerText = "Hi," + you_id; 
+var you_id;
+var you_obj_res;
+var name;
+
+getLocalUser();
+if(you_obj_res.Rollno != 0){
+    document.querySelector('#rem').innerText = "Hi," + name; 
 }
 
 // auto full year in 3 sec.
-// setTimeout(change,3000); 
-setTimeout(change,0); 
+setTimeout(change,3000); 
+// setTimeout(change,0); 
+
 // change branch or year.
 function change(){
-    limit = 500;
+    limit = n_elem;
     clear();
     branch = document.querySelector('#branch').value;
     batch = document.querySelector('#batch').value;
@@ -43,8 +51,8 @@ function change(){
                 data = JSON.parse(xhr.responseText);
                 limit =  (limit < data.length)?limit:data.length;
 
-                // enable page buttons if data exceeds 500
-                if(data.length > 500){
+                // enable page buttons if data exceeds n_elem
+                if(data.length > n_elem){
                     document.querySelector('.nav').style.display = 'flex';
                 }
                 else{
@@ -53,7 +61,8 @@ function change(){
 
 
                 // find your result
-                your_res =  data.filter(obj => obj.Rollno == you_id )[0];
+                getLocalUser();
+                your_res =  data.filter(obj => obj.Rollno == you_obj_res.Rollno )[0];
                 if(your_res){
                     you.innerHTML ='';
                     you.appendChild(create(your_res));
@@ -100,7 +109,7 @@ ser.addEventListener('keyup', function(e){
             if(res){
                 res_cnt.innerHTML = res.length + ' results found...';
                 
-                for(let i =0 ;i<Math.min(500,res.length);++i){
+                for(let i =0 ;i<Math.min(n_elem,res.length);++i){
                     renderSmooth(res[i],i);
                 }
             }
@@ -170,19 +179,21 @@ function renderSmooth(div,i,n=50){
 
 function next(){
     clear();
-    limit +=500;
-    limit = (limit>data.length)?data.length:limit;
-    for(i=Math.max(0,limit-500);i<limit;++i){
-        container.appendChild(create(data[i]));
+    p_data = res || data;
+    limit +=n_elem;
+    limit = (limit>p_data.length)?p_data.length:limit;
+    for(i=Math.max(0,limit-n_elem);i<limit;++i){
+        container.appendChild(create(p_data[i]));
     }
 }
 
 function prev(){
     clear();
-    limit -=500;
-    limit = limit<500? 500: limit;
-    for(i=Math.max(0,limit-500);i<limit;++i){
-        container.appendChild(create(data[i]));
+    p_data = res || data;
+    limit -=n_elem;
+    limit = limit<n_elem? n_elem: limit;
+    for(i=Math.max(0,limit-n_elem);i<limit;++i){
+        container.appendChild(create(p_data[i]));
     }
 }
 
@@ -216,9 +227,39 @@ document.querySelector('#form_you_inp').addEventListener('submit', function(e){
     e.preventDefault(e);
     tmp = document.querySelector('#you_inp').value;
     console.log(tmp);
-    you_id = tmp != '' && tmp != null ? tmp: you_id;
-    localStorage.setItem('you_id',you_id);
+    rollno_ip = tmp != '' && tmp != null ? tmp: you_id;
+    you_obj = data.filter(obj => JSON.stringify(obj).toUpperCase().indexOf(rollno_ip) != -1 )[0];
+    console.log(you_obj);
+    let save_str;
+    if(you_obj){
+        save_str = JSON.stringify(you_obj);
+    }
+    else{
+        save_str = JSON.stringify({Rollno : rollno_ip, Name : 'There'});
+    }
+    console.log(save_str);
+    
+    localStorage.setItem('you_id',save_str);
     change();
     togglePopup();
 });
     
+function getLocalUser(){
+    you_id = localStorage.getItem('you_id') || '';
+    if(you_id){
+        you_obj_res = JSON.parse(you_id);
+    }
+    else{
+        you_obj_res = {Rollno : 0, Name: "There"}
+    }
+    if(you_obj_res) name = toTitleCase(you_obj_res.Name.split('S/D')[0]);
+}
+
+function toTitleCase(str) {
+    return str.replace(
+        /\w\S*/g,
+        function(txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        }
+    );
+}
