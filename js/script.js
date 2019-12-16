@@ -141,11 +141,17 @@ function clear(){
 function create(stud){
     let node = document.createElement('div');
     let Name = document.createElement('div'); Name.className = "Name"; Name.innerText = stud.Name.split('S/D')[0];
+        Name.title = 'Name';
     let Rollno = document.createElement('div'); Rollno.className = "Rollno"; Rollno.innerText = stud.Rollno;
+        Rollno.title = 'Rollno';
     let Rank = document.createElement('div'); Rank.className = "Rank"; Rank.innerText = '#_'+stud.Rank;
+        Rank.title = 'Rank';
     let Cgpa = document.createElement('div'); Cgpa.className = "Cgpa"; Cgpa.innerText = stud.Cgpa; 
+        Cgpa.title = 'Cgpa';
     let Sgpa = document.createElement('div'); Sgpa.className = "Sgpa"; Sgpa.innerText = stud.Sgpa; 
+        Sgpa.title = 'Sgpa';
     let Points = document.createElement('div'); Points.className = "Points"; Points.innerText = stud.Points; 
+        Points.title = 'Points';
     if(branch == 'FULL_COLLEGE'){
         let Branch  = document.createElement('div'); Branch.className = "Branch"; Branch.innerText = stud.Branch; 
         let Year = document.createElement('div'); Year.className = "Year"; Year.innerText = stud.Year; 
