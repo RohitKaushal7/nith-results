@@ -151,10 +151,10 @@ function create(stud){
         Rollno.title = 'Rollno';
     let Rank = document.createElement('div'); Rank.className = "Rank"; Rank.innerText = '#_'+stud.Rank;
         Rank.title = 'Rank';
-    let Cgpa = document.createElement('div'); Cgpa.className = "Cgpa"; Cgpa.innerText = stud.Cgpa; 
-        Cgpa.title = 'Cgpa';
-    let Sgpa = document.createElement('div'); Sgpa.className = "Sgpa"; Sgpa.innerText = stud.Sgpa; 
-        Sgpa.title = 'Sgpa';
+    let Cgpa = document.createElement('div'); Cgpa.className = "Cgpa"; Cgpa.innerText = cs=='c' ? stud.Cgpa : stud.Sgpa; 
+        Cgpa.title = cs=='c'? 'Cgpa' : 'Sgpa';
+    let Sgpa = document.createElement('div'); Sgpa.className = "Sgpa"; Sgpa.innerText = cs=='c' ? stud.Sgpa : stud.Cgpa; 
+        Sgpa.title = cs=='c'? 'Sgpa' : 'Cgpa';
     let Points = document.createElement('div'); Points.className = "Points"; Points.innerText = stud.Points; 
         Points.title = 'Points';
     if(branch == 'FULL_COLLEGE'){
