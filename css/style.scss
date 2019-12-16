@@ -162,7 +162,8 @@ body {
 }
 
 .branch-con,
-.batch-con {
+.batch-con,
+.cs {
   display: inline-flex;
   width: 12%;
   height: 3rem;
@@ -173,16 +174,34 @@ body {
   text-align: center;
   overflow: hidden;
   // color: white;
+  &:hover{
+    background: fade-out($info-color, 0.7) ;
+  }
 }
 .batch-con {
-  width: 5%;
+  width: 3rem;
+}
+
+.cs{
+  // background: #f00;
+  width: 3rem;
+  padding: 1rem 0.7rem;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 1.1px;
+  cursor: pointer;
+
+  &:active{
+    transform: scale(0.9);
+  }
 }
 
 select{
   // display: inline-block;
   width: 100%;
   // margin: 0 1rem;
-  padding: 1rem 1rem;
+  padding: 1rem 0.7rem;
   color: inherit;
   font-weight: bold;
   text-align: center;
@@ -491,18 +510,30 @@ select {
     padding: 0.5rem 1rem;
   }
   .batch-con,
-  .branch-con {
-    width: 15%;
+  .branch-con,
+  .cs {
+    box-shadow: 0 2px 3px 0px #0003;
+    transform: translate(0,-5px);
     text-align: center;
+    background: #eee;
+  }
+  .branch-con{
+    width: 9rem;
   }
   select{
     padding: 0.1rem 0.4rem;
   }
   .ctrl {
     padding: 0.5rem;
+    height: 7rem;
+    width: 90vw;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
   .ser {
-    width: 70%;
+    width: 100%;
+    z-index: 2;
   }
   .batch-con {
     width: 10%;
@@ -510,6 +541,11 @@ select {
   .you {
     & > div > div {
       margin: 0 0.5rem;
+    }
+  }
+  .you{
+    .Branch,.Year{
+      display: none;
     }
   }
 }

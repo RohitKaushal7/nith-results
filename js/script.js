@@ -7,6 +7,7 @@ var xhr;
 var n_elem = 200;
 var limit = n_elem;
 var res;
+var cs = 'c';
 
 
 var you = document.querySelector('#you');
@@ -35,13 +36,13 @@ function change(){
     xhr = new XMLHttpRequest();
 
     if(branch == 'FULL_COLLEGE'){
-        xhr.open('get', `./json/${branch}/full_college_cgpi.json`);
+        xhr.open('get', `./json/${branch}/full_college_${cs}gpi.json`);
     }
     else if(branch == 'FULL_YEAR'){
-        xhr.open('get', `./json/${branch}/full_year_batch${batch}_cgpi.json`);
+        xhr.open('get', `./json/${branch}/full_year_batch${batch}_${cs}gpi.json`);
     }
     else{
-        xhr.open('get', `./json/${branch}/batch_${batch}_cgpi.json`);
+        xhr.open('get', `./json/${branch}/batch_${batch}_${cs}gpi.json`);
     }
 
     xhr.send();
@@ -49,36 +50,40 @@ function change(){
         if(xhr.readyState == 4){
             if(xhr.status == 200){
                 data = JSON.parse(xhr.responseText);
-                limit =  (limit < data.length)?limit:data.length;
-
-                // enable page buttons if data exceeds n_elem
-                if(data.length > n_elem){
-                    document.querySelector('.nav').style.display = 'flex';
-                }
-                else{
-                    document.querySelector('.nav').style.display = 'none';
-                }
-
-
-                // find your result
-                getLocalUser();
-                your_res =  data.filter(obj => obj.Rollno == you_obj_res.Rollno )[0];
-                if(your_res){
-                    you.innerHTML ='';
-                    you.appendChild(create(your_res));
-                }
-                else{
-                    you.innerHTML = "<span id ='rem'>You are not Here..!</span>"   
-                }
-            
-                let i =0;
-                for (const stud of data) {
-                    renderSmooth(stud,i,20);
-                    i++;
-                    if(i>limit) break;
-                }
+                
+                render();
             }                  
         }
+    }
+}
+
+function render(){
+    limit =  (limit < data.length)?limit:data.length;
+    // enable page buttons if data exceeds n_elem
+    if(data.length > n_elem){
+        document.querySelector('.nav').style.display = 'flex';
+    }
+    else{
+        document.querySelector('.nav').style.display = 'none';
+    }
+
+
+    // find your result
+    getLocalUser();
+    your_res =  data.filter(obj => obj.Rollno == you_obj_res.Rollno )[0];
+    if(your_res){
+        you.innerHTML ='';
+        you.appendChild(create(your_res));
+    }
+    else{
+        you.innerHTML = "<span id ='rem'>You are not Here..!</span>"   
+    }
+
+    let i =0;
+    for (const stud of data) {
+        renderSmooth(stud,i,20);
+        i++;
+        if(i>limit) break;
     }
 }
 
@@ -141,11 +146,17 @@ function clear(){
 function create(stud){
     let node = document.createElement('div');
     let Name = document.createElement('div'); Name.className = "Name"; Name.innerText = stud.Name.split('S/D')[0];
+        Name.title = 'Name';
     let Rollno = document.createElement('div'); Rollno.className = "Rollno"; Rollno.innerText = stud.Rollno;
+        Rollno.title = 'Rollno';
     let Rank = document.createElement('div'); Rank.className = "Rank"; Rank.innerText = '#_'+stud.Rank;
+        Rank.title = 'Rank';
     let Cgpa = document.createElement('div'); Cgpa.className = "Cgpa"; Cgpa.innerText = stud.Cgpa; 
+        Cgpa.title = 'Cgpa';
     let Sgpa = document.createElement('div'); Sgpa.className = "Sgpa"; Sgpa.innerText = stud.Sgpa; 
+        Sgpa.title = 'Sgpa';
     let Points = document.createElement('div'); Points.className = "Points"; Points.innerText = stud.Points; 
+        Points.title = 'Points';
     if(branch == 'FULL_COLLEGE'){
         let Branch  = document.createElement('div'); Branch.className = "Branch"; Branch.innerText = stud.Branch; 
         let Year = document.createElement('div'); Year.className = "Year"; Year.innerText = stud.Year; 
@@ -262,4 +273,16 @@ function toTitleCase(str) {
             return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
         }
     );
+}
+
+function cs_toggle(){
+    if(cs=='c'){
+        cs = 's';
+        this.innerText = 'Sg';
+    }
+    else {
+        cs = 'c';
+        this.innerText = 'Cg';
+    }
+    change();
 }
