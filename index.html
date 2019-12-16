@@ -40,7 +40,7 @@
     <div class="ctrl" onchange="change()">
         <div class="ser">
             <img src="pics/search.svg" alt="">
-            <input type="search" placeholder="Search RollNo, Name, cgpi, #_Rank">
+            <input type="search" placeholder='Search RollNo, Name, CGPA, #_Rank, "property":"value"'>
         </div>
         <div class="branch-con">
                 <select name="branch" id="branch" title="Branch" onchange="change()">
@@ -69,6 +69,7 @@
                         <option value="15">15</option>
                 </select>
         </div>
+        <div class="cs" title="sort: CGPA / SGPA" onclick="cs_toggle.call(this);">Cg</div>
     </div>
     
     <div class="you" id="you" onclick="togglePopup()" title=" your Score Info : Click to change your roll no.">
