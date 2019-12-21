@@ -1,33 +1,37 @@
 
-var container = document.querySelector('.container');
+var container = document.querySelector('.container'); // Main Data Container
+
+// controllers 
 var branch;
 var batch;
-var data;
-var xhr;
-var n_elem = 200;
-var limit = n_elem;
-var res;
 var cs = 'c';
 
+var n_elem = 200; // Number of elements per page
+var limit = n_elem; // for pagination purpose
 
-var you = document.querySelector('#you');
-var res_cnt = document.querySelector('#res_cnt');
-var your_res;
+var xhr;
+var data; // XHR response data
+var res; // Search Result
+var your_res; // Local user result if exists in the current page (`data`)
 
-var you_id;
-var you_obj_res;
-var name;
+var you = document.querySelector('#you'); // Local Username / Result Container
+var you_id; // JSON object - Local
+var you_obj_res; // User Object JSON.parse(you_id)
+var name; // User name S/D stripped
 
-getLocalUser();
+var res_cnt = document.querySelector('#res_cnt'); // Results found Count
+
+
+getLocalUser(); // greet user if exists
 if(you_obj_res.Rollno != 0){
     document.querySelector('#rem').innerText = "Hi," + name; 
 }
 
-// auto full year in 3 sec.
-setTimeout(change,3000); 
-// setTimeout(change,0); 
 
-// change branch or year.
+
+setTimeout(change,3000); // auto change to full_year in 3 sec.
+
+// change branch or year. > Sends XHR  
 function change(){
     limit = n_elem;
     clear();
@@ -57,35 +61,20 @@ function change(){
     }
 }
 
-function render(){
-    limit =  (limit < data.length)?limit:data.length;
-    // enable page buttons if data exceeds n_elem
-    if(data.length > n_elem){
-        document.querySelector('.nav').style.display = 'flex';
+// CGPA / SGPA toggle
+function cs_toggle(){
+    if(cs=='c'){
+        cs = 's';
+        this.innerText = 'Sg';
     }
-    else{
-        document.querySelector('.nav').style.display = 'none';
+    else {
+        cs = 'c';
+        this.innerText = 'Cg';
     }
-
-
-    // find your result
-    getLocalUser();
-    your_res =  data.filter(obj => obj.Rollno == you_obj_res.Rollno )[0];
-    if(your_res){
-        you.innerHTML ='';
-        you.appendChild(create(your_res));
-    }
-    else{
-        you.innerHTML = "<span id ='rem'>You are not Here..!</span>"   
-    }
-
-    let i =0;
-    for (const stud of data) {
-        renderSmooth(stud,i,20);
-        i++;
-        if(i>limit) break;
-    }
+    change();
 }
+
+
 
 // Search 
 var ser = document.querySelector('input[type="search"]');
@@ -135,47 +124,95 @@ ser.addEventListener('keyup', function(e){
     }
 });
 
-function clear(){
-    let divs = document.querySelectorAll('.container > div');
 
-    for (var div of divs) {
-        div.parentElement.removeChild(div);
-    }
-}
 
+// create n new Card for Student // ----------------------------------------------------------------------------------------------------
 function create(stud){
     let node = document.createElement('div');
-    let Name = document.createElement('div'); Name.className = "Name"; Name.innerText = stud.Name.split('S/D')[0];
+        node.className = 'card';
+
+    let Name = document.createElement('div');
+        Name.className = "Name";
+        Name.innerText = stud.Name.split('S/D')[0];
         Name.title = 'Name';
-    let Rollno = document.createElement('div'); Rollno.className = "Rollno"; Rollno.innerText = stud.Rollno;
+    let Rollno = document.createElement('div');
+        Rollno.className = "Rollno";
+        Rollno.innerText = stud.Rollno;  
         Rollno.title = 'Rollno';
-    let Rank = document.createElement('div'); Rank.className = "Rank"; Rank.innerText = '#_'+stud.Rank;
+    let Rank = document.createElement('div');
+        Rank.className = "Rank";
+        Rank.innerText = '#_'+stud.Rank;    
         Rank.title = 'Rank';
-    let Cgpa = document.createElement('div'); Cgpa.className = "Cgpa"; Cgpa.innerText = cs=='c' ? stud.Cgpa : stud.Sgpa; 
+    let Cgpa = document.createElement('div');
+        Cgpa.className = "Cgpa";
+        Cgpa.innerText = cs=='c' ? stud.Cgpa : stud.Sgpa;
         Cgpa.title = cs=='c'? 'Cgpa' : 'Sgpa';
-    let Sgpa = document.createElement('div'); Sgpa.className = "Sgpa"; Sgpa.innerText = cs=='c' ? stud.Sgpa : stud.Cgpa; 
+    let Sgpa = document.createElement('div');
+        Sgpa.className = "Sgpa";
+        Sgpa.innerText = cs=='c' ? stud.Sgpa : stud.Cgpa;
         Sgpa.title = cs=='c'? 'Sgpa' : 'Cgpa';
-    let Points = document.createElement('div'); Points.className = "Points"; Points.innerText = stud.Points; 
+    let Points = document.createElement('div');
+        Points.className = "Points";
+        Points.innerText = stud.Points;
         Points.title = 'Points';
-    if(branch == 'FULL_COLLEGE'){
-        let Branch  = document.createElement('div'); Branch.className = "Branch"; Branch.innerText = stud.Branch; 
-        let Year = document.createElement('div'); Year.className = "Year"; Year.innerText = stud.Year; 
+
+    if(branch == 'FULL_COLLEGE'){ // + Branch, Year
+        let Branch  = document.createElement('div');
+            Branch.className = "Branch";
+            Branch.innerText = stud.Branch; 
+        let Year = document.createElement('div');
+            Year.className = "Year";
+            Year.innerText = stud.Year; 
         node.append(Rank,Name,Rollno,Branch,Year,Points,Sgpa,Cgpa);
     }
-    else if(branch == 'FULL_YEAR'){
-        let Branch  = document.createElement('div'); Branch.className = "Branch"; Branch.innerText = stud.Branch;
+    else if(branch == 'FULL_YEAR'){ // + Branch
+        let Branch  = document.createElement('div');
+            Branch.className = "Branch";
+            Branch.innerText = stud.Branch;
         node.append(Rank,Name,Rollno,Branch,Points,Sgpa,Cgpa);
     }
-    else{
+    else{ // + 
         node.append(Rank,Name,Rollno,Points,Sgpa,Cgpa);
     }
 
     node.setAttribute('data-rank',stud.Rank);
     
     return node;
-    // container.appendChild(node);
 }
 
+// render `data` > divs in the container // ----------------------------------------------------------------------------------------------------
+function render(){
+    limit =  (limit < data.length)?limit:data.length;
+    // enable page-navigation buttons if data exceeds n_elem
+    if(data.length > n_elem){
+        document.querySelector('.nav').style.display = 'flex';
+    }
+    else{
+        document.querySelector('.nav').style.display = 'none';
+    }
+
+
+    // find User result
+    getLocalUser();
+    your_res =  data.filter(obj => obj.Rollno == you_obj_res.Rollno )[0];
+    if(your_res){
+        you.innerHTML ='';
+        you.appendChild(create(your_res));
+    }
+    else{
+        you.innerHTML = "<span id ='rem'>You are not Here..!</span>"   
+    }
+
+    // Render the divs
+    let i =0;
+    for (const stud of data) {
+        renderSmooth(stud,i,20);
+        i++;
+        if(i>limit) break;
+    }
+}
+
+// Renders with animation
 function renderSmooth(div,i,n=50){
     if(i<n){ // animations delay for some first divs
         anim_div=create(div);
@@ -187,7 +224,18 @@ function renderSmooth(div,i,n=50){
     }
 }
 
+// Clears the Container
+function clear(){
+    let divs = document.querySelectorAll('.container > div');
 
+    for (var div of divs) {
+        div.parentElement.removeChild(div);
+    }
+}
+
+
+
+// Pagination navigation // ----------------------------------------------------------------------------------------------------
 function next(){
     clear();
     p_data = res || data;
@@ -209,8 +257,9 @@ function prev(){
 }
 
 
+
+// Local User Popup // ----------------------------------------------------------------------------------------------------
 var popup = document.querySelector('.popup');
-popup.style.display = 'none';
 function togglePopup(){
     
     if(popup.style.display == 'none'){
@@ -228,19 +277,21 @@ function togglePopup(){
     }
 }
 
+// Esc popup
 popup.addEventListener('keydown', function(e){
     if(e.keyCode == 27) 
         togglePopup();
 });
 
+// store User rollNo on LocalStorage
 document.querySelector('#form_you_inp').addEventListener('submit', function(e){
-    // tmp = prompt("Enter Your Roll No. to Remember you on this device. Tip- you can always change roll no by clicking on your info.");
     e.preventDefault(e);
     tmp = document.querySelector('#you_inp').value;
     console.log(tmp);
     rollno_ip = tmp != '' && tmp != null ? tmp: you_id;
     you_obj = data.filter(obj => JSON.stringify(obj).toUpperCase().indexOf(rollno_ip) != -1 )[0];
     console.log(you_obj);
+
     let save_str;
     if(you_obj){
         save_str = JSON.stringify(you_obj);
@@ -254,7 +305,8 @@ document.querySelector('#form_you_inp').addEventListener('submit', function(e){
     change();
     togglePopup();
 });
-    
+
+// get the local user if it is in the localStorage
 function getLocalUser(){
     you_id = localStorage.getItem('you_id') || '';
     if(you_id){
@@ -266,6 +318,9 @@ function getLocalUser(){
     if(you_obj_res) name = toTitleCase(you_obj_res.Name.split('S/D')[0]);
 }
 
+
+
+// Helper Fuctions // ----------------------------------------------------------------------------------------------------
 function toTitleCase(str) {
     return str.replace(
         /\w\S*/g,
@@ -273,16 +328,4 @@ function toTitleCase(str) {
             return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
         }
     );
-}
-
-function cs_toggle(){
-    if(cs=='c'){
-        cs = 's';
-        this.innerText = 'Sg';
-    }
-    else {
-        cs = 'c';
-        this.innerText = 'Cg';
-    }
-    change();
 }
