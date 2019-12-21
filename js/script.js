@@ -176,6 +176,7 @@ function create(stud){
     }
 
     node.setAttribute('data-rank',stud.Rank);
+    node.setAttribute('data-base',parseInt(Cgpa.innerText));
     
     return node;
 }
@@ -214,13 +215,15 @@ function render(){
 
 // Renders with animation
 function renderSmooth(div,i,n=50){
-    if(i<n){ // animations delay for some first divs
-        anim_div=create(div);
-        anim_div.style.animationDelay=i/50+'s';
-        container.appendChild(anim_div);
-    }
-    else{
-        container.appendChild(create(div));
+    if(Number(div.Cgpa)){
+        if(i<n){ // animations delay for some first divs
+            anim_div=create(div);
+            anim_div.style.animationDelay=i/50+'s';
+            container.appendChild(anim_div);
+        }
+        else{
+            container.appendChild(create(div));
+        }
     }
 }
 
@@ -242,7 +245,9 @@ function next(){
     limit +=n_elem;
     limit = (limit>p_data.length)?p_data.length:limit;
     for(i=Math.max(0,limit-n_elem);i<limit;++i){
-        container.appendChild(create(p_data[i]));
+        if(Number(p_data[i].Cgpa)){
+            container.appendChild(create(p_data[i]));
+        }
     }
 }
 
@@ -252,7 +257,9 @@ function prev(){
     limit -=n_elem;
     limit = limit<n_elem? n_elem: limit;
     for(i=Math.max(0,limit-n_elem);i<limit;++i){
-        container.appendChild(create(p_data[i]));
+        if(Number(p_data[i].Cgpa)){
+            container.appendChild(create(p_data[i]));
+        }
     }
 }
 

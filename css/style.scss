@@ -261,11 +261,75 @@ select {
     transform: translate(0,15px);
 
     &:hover {
-      box-shadow: 0px 3px 7px 1px #0003;
+      box-shadow: 0px 3px 7px 1px #0002;
+    }
+
+    &[data-base="10"] {
+      // background: hsla(50, 100%, 64%, 0.7);
+      // border: 1px solid $rank-color;
+      position: relative;
+      &::after{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        right: 1rem;
+        top: -1rem;
+        border-radius: 3px;
+        // transform: rotate(45deg);
+        width: 1rem;
+        height: 3rem;
+        background: hsla(340, 82%, 52%, 0.6);
+        animation: glow 1s alternate infinite;
+      }
+      
+    }
+
+    &[data-base="9"] {
+      // background: hsla(50, 100%, 64%, 0.7);
+      // border: 1px solid $rank-color;
+      position: relative;
+      &::after{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        right: 1rem;
+        top: -1rem;
+        border-radius: 3px;
+        // transform: rotate(45deg);
+        width: 1rem;
+        height: 3rem;
+        background: fade-out($hash-color,0.5);
+      }
+      
+    }
+    &[data-base="8"] {
+      // background: hsla(50, 100%, 64%, 0.7);
+      // border: 1px solid $rank-color;
+      position: relative;
+      &::after{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        right: 1rem;
+        top: -1rem;
+        border-radius: 3px;
+        // transform: rotate(45deg);
+        width: 1rem;
+        height: 3rem;
+        background: fade-out($rank-color,0.9);
+      }
+      
     }
 
     &[data-rank="1"] {
       background: $c1st;
+      border:none;
+      &::after{
+        display: none;
+      }
+      > .Cgpa{
+        color: black;
+      }
       > .Rank {
         position: relative;
         &::before {
@@ -283,6 +347,13 @@ select {
     }
     &[data-rank="2"] {
       background: $c2nd;
+      border:none;
+      &::after{
+        display: none;
+      }
+      > .Cgpa{
+        color: black;
+      }
       > .Rank {
         position: relative;
         &::before {
@@ -300,6 +371,13 @@ select {
     }
     &[data-rank="3"] {
       background: $c3rd;
+      border:none;
+      &::after{
+        display: none;
+      }
+      > .Cgpa{
+        color: black;
+      }
       > .Rank {
         position: relative;
         &::before {
@@ -405,6 +483,14 @@ select {
   70% {
     opacity: 1;
     transform: rotateZ(0deg);
+  }
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 2px 1px #e91e6355;
+  }
+  100% {
+    box-shadow: 0px 0px 20px 10px #e91e6355;
   }
 }
 
@@ -519,6 +605,10 @@ select {
   }
   .branch-con{
     width: 9rem;
+  }
+  .cs{
+    width: 2rem;
+    padding: 1rem 0.3rem;
   }
   select{
     padding: 0.1rem 0.4rem;

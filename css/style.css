@@ -310,12 +310,71 @@ select {
 }
 
 .container > div:hover {
-  -webkit-box-shadow: 0px 3px 7px 1px #0003;
-          box-shadow: 0px 3px 7px 1px #0003;
+  -webkit-box-shadow: 0px 3px 7px 1px #0002;
+          box-shadow: 0px 3px 7px 1px #0002;
+}
+
+.container > div[data-base="10"] {
+  position: relative;
+}
+
+.container > div[data-base="10"]::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 1rem;
+  top: -1rem;
+  border-radius: 3px;
+  width: 1rem;
+  height: 3rem;
+  background: rgba(233, 32, 99, 0.6);
+  -webkit-animation: glow 1s alternate infinite;
+          animation: glow 1s alternate infinite;
+}
+
+.container > div[data-base="9"] {
+  position: relative;
+}
+
+.container > div[data-base="9"]::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 1rem;
+  top: -1rem;
+  border-radius: 3px;
+  width: 1rem;
+  height: 3rem;
+  background: rgba(156, 39, 176, 0.5);
+}
+
+.container > div[data-base="8"] {
+  position: relative;
+}
+
+.container > div[data-base="8"]::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 1rem;
+  top: -1rem;
+  border-radius: 3px;
+  width: 1rem;
+  height: 3rem;
+  background: rgba(103, 58, 183, 0.1);
 }
 
 .container > div[data-rank="1"] {
   background: #ffd700;
+  border: none;
+}
+
+.container > div[data-rank="1"]::after {
+  display: none;
+}
+
+.container > div[data-rank="1"] > .Cgpa {
+  color: black;
 }
 
 .container > div[data-rank="1"] > .Rank {
@@ -336,6 +395,15 @@ select {
 
 .container > div[data-rank="2"] {
   background: #c0c0c0;
+  border: none;
+}
+
+.container > div[data-rank="2"]::after {
+  display: none;
+}
+
+.container > div[data-rank="2"] > .Cgpa {
+  color: black;
 }
 
 .container > div[data-rank="2"] > .Rank {
@@ -356,6 +424,15 @@ select {
 
 .container > div[data-rank="3"] {
   background: #ca780088;
+  border: none;
+}
+
+.container > div[data-rank="3"]::after {
+  display: none;
+}
+
+.container > div[data-rank="3"] > .Cgpa {
+  color: black;
 }
 
 .container > div[data-rank="3"] > .Rank {
@@ -518,6 +595,28 @@ select {
   }
 }
 
+@-webkit-keyframes glow {
+  0% {
+    -webkit-box-shadow: 0 0 2px 1px #e91e6355;
+            box-shadow: 0 0 2px 1px #e91e6355;
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 20px 10px #e91e6355;
+            box-shadow: 0px 0px 20px 10px #e91e6355;
+  }
+}
+
+@keyframes glow {
+  0% {
+    -webkit-box-shadow: 0 0 2px 1px #e91e6355;
+            box-shadow: 0 0 2px 1px #e91e6355;
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 20px 10px #e91e6355;
+            box-shadow: 0px 0px 20px 10px #e91e6355;
+  }
+}
+
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -665,6 +764,10 @@ select {
   }
   .branch-con {
     width: 9rem;
+  }
+  .cs {
+    width: 2rem;
+    padding: 1rem 0.3rem;
   }
   select {
     padding: 0.1rem 0.4rem;
