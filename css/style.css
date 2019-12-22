@@ -332,11 +332,11 @@ select {
           animation: glow 1s alternate infinite;
 }
 
-.container > div[data-base="9"] {
+.container > div[data-base="9"], .container > div[data-base="9.5"] {
   position: relative;
 }
 
-.container > div[data-base="9"]::after {
+.container > div[data-base="9"]::after, .container > div[data-base="9.5"]::after {
   content: '';
   display: inline-block;
   position: absolute;
@@ -346,6 +346,11 @@ select {
   width: 1rem;
   height: 3rem;
   background: rgba(156, 39, 176, 0.5);
+}
+
+.container > div[data-base="9.5"]::after {
+  -webkit-animation: glow2 1s alternate infinite;
+          animation: glow2 1s alternate infinite;
 }
 
 .container > div[data-base="8"] {
@@ -453,6 +458,9 @@ select {
 
 .Name {
   font-size: 1.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .Rank {
@@ -601,8 +609,8 @@ select {
             box-shadow: 0 0 2px 1px #e91e6355;
   }
   100% {
-    -webkit-box-shadow: 0px 0px 20px 10px #e91e6355;
-            box-shadow: 0px 0px 20px 10px #e91e6355;
+    -webkit-box-shadow: 0px 0px 10px 5px #e91e6355;
+            box-shadow: 0px 0px 10px 5px #e91e6355;
   }
 }
 
@@ -612,8 +620,30 @@ select {
             box-shadow: 0 0 2px 1px #e91e6355;
   }
   100% {
-    -webkit-box-shadow: 0px 0px 20px 10px #e91e6355;
-            box-shadow: 0px 0px 20px 10px #e91e6355;
+    -webkit-box-shadow: 0px 0px 10px 5px #e91e6355;
+            box-shadow: 0px 0px 10px 5px #e91e6355;
+  }
+}
+
+@-webkit-keyframes glow2 {
+  0% {
+    -webkit-box-shadow: 0 0 0px 0px rgba(156, 39, 176, 0.3);
+            box-shadow: 0 0 0px 0px rgba(156, 39, 176, 0.3);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 10px 3px #d11ee955;
+            box-shadow: 0 0 10px 3px #d11ee955;
+  }
+}
+
+@keyframes glow2 {
+  0% {
+    -webkit-box-shadow: 0 0 0px 0px rgba(156, 39, 176, 0.3);
+            box-shadow: 0 0 0px 0px rgba(156, 39, 176, 0.3);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 10px 3px #d11ee955;
+            box-shadow: 0 0 10px 3px #d11ee955;
   }
 }
 
@@ -737,6 +767,10 @@ select {
   text-decoration: none;
 }
 
+.footer a:hover {
+  color: #2196f3;
+}
+
 #ref {
   font-size: 0.7rem;
   color: #777;
@@ -751,6 +785,10 @@ select {
     width: 13rem;
     margin: 0.5rem 0.5rem;
     padding: 0.5rem 1rem;
+  }
+  .container > div[data-base="10"]::after, .container > div[data-base="9.5"]::after {
+    -webkit-animation: none;
+            animation: none;
   }
   .batch-con,
   .branch-con,
@@ -795,6 +833,10 @@ select {
   }
   .you .Branch, .you .Year {
     display: none;
+  }
+  .you .Name {
+    overflow: visible;
+    white-space: normal;
   }
 }
 

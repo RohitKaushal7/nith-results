@@ -176,7 +176,7 @@ function create(stud){
     }
 
     node.setAttribute('data-rank',stud.Rank);
-    node.setAttribute('data-base',parseInt(Cgpa.innerText));
+    node.setAttribute('data-base', (Number(Cgpa.innerText)>=9.5 && Number(Cgpa.innerText)< 10) ? '9.5' : parseInt(Cgpa.innerText));
     
     return node;
 }
