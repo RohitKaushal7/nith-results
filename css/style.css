@@ -109,7 +109,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0.5rem 2rem;
-  color: #777;
+  color: #231f20;
   font-size: 1.2rem;
 }
 
@@ -119,6 +119,26 @@ body {
 
 .header > * {
   font-family: "Source Sans Pro","Open Sans","ZCOOL KuaiLe";
+}
+
+.header .main-heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header .main-heading .date {
+  font-size: 0.5em;
+  width: 3.5rem;
+  font-weight: bold;
+  padding: 0.2rem 0.4rem;
+  border-radius: 5px;
+  background: #E91E63;
+  color: white;
 }
 
 .ctrl {

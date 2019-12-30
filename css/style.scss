@@ -105,7 +105,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0.5rem 2rem;
-  color: $light-color;
+  color: #231f20;
   font-size: 1.2rem;
   & img{
     width: 3rem;
@@ -114,6 +114,20 @@ body {
   & > * {
     font-family: "Source Sans Pro","Open Sans","ZCOOL KuaiLe";
   }
+  .main-heading{
+    display: flex;
+    flex-direction: column;
+    .date{
+      font-size: 0.5em;
+      width: 3.5rem;
+      font-weight: bold;
+      padding: 0.2rem 0.4rem;
+      border-radius: 5px;
+      background: #E91E63;
+      color: white;
+    }
+  }
+  
 }
 
 .ctrl {
