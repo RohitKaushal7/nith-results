@@ -5,6 +5,7 @@ var container = document.querySelector('.container'); // Main Data Container
 var branch;
 var batch;
 var cs = 'c';
+var rr = true; //realRanks
 
 var n_elem = 200; // Number of elements per page
 var limit = n_elem; // for pagination purpose
@@ -54,7 +55,8 @@ function change(){
         if(xhr.readyState == 4){
             if(xhr.status == 200){
                 data = JSON.parse(xhr.responseText);
-                
+                if(rr) RealRanks(data);
+
                 render();
             }                  
         }
@@ -335,4 +337,22 @@ function toTitleCase(str) {
             return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
         }
     );
+}
+
+function RealRanks(data) { 
+    let k=1;
+    if(cs=='c'){
+        for(let i=1;i<data.length;++i){
+            if(data[i-1].Cgpa !=data[i].Cgpa)
+                k=i+1;
+            data[i].Rank = k;
+        }
+    }
+    else{
+        for(let i=1;i<data.length;++i){
+            if(data[i-1].Sgpa !=data[i].Sgpa)
+                k=i+1;
+            data[i].Rank = k;
+        }
+    }
 }
