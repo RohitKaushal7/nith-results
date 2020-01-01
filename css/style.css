@@ -334,11 +334,11 @@ select {
           box-shadow: 0px 3px 7px 1px #0002;
 }
 
-.container > div[data-base="10"] {
+.container > div[data-base="9.5"] {
   position: relative;
 }
 
-.container > div[data-base="10"]::after {
+.container > div[data-base="9.5"]::after {
   content: '';
   display: inline-block;
   position: absolute;
@@ -352,11 +352,11 @@ select {
           animation: glow 1s alternate infinite;
 }
 
-.container > div[data-base="9"], .container > div[data-base="9.5"] {
+.container > div[data-base="9"] {
   position: relative;
 }
 
-.container > div[data-base="9"]::after, .container > div[data-base="9.5"]::after {
+.container > div[data-base="9"]::after {
   content: '';
   display: inline-block;
   position: absolute;
@@ -366,11 +366,6 @@ select {
   width: 1rem;
   height: 3rem;
   background: rgba(156, 39, 176, 0.5);
-}
-
-.container > div[data-base="9.5"]::after {
-  -webkit-animation: glow2 1s alternate infinite;
-          animation: glow2 1s alternate infinite;
 }
 
 .container > div[data-base="8"] {
