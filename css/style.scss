@@ -177,7 +177,8 @@ body {
 
 .branch-con,
 .batch-con,
-.cs {
+.cs,
+.ranking-con {
   display: inline-flex;
   width: 12%;
   height: 3rem;
@@ -211,6 +212,10 @@ body {
   }
 }
 
+.ranking-con{
+  padding: 0.1rem 0.2rem;
+}
+
 select{
   // display: inline-block;
   width: 100%;
@@ -234,6 +239,13 @@ select {
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: "";
+}
+
+#ranking{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+  padding: 0.7rem 0.4rem;
 }
 
 ::placeholder {
@@ -629,7 +641,8 @@ select {
   }
   .batch-con,
   .branch-con,
-  .cs {
+  .cs,
+  .ranking-con {
     box-shadow: 0 2px 3px 0px #0003;
     transform: translate(0,-5px);
     text-align: center;
@@ -637,6 +650,13 @@ select {
   }
   .branch-con{
     width: 9rem;
+  }
+  .ser {
+    width: 100%;
+    z-index: 2;
+  }
+  .batch-con {
+    width: 10%;
   }
   .cs{
     width: 2rem;
@@ -653,13 +673,7 @@ select {
     flex-wrap: wrap;
     justify-content: flex-end;
   }
-  .ser {
-    width: 100%;
-    z-index: 2;
-  }
-  .batch-con {
-    width: 10%;
-  }
+ 
   .you {
     & > div > div {
       margin: 0 0.5rem;

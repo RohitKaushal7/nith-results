@@ -198,7 +198,8 @@ body {
 
 .branch-con,
 .batch-con,
-.cs {
+.cs,
+.ranking-con {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -215,7 +216,8 @@ body {
 
 .branch-con:hover,
 .batch-con:hover,
-.cs:hover {
+.cs:hover,
+.ranking-con:hover {
   background: rgba(33, 150, 243, 0.3);
 }
 
@@ -236,6 +238,10 @@ body {
 .cs:active {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
+}
+
+.ranking-con {
+  padding: 0.1rem 0.2rem;
 }
 
 select {
@@ -260,6 +266,13 @@ select {
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: "";
+}
+
+#ranking {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+  padding: 0.7rem 0.4rem;
 }
 
 ::-webkit-input-placeholder {
@@ -807,7 +820,8 @@ select {
   }
   .batch-con,
   .branch-con,
-  .cs {
+  .cs,
+  .ranking-con {
     -webkit-box-shadow: 0 2px 3px 0px #0003;
             box-shadow: 0 2px 3px 0px #0003;
     -webkit-transform: translate(0, -5px);
@@ -817,6 +831,13 @@ select {
   }
   .branch-con {
     width: 9rem;
+  }
+  .ser {
+    width: 100%;
+    z-index: 2;
+  }
+  .batch-con {
+    width: 10%;
   }
   .cs {
     width: 2rem;
@@ -835,13 +856,6 @@ select {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-  }
-  .ser {
-    width: 100%;
-    z-index: 2;
-  }
-  .batch-con {
-    width: 10%;
   }
   .you > div > div {
     margin: 0 0.5rem;

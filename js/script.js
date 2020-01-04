@@ -5,7 +5,7 @@ var container = document.querySelector('.container'); // Main Data Container
 var branch;
 var batch;
 var cs = 'c';
-var rr = true; //realRanks
+var ranking = 'S'; // real Ranks
 
 var n_elem = 200; // Number of elements per page
 var limit = n_elem; // for pagination purpose
@@ -38,6 +38,7 @@ function change(){
     clear();
     branch = document.querySelector('#branch').value;
     batch = document.querySelector('#batch').value;
+    ranking = document.querySelector('#ranking').value;
     xhr = new XMLHttpRequest();
 
     if(branch == 'FULL_COLLEGE'){
@@ -55,7 +56,8 @@ function change(){
         if(xhr.readyState == 4){
             if(xhr.status == 200){
                 data = JSON.parse(xhr.responseText);
-                if(rr) RealRanks(data);
+                if(ranking == 'S') StandardRanks(data);
+                else if(ranking == 'D') DenseRanks(data);
 
                 render();
             }                  
@@ -339,7 +341,7 @@ function toTitleCase(str) {
     );
 }
 
-function RealRanks(data) { 
+function StandardRanks(data) { 
     let k=1;
     if(cs=='c'){
         for(let i=1;i<data.length;++i){
@@ -352,6 +354,23 @@ function RealRanks(data) {
         for(let i=1;i<data.length;++i){
             if(data[i-1].Sgpa !=data[i].Sgpa)
                 k=i+1;
+            data[i].Rank = k;
+        }
+    }
+}
+function DenseRanks(data) { 
+    let k=1;
+    if(cs=='c'){
+        for(let i=1;i<data.length;++i){
+            if(data[i-1].Cgpa !=data[i].Cgpa)
+                k++;
+            data[i].Rank = k;
+        }
+    }
+    else{
+        for(let i=1;i<data.length;++i){
+            if(data[i-1].Sgpa !=data[i].Sgpa)
+                k++;
             data[i].Rank = k;
         }
     }
