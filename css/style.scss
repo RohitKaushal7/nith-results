@@ -600,6 +600,7 @@ select {
 }
 
 .footer {
+  cursor: default;
   display: flex;
   // position: absolute;
   width: 100%;
@@ -623,6 +624,15 @@ select {
   font-size: 0.7rem;
   color: $light-color;
 }
+.heart{
+  cursor: grab;
+  transition: 0.5s;
+  &:hover{
+    color:red;
+    
+  }
+}
+
 
 @media (max-width: 980px) {
   :root {

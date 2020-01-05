@@ -770,6 +770,7 @@ select {
 }
 
 .footer {
+  cursor: default;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -802,6 +803,17 @@ select {
 #ref {
   font-size: 0.7rem;
   color: #777;
+}
+
+.heart {
+  cursor: -webkit-grab;
+  cursor: grab;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.heart:hover {
+  color: red;
 }
 
 @media (max-width: 980px) {
