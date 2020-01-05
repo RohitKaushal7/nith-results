@@ -49,7 +49,8 @@
         </div>
         <div class="branch-con">
                 <select name="branch" id="branch" title="Branch" onchange="change()">
-                        <option value="FULL_COLLEGE">FULL_COLLEGE</option>
+                        <option disabled>📑 Branch </option>
+                        <option selected value="FULL_COLLEGE">FULL_COLLEGE</option>
                         <option value="FULL_YEAR">FULL_YEAR</option>
                         <option value="Architecture">Architecture</option>
                         <option value="Chemical">Chemical</option>
@@ -69,7 +70,8 @@
         
         <div class="batch-con">
                 <select name="batch" id="batch" title="Batch" onchange="change()">
-                        <option value="19">19</option>
+                    <option disabled>🎓 Batch </option>
+                        <option selected value="19">19</option>
                         <option value="18">18</option>
                         <option value="17">17</option>
                         <option value="16">16</option>
@@ -78,7 +80,8 @@
         <div class="cs" title="sort: CGPA / SGPA" onclick="cs_toggle.call(this);">Cg</div>
         <div class="batch-con ranking-con">
             <select name="ranking" id="ranking" title="Ranking" onchange="change()">
-                    <option value="S">Standard '1224'</option>
+                <option disabled>🏆 Ranking </option>
+                    <option selected value="S">Standard '1224'</option>
                     <option value="D">Dense '1223'</option>
                     <option value="O">Ordinal '1234'</option>
             </select>
