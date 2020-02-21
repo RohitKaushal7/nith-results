@@ -118,7 +118,7 @@ body {
 }
 
 .header > * {
-  font-family: "Source Sans Pro","Open Sans","ZCOOL KuaiLe";
+  font-family: "Source Sans Pro", "Open Sans", "ZCOOL KuaiLe";
 }
 
 .header .main-heading {
@@ -137,7 +137,7 @@ body {
   font-weight: bold;
   padding: 0.2rem 0.4rem;
   border-radius: 5px;
-  background: #00BCD4;
+  background: #00bcd4;
   color: white;
 }
 
@@ -242,6 +242,38 @@ body {
 
 .ranking-con {
   padding: 0.1rem 0.2rem;
+}
+
+.csv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #36ff2f;
+  padding: 0 0.7rem;
+  height: 3rem;
+  cursor: pointer;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  opacity: 0.05;
+}
+
+.csv:hover {
+  opacity: 1;
+}
+
+.csv:active span:nth-child(1) {
+  -webkit-transform: translate(0, 0.5rem);
+          transform: translate(0, 0.5rem);
 }
 
 select {
@@ -352,7 +384,7 @@ select {
 }
 
 .container > div[data-base="9.5"]::after {
-  content: '';
+  content: "";
   display: inline-block;
   position: absolute;
   right: 1rem;
@@ -370,7 +402,7 @@ select {
 }
 
 .container > div[data-base="9"]::after {
-  content: '';
+  content: "";
   display: inline-block;
   position: absolute;
   right: 1rem;
@@ -386,7 +418,7 @@ select {
 }
 
 .container > div[data-base="8"]::after {
-  content: '';
+  content: "";
   display: inline-block;
   position: absolute;
   right: 1rem;
@@ -872,12 +904,16 @@ select {
   .you > div > div {
     margin: 0 0.5rem;
   }
-  .you .Branch, .you .Year {
+  .you .Branch,
+  .you .Year {
     display: none;
   }
   .you .Name {
     overflow: visible;
     white-space: normal;
+  }
+  .csv {
+    display: none;
   }
 }
 

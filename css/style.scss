@@ -1,19 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Source+Sans+Pro|ZCOOL+KuaiLe&display=swap");
 
-$card-color:#eee9;
+$card-color: #eee9;
 $rank-color: #673ab7;
 $hash-color: #9c27b0;
 $primary-color: #000;
 $light-color: #777;
-$info-color:#2196f3;
+$info-color: #2196f3;
 
+$c1st: #ffd700;
+$c2nd: #c0c0c0;
+$c3rd: #ca780088;
 
-$c1st:#ffd700;
-$c2nd:#c0c0c0;
-$c3rd:#ca780088;
-
-$c-hidden:#795548;
-
+$c-hidden: #795548;
 
 * {
   box-sizing: border-box;
@@ -29,7 +27,7 @@ $c-hidden:#795548;
 
 ::-webkit-scrollbar {
   width: 0.5rem;
-  background:transparent;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background: rgb(20, 130, 255);
@@ -37,9 +35,8 @@ $c-hidden:#795548;
 }
 
 ::-webkit-scrollbar-track {
-  background:transparent;
+  background: transparent;
 }
-
 
 body {
   min-height: 100vh;
@@ -48,12 +45,12 @@ body {
   overflow-x: hidden;
 }
 
-.popup{
+.popup {
   position: fixed;
-  top:0%;
+  top: 0%;
   bottom: 0%;
   left: 0%;
-  right:0%;
+  right: 0%;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -63,28 +60,28 @@ body {
   backdrop-filter: blur(10px);
   transition: all 0.3s;
   animation: fade-in 0.7s;
-  .title{
+  .title {
     font-size: 6rem;
   }
-  .desc{
+  .desc {
     color: #333;
     padding: 0.5rem 2rem;
-    background:#fffa;
+    background: #fffa;
     border-radius: 5px;
     // font-weight: bold;
   }
-  .tip{
+  .tip {
     @extend .desc;
     position: absolute;
     bottom: 1rem;
     // font-style: italic;
     font-variant-caps: all-small-caps;
   }
-  form{
+  form {
     width: 100%;
     text-align: center;
   }
-  .inp{
+  .inp {
     margin-top: 1rem;
     padding: 0.5rem 2rem;
     text-align: center;
@@ -107,27 +104,26 @@ body {
   padding: 0.5rem 2rem;
   color: #231f20;
   font-size: 1.2rem;
-  & img{
+  & img {
     width: 3rem;
   }
 
   & > * {
-    font-family: "Source Sans Pro","Open Sans","ZCOOL KuaiLe";
+    font-family: "Source Sans Pro", "Open Sans", "ZCOOL KuaiLe";
   }
-  .main-heading{
+  .main-heading {
     display: flex;
     flex-direction: column;
-    .date{
+    .date {
       font-size: 0.5em;
       width: 3.5rem;
       font-weight: bold;
       padding: 0.2rem 0.4rem;
       border-radius: 5px;
-      background: #00BCD4;
+      background: #00bcd4;
       color: white;
     }
   }
-  
 }
 
 .ctrl {
@@ -189,15 +185,15 @@ body {
   text-align: center;
   overflow: hidden;
   // color: white;
-  &:hover{
-    background: fade-out($info-color, 0.7) ;
+  &:hover {
+    background: fade-out($info-color, 0.7);
   }
 }
 .batch-con {
   width: 3rem;
 }
 
-.cs{
+.cs {
   // background: #f00;
   width: 3rem;
   padding: 1rem 0.7rem;
@@ -207,16 +203,37 @@ body {
   letter-spacing: 1.1px;
   cursor: pointer;
 
-  &:active{
+  &:active {
     transform: scale(0.9);
   }
 }
 
-.ranking-con{
+.ranking-con {
   padding: 0.1rem 0.2rem;
 }
 
-select{
+.csv {
+  display: flex;
+  color: rgb(54, 255, 47);
+  padding: 0 0.7rem;
+  height: 3rem;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  opacity: 0.05;
+}
+.csv:hover {
+  opacity: 1;
+}
+.csv:active {
+  span:nth-child(1) {
+    transform: translate(0, 0.5rem);
+  }
+}
+
+select {
   // display: inline-block;
   width: 100%;
   // margin: 0 1rem;
@@ -230,8 +247,8 @@ select{
   letter-spacing: 1.1px;
   background: transparent;
 }
-option{
-  color:black;
+option {
+  color: black;
 }
 
 select {
@@ -241,7 +258,7 @@ select {
   text-overflow: "";
 }
 
-#ranking{
+#ranking {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: clip;
@@ -252,7 +269,7 @@ select {
   opacity: 0.3;
 }
 
-#res_cnt{
+#res_cnt {
   display: flex;
   width: 100%;
   max-width: 500px;
@@ -284,7 +301,7 @@ select {
     border-radius: 5px;
     animation: pop 0.3s forwards;
     opacity: 0;
-    transform: translate(0,15px);
+    transform: translate(0, 15px);
 
     &:hover {
       box-shadow: 0px 3px 7px 1px #0002;
@@ -292,8 +309,8 @@ select {
 
     &[data-base="9.5"] {
       position: relative;
-      &::after{
-        content: '';
+      &::after {
+        content: "";
         display: inline-block;
         position: absolute;
         right: 1rem;
@@ -305,13 +322,12 @@ select {
         background: hsla(340, 82%, 52%, 0.6);
         animation: glow 1s alternate infinite;
       }
-      
     }
 
     &[data-base="9"] {
       position: relative;
-      &::after{
-        content: '';
+      &::after {
+        content: "";
         display: inline-block;
         position: absolute;
         right: 1rem;
@@ -320,15 +336,14 @@ select {
         // transform: rotate(45deg);
         width: 1rem;
         height: 3rem;
-        background: fade-out($hash-color,0.5);
+        background: fade-out($hash-color, 0.5);
       }
-      
     }
 
     &[data-base="8"] {
       position: relative;
-      &::after{
-        content: '';
+      &::after {
+        content: "";
         display: inline-block;
         position: absolute;
         right: 1rem;
@@ -337,18 +352,17 @@ select {
         // transform: rotate(45deg);
         width: 1rem;
         height: 3rem;
-        background: fade-out($rank-color,0.9);
+        background: fade-out($rank-color, 0.9);
       }
-      
     }
 
     &[data-rank="1"] {
       background: $c1st;
-      border:none;
-      &::after{
+      border: none;
+      &::after {
         display: none;
       }
-      > .Cgpa{
+      > .Cgpa {
         color: black;
       }
       > .Rank {
@@ -368,11 +382,11 @@ select {
     }
     &[data-rank="2"] {
       background: $c2nd;
-      border:none;
-      &::after{
+      border: none;
+      &::after {
         display: none;
       }
-      > .Cgpa{
+      > .Cgpa {
         color: black;
       }
       > .Rank {
@@ -392,11 +406,11 @@ select {
     }
     &[data-rank="3"] {
       background: $c3rd;
-      border:none;
-      &::after{
+      border: none;
+      &::after {
         display: none;
       }
-      > .Cgpa{
+      > .Cgpa {
         color: black;
       }
       > .Rank {
@@ -483,11 +497,11 @@ select {
 }
 
 @keyframes fade-in {
-  0%{
+  0% {
     opacity: 0;
     transform: scale(0.9);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -562,7 +576,7 @@ select {
   }
 }
 
-#rem{
+#rem {
   font-size: 0.7rem;
   color: $info-color;
 }
@@ -615,7 +629,7 @@ select {
   & a {
     color: inherit;
     text-decoration: none;
-    &:hover{
+    &:hover {
       color: $info-color;
     }
   }
@@ -624,15 +638,13 @@ select {
   font-size: 0.7rem;
   color: $light-color;
 }
-.heart{
+.heart {
   cursor: grab;
   transition: 0.5s;
-  &:hover{
-    color:red;
-    
+  &:hover {
+    color: red;
   }
 }
-
 
 @media (max-width: 980px) {
   :root {
@@ -643,8 +655,9 @@ select {
     width: 13rem;
     margin: 0.5rem 0.5rem;
     padding: 0.5rem 1rem;
-    &[data-base="10"], &[data-base="9.5"] {
-      &::after{
+    &[data-base="10"],
+    &[data-base="9.5"] {
+      &::after {
         animation: none;
       }
     }
@@ -654,11 +667,11 @@ select {
   .cs,
   .ranking-con {
     box-shadow: 0 2px 3px 0px #0003;
-    transform: translate(0,-5px);
+    transform: translate(0, -5px);
     text-align: center;
     background: #eee;
   }
-  .branch-con{
+  .branch-con {
     width: 9rem;
   }
   .ser {
@@ -668,11 +681,11 @@ select {
   .batch-con {
     width: 10%;
   }
-  .cs{
+  .cs {
     width: 2rem;
     padding: 1rem 0.3rem;
   }
-  select{
+  select {
     padding: 0.1rem 0.4rem;
   }
   .ctrl {
@@ -683,22 +696,25 @@ select {
     flex-wrap: wrap;
     justify-content: flex-end;
   }
- 
+
   .you {
     & > div > div {
       margin: 0 0.5rem;
     }
   }
-  .you{
-    .Branch,.Year{
+  .you {
+    .Branch,
+    .Year {
       display: none;
     }
-    .Name{
+    .Name {
       overflow: visible;
       white-space: normal;
     }
   }
-  
+  .csv {
+    display: none;
+  }
 }
 
 @media (max-width: 400px) {
@@ -718,8 +734,8 @@ select {
   }
 }
 
-@supports not (backdrop-filter: blur(10px)){
-  .popup{
+@supports not (backdrop-filter: blur(10px)) {
+  .popup {
     background: white;
   }
 }
