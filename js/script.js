@@ -26,7 +26,7 @@ if (you_obj_res.Rollno != 0) {
   document.querySelector("#rem").innerText = "Hi," + name;
 }
 
-setTimeout(change, 3000); // auto change to full_year in 3 sec.
+setTimeout(change, 1000); // auto change to full_year in 3 sec.
 
 // change branch or year. > Sends XHR
 function change() {
@@ -140,6 +140,16 @@ ser.addEventListener("keyup", function(e) {
   }
 });
 
+// Get Full Result
+function fullResult(roll) {
+  fetch(`https://nithp.herokuapp.com/api/result/student/${roll}`)
+    .then(res => res.json())
+    .then(res => {
+      console.log(res);
+      window.open(`https://nithp.herokuapp.com/result/student?roll=${roll}`);
+    });
+}
+
 // create n new Card for Student // ----------------------------------------------------------------------------------------------------
 function create(stud) {
   let node = document.createElement("div");
@@ -191,13 +201,16 @@ function create(stud) {
   }
 
   node.setAttribute("data-rank", stud.Rank);
-  node.setAttribute("onclick", "getResult(" + stud.Rollno + ")");
   node.setAttribute(
     "data-base",
     Number(Cgpa.innerText) >= 9.5 && Number(Cgpa.innerText) < 10
       ? "9.5"
       : parseInt(Cgpa.innerText)
   );
+
+  node.addEventListener("click", () => {
+    fullResult(stud.Rollno);
+  });
 
   return node;
 }
@@ -252,22 +265,6 @@ function clear() {
   for (var div of divs) {
     div.parentElement.removeChild(div);
   }
-}
-
-// Student Full Result Rohit Hill API
-function getResult(rollNo) {
-  fetch(`https://nithp.herokuapp.com/api/result/${rollNo}`, {
-    headers: {
-      credentials: "omit",
-      referrerPolicy: "no-referrer-when-downgrade",
-      body: null,
-      method: "GET",
-      mode: "cors",
-      "Access-Control-Allow-Origin": "*"
-    }
-  })
-    .then(res => res.json())
-    .then(data => console.log(data));
 }
 
 // Pagination navigation // ----------------------------------------------------------------------------------------------------
