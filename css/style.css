@@ -97,6 +97,169 @@ body {
   background: #000e;
 }
 
+.fullResult {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  z-index: 11;
+  padding: 1em 2em;
+  font-size: 12px;
+  background: #fff;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.fullResult .stInfo {
+  padding: 1em 2em;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fullResult .stInfo * {
+  width: 100%;
+  margin: 0 0.5rem;
+}
+
+.fullResult .stInfo .stName {
+  font-size: 2em;
+  text-align: left;
+}
+
+.fullResult .stInfo .stcg {
+  font-size: 2.5em;
+  text-align: center;
+  width: 25%;
+}
+
+.fullResult .stInfo .stDesc {
+  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  color: #333;
+}
+
+.fullResult .stInfo .stDesc .stRoll {
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  font-size: 1.5em;
+}
+
+.fullResult .stSemesters {
+  margin: 2em 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.fullResult .stSemesters * {
+  border-radius: 0.3em;
+}
+
+.fullResult .stSemesters .sem {
+  width: 24%;
+  min-width: 15em;
+  background: #ddd;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.fullResult .stSemesters .sem * {
+  font-family: monospace;
+}
+
+@media (max-width: 980px) {
+  .fullResult .stSemesters .sem {
+    width: 100%;
+  }
+}
+
+.fullResult .stSemesters .sem .stsg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.5em 1em;
+  font-size: 1.5em;
+  background: #fff;
+  margin-bottom: 0.5em;
+}
+
+.fullResult .stSemesters .sem .stsg .semN {
+  width: 80%;
+  text-align: left;
+}
+
+.fullResult .stSemesters .sem .stsg .sg {
+  color: #2196f3;
+  text-align: center;
+}
+
+.fullResult .stSemesters .sem .subs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #333;
+}
+
+.fullResult .stSemesters .sem .subs .sub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fffe;
+  margin-bottom: 0.2em;
+}
+
+.fullResult .stSemesters .sem .subs .sub .code {
+  padding: 0.5em 1em;
+  width: 80%;
+  font-size: 0.8em;
+}
+
+.fullResult .stSemesters .sem .subs .sub .grade {
+  color: #45f;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  width: 15%;
+  text-align: center;
+}
+
 .header {
   height: 5rem;
   display: -webkit-box;

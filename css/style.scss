@@ -96,6 +96,128 @@ body {
   }
 }
 
+.fullResult {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  z-index: 11;
+  padding: 1em 2em;
+  font-size: 12px;
+  background: #fff;
+  // display: flex;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .stInfo {
+    // max-width: 50em;
+    padding: 1em 2em;
+    background: #fff;
+    display: flex;
+    // border-radius: 0.5em;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    * {
+      width: 100%;
+      margin: 0 0.5rem;
+    }
+    .stName {
+      font-size: 2em;
+      text-align: left;
+    }
+    .stcg {
+      font-size: 2.5em;
+      text-align: center;
+      width: 25%;
+      // color: green;
+    }
+    .stDesc {
+      text-align: right;
+      display: flex;
+      // flex-direction: column;
+      align-items: left;
+      color: #333;
+      .stRoll {
+        align-items: left;
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  .stSemesters {
+    * {
+      border-radius: 0.3em;
+    }
+    margin: 2em 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow: scroll;
+
+    .sem {
+      * {
+        font-family: monospace;
+      }
+      width: 24%;
+      min-width: 15em;
+      background: #ddd;
+      padding: 0.5em;
+      margin: 0.5em;
+      // border-radius: 0.5em;
+
+      @media (max-width: 980px) {
+        width: 100%;
+      }
+
+      .stsg {
+        display: flex;
+        padding: 0.5em 1em;
+        font-size: 1.5em;
+        background: #fff;
+        margin-bottom: 0.5em;
+        .semN {
+          width: 80%;
+          text-align: left;
+        }
+        .sg {
+          color: $info-color;
+          text-align: center;
+        }
+        // border-radius: 0.5em;
+      }
+      .subs {
+        display: flex;
+        flex-direction: column;
+        color: #333;
+        // background: #fff5;
+
+        .sub {
+          display: flex;
+          background: #fffe;
+          margin-bottom: 0.2em;
+          .code {
+            padding: 0.5em 1em;
+            width: 80%;
+            font-size: 0.8em;
+          }
+          .grade {
+            color: #45f;
+            font-weight: bold;
+            padding: 0.5em 1em;
+            width: 15%;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
 .header {
   height: 5rem;
   display: flex;

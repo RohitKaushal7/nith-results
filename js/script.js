@@ -141,15 +141,65 @@ ser.addEventListener("keyup", function(e) {
 });
 
 // Get Full Result
+let con = document.querySelector(".fullResult");
+con.addEventListener("click", function(e) {
+  con.style.display = "none";
+});
 function fullResult(roll) {
   fetch(`https://nithp.herokuapp.com/api/result/student/${roll}`)
     .then(res => res.json())
     .then(res => {
       console.log(res);
-      window.open(`https://nithp.herokuapp.com/result/student?roll=${roll}`);
+      con.style.display = "flex";
+      con.innerHTML = "";
+      con.innerHTML += `
+        <div class="stInfo">
+        <div class="stDesc">
+          <div class="stName">${res.name}</div>
+          <div class="stRoll">${res.roll} ${res.branch}</div>
+          
+        </div>
+        <div class="stcg">${res.cgpi}</div>
+        </div>
+        `;
+      let stSemesters = document.createElement("div");
+      stSemesters.className = "stSemesters";
+      for (let i = 8; i > 0; --i) {
+        let thisSem = res.result.filter(x => x.sem == i);
+        let sem = document.createElement("div");
+        sem.className = "sem";
+        if (thisSem.length) {
+          let stsg = document.createElement("div");
+          stsg.className = "stsg";
+          stsg.innerHTML = `
+              <div class="semN">Sem ${i}</div>
+              <div class="sg">${res.summary[i - 1].sgpi}</div>
+            `;
+          sem.appendChild(stsg);
+          let subs = document.createElement("div");
+          subs.className = "subs";
+          for (subj of thisSem) {
+            let sub = document.createElement("div");
+            sub.className = "sub";
+            sub.innerHTML = `
+                <div class="code">${subj.subject}</div>
+                <div class="grade">${subj.grade}</div>
+              `;
+            subs.appendChild(sub);
+          }
+          sem.appendChild(subs);
+        }
+        if (sem.innerHTML != "") stSemesters.appendChild(sem);
+      }
+      con.appendChild(stSemesters);
+
+      con.innerHTML += `<a href="https://nithp.herokuapp.com/result/student?roll=${roll}"> Source</a>`;
+
+      // window.open(`https://nithp.herokuapp.com/result/student?roll=${roll}`);
     })
     .catch(err => {
-      window.open(`https://nithp.herokuapp.com/result/student?roll=${roll}`);
+      console.log(err);
+      // window.open(`https://nithp.herokuapp.com/result/student?roll=${roll}`);
     });
 }
 
