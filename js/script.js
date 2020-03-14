@@ -147,6 +147,9 @@ function fullResult(roll) {
     .then(res => {
       console.log(res);
       window.open(`https://nithp.herokuapp.com/result/student?roll=${roll}`);
+    })
+    .catch(err => {
+      window.open(`https://nithp.herokuapp.com/result/student?roll=${roll}`);
     });
 }
 
@@ -158,7 +161,7 @@ function create(stud) {
   let Name = document.createElement("div");
   Name.className = "Name";
   Name.innerText = stud.Name.split("S/D")[0];
-  Name.title = "Name";
+  // Name.title = "Name";
   let Rollno = document.createElement("div");
   Rollno.className = "Rollno";
   Rollno.innerText = stud.Rollno;
@@ -166,7 +169,7 @@ function create(stud) {
   let Rank = document.createElement("div");
   Rank.className = "Rank";
   Rank.innerText = "#_" + stud.Rank;
-  Rank.title = "Rank";
+  // Rank.title = "Rank";
   let Cgpa = document.createElement("div");
   Cgpa.className = "Cgpa";
   Cgpa.innerText = cs == "c" ? stud.Cgpa : stud.Sgpa;
@@ -207,6 +210,7 @@ function create(stud) {
       ? "9.5"
       : parseInt(Cgpa.innerText)
   );
+  node.setAttribute("title", "Click to view Complete Result");
 
   node.addEventListener("click", () => {
     fullResult(stud.Rollno);

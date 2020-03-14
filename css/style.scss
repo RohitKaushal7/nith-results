@@ -616,6 +616,7 @@ select {
 .footer {
   cursor: default;
   display: flex;
+  background: #eee;
   // position: absolute;
   width: 100%;
   bottom: 0;
@@ -623,11 +624,17 @@ select {
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
-  padding: 0.5rem;
+  padding: 2rem 0.5rem;
+  box-shadow: inset 0 5px 5px #1113;
+  margin-top: 2rem;
   color: #333;
 
+  #me {
+    margin: 0.2rem;
+  }
+
   & a {
-    color: inherit;
+    color: #444;
     text-decoration: none;
     &:hover {
       color: $info-color;
@@ -641,6 +648,7 @@ select {
 .heart {
   cursor: grab;
   transition: 0.5s;
+  color: red;
   &:hover {
     color: red;
   }

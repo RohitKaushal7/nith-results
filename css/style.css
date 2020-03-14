@@ -806,6 +806,7 @@ select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background: #eee;
   width: 100%;
   bottom: 0;
   -webkit-box-orient: vertical;
@@ -819,12 +820,19 @@ select {
       -ms-flex-align: center;
           align-items: center;
   font-size: 0.8rem;
-  padding: 0.5rem;
+  padding: 2rem 0.5rem;
+  -webkit-box-shadow: inset 0 5px 5px #1113;
+          box-shadow: inset 0 5px 5px #1113;
+  margin-top: 2rem;
   color: #333;
 }
 
+.footer #me {
+  margin: 0.2rem;
+}
+
 .footer a {
-  color: inherit;
+  color: #444;
   text-decoration: none;
 }
 
@@ -842,6 +850,7 @@ select {
   cursor: grab;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  color: red;
 }
 
 .heart:hover {
