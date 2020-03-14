@@ -104,7 +104,7 @@ body {
   z-index: 11;
   padding: 1em 2em;
   font-size: 12px;
-  background: #fff;
+  background: #eee;
   // display: flex;
   display: none;
   flex-direction: column;
@@ -112,11 +112,11 @@ body {
   align-items: flex-start;
 
   .stInfo {
-    // max-width: 50em;
+    max-width: 50em;
     padding: 1em 2em;
     background: #fff;
     display: flex;
-    // border-radius: 0.5em;
+    border-radius: 1em;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -124,30 +124,40 @@ body {
       width: 100%;
       margin: 0 0.5rem;
     }
-    .stName {
-      font-size: 2em;
-      text-align: left;
-    }
     .stcg {
-      font-size: 2.5em;
-      text-align: center;
-      width: 25%;
-      // color: green;
+      display: flex;
+      flex-direction: column;
+      .cp {
+        font-size: 2.5em;
+        font-weight: bold;
+      }
+      .cp_total {
+        font-size: 1.5em;
+        color: #666;
+      }
     }
     .stDesc {
-      text-align: right;
+      text-align: left;
       display: flex;
-      // flex-direction: column;
-      align-items: left;
+      flex-direction: column;
+      width: 200%;
       color: #333;
+      .stName {
+        font-size: 2em;
+        text-align: left;
+      }
       .stRoll {
         align-items: left;
         font-size: 1.5em;
+        color: #666;
       }
     }
   }
 
   .stSemesters {
+    &::-webkit-scrollbar {
+      display: none;
+    }
     * {
       border-radius: 0.3em;
     }
@@ -165,7 +175,7 @@ body {
       }
       width: 24%;
       min-width: 15em;
-      background: #ddd;
+      // background: #ddd;
       padding: 0.5em;
       margin: 0.5em;
       // border-radius: 0.5em;
@@ -180,9 +190,15 @@ body {
         font-size: 1.5em;
         background: #fff;
         margin-bottom: 0.5em;
+        justify-content: space-between;
+        align-items: center;
         .semN {
-          width: 80%;
           text-align: left;
+          width: 60%;
+        }
+        .sg_total {
+          font-size: 0.5em;
+          color: green;
         }
         .sg {
           color: $info-color;
@@ -206,11 +222,37 @@ body {
             font-size: 0.8em;
           }
           .grade {
-            color: #45f;
+            // background: #45f;
+            color: #fff;
             font-weight: bold;
-            padding: 0.5em 1em;
+            margin: 0.5em;
+            padding: 0.2em 0.6em;
             width: 15%;
             text-align: center;
+          }
+          .A {
+            background: #45f;
+          }
+          .AB {
+            background: #45f;
+          }
+          .B {
+            background: #45f;
+          }
+          .BC {
+            background: #45f;
+          }
+          .C {
+            background: #45f;
+          }
+          .CD {
+            background: #45f;
+          }
+          .D {
+            background: #45f;
+          }
+          .F {
+            background: #d30012;
           }
         }
       }

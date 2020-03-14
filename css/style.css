@@ -105,7 +105,7 @@ body {
   z-index: 11;
   padding: 1em 2em;
   font-size: 12px;
-  background: #fff;
+  background: #eee;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -120,11 +120,13 @@ body {
 }
 
 .fullResult .stInfo {
+  max-width: 50em;
   padding: 1em 2em;
   background: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  border-radius: 1em;
   width: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -139,26 +141,42 @@ body {
   margin: 0 0.5rem;
 }
 
-.fullResult .stInfo .stName {
-  font-size: 2em;
-  text-align: left;
-}
-
 .fullResult .stInfo .stcg {
-  font-size: 2.5em;
-  text-align: center;
-  width: 25%;
-}
-
-.fullResult .stInfo .stDesc {
-  text-align: right;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.fullResult .stInfo .stcg .cp {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.fullResult .stInfo .stcg .cp_total {
+  font-size: 1.5em;
+  color: #666;
+}
+
+.fullResult .stInfo .stDesc {
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 200%;
   color: #333;
+}
+
+.fullResult .stInfo .stDesc .stName {
+  font-size: 2em;
+  text-align: left;
 }
 
 .fullResult .stInfo .stDesc .stRoll {
@@ -166,6 +184,7 @@ body {
       -ms-flex-align: left;
           align-items: left;
   font-size: 1.5em;
+  color: #666;
 }
 
 .fullResult .stSemesters {
@@ -185,6 +204,10 @@ body {
   overflow: scroll;
 }
 
+.fullResult .stSemesters::-webkit-scrollbar {
+  display: none;
+}
+
 .fullResult .stSemesters * {
   border-radius: 0.3em;
 }
@@ -192,7 +215,6 @@ body {
 .fullResult .stSemesters .sem {
   width: 24%;
   min-width: 15em;
-  background: #ddd;
   padding: 0.5em;
   margin: 0.5em;
 }
@@ -215,11 +237,22 @@ body {
   font-size: 1.5em;
   background: #fff;
   margin-bottom: 0.5em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .fullResult .stSemesters .sem .stsg .semN {
-  width: 80%;
   text-align: left;
+  width: 60%;
+}
+
+.fullResult .stSemesters .sem .stsg .sg_total {
+  font-size: 0.5em;
+  color: green;
 }
 
 .fullResult .stSemesters .sem .stsg .sg {
@@ -253,11 +286,44 @@ body {
 }
 
 .fullResult .stSemesters .sem .subs .sub .grade {
-  color: #45f;
+  color: #fff;
   font-weight: bold;
-  padding: 0.5em 1em;
+  margin: 0.5em;
+  padding: 0.2em 0.6em;
   width: 15%;
   text-align: center;
+}
+
+.fullResult .stSemesters .sem .subs .sub .A {
+  background: #45f;
+}
+
+.fullResult .stSemesters .sem .subs .sub .AB {
+  background: #45f;
+}
+
+.fullResult .stSemesters .sem .subs .sub .B {
+  background: #45f;
+}
+
+.fullResult .stSemesters .sem .subs .sub .BC {
+  background: #45f;
+}
+
+.fullResult .stSemesters .sem .subs .sub .C {
+  background: #45f;
+}
+
+.fullResult .stSemesters .sem .subs .sub .CD {
+  background: #45f;
+}
+
+.fullResult .stSemesters .sem .subs .sub .D {
+  background: #45f;
+}
+
+.fullResult .stSemesters .sem .subs .sub .F {
+  background: #d30012;
 }
 
 .header {

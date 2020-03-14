@@ -159,7 +159,12 @@ function fullResult(roll) {
           <div class="stRoll">${res.roll} ${res.branch}</div>
           
         </div>
-        <div class="stcg">${res.cgpi}</div>
+        <div class="stcg">
+          <div class="cp">${res.cgpi}</div>
+          <div class="cp_total">${
+            res.summary[res.summary.length - 1].cgpi_total
+          }</div>
+        </div>
         </div>
         `;
       let stSemesters = document.createElement("div");
@@ -173,6 +178,7 @@ function fullResult(roll) {
           stsg.className = "stsg";
           stsg.innerHTML = `
               <div class="semN">Sem ${i}</div>
+              <div class="sg_total"> +${res.summary[i - 1].sgpi_total}</div>
               <div class="sg">${res.summary[i - 1].sgpi}</div>
             `;
           sem.appendChild(stsg);
@@ -183,7 +189,7 @@ function fullResult(roll) {
             sub.className = "sub";
             sub.innerHTML = `
                 <div class="code">${subj.subject}</div>
-                <div class="grade">${subj.grade}</div>
+                <div class="grade ${subj.grade}">${subj.grade}</div>
               `;
             subs.appendChild(sub);
           }
