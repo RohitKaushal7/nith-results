@@ -142,7 +142,7 @@ ser.addEventListener("keyup", function(e) {
 
 // Get Full Result
 let con = document.querySelector(".fullResult");
-con.addEventListener("click", function(e) {
+con.addEventListener("dblclick", function(e) {
   con.style.display = "none";
 });
 function fullResult(roll) {
@@ -199,7 +199,10 @@ function fullResult(roll) {
       }
       con.appendChild(stSemesters);
 
-      con.innerHTML += `<a href="https://nithp.herokuapp.com/result/student?roll=${roll}"> Source</a>`;
+      con.innerHTML += `<div>
+                          <a href="https://nithp.herokuapp.com/result/student?roll=${roll}"> Source</a>
+                          <i style="color:#666; margin-left:2rem;">Double click anywhere to close.</i>
+                        </div>`;
 
       // window.open(`https://nithp.herokuapp.com/result/student?roll=${roll}`);
     })
