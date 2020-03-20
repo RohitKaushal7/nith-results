@@ -33,7 +33,7 @@
                 <input type="text" class="inp" id='you_inp' autocomplete="off"></input>
         </form>
         
-        <div class="tip">Tip - you can always change roll no by clicking on your info.</div>
+        <!-- <div class="tip">Tip - you can always change roll no by clicking on your info.</div> -->
     </div>
 
     <div class="fullResult">
@@ -115,12 +115,13 @@
         <div class="csv" onclick="csv()"> <span>🔽</span> <span>csv</span></div>
     </div>
     
-    <div class="you" id="you" onclick="togglePopup()" title=" your Score Info : Click to change your roll no.">
+    <div class="you" id="you" title="">
         <span id="rem"> 
             <img src="pics/rem.svg" valign="middle" width="12" alt=""> 
             Click to Remember You by Roll No.*
         </span>
     </div>
+    <div class="tip"><span class="content">View Full Result by clicking any card.</span><span onclick="tip_close()" class="close">X</span></div>
     <div id="res_cnt"></div>
 
     <div class="container">

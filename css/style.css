@@ -65,17 +65,11 @@ body {
   font-size: 6rem;
 }
 
-.popup .desc, .popup .tip {
+.popup .desc {
   color: #333;
   padding: 0.5rem 2rem;
   background: #fffa;
   border-radius: 5px;
-}
-
-.popup .tip {
-  position: absolute;
-  bottom: 1rem;
-  font-variant-caps: all-small-caps;
 }
 
 .popup form {
@@ -95,6 +89,37 @@ body {
   width: 90%;
   max-width: 700px;
   background: #000e;
+}
+
+.tip {
+  color: #00b91f;
+  display: none;
+  background: #eee;
+  border-radius: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  overflow: hidden;
+  margin: 0 auto;
+  font-variant-caps: all-small-caps;
+}
+
+.tip span {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+}
+
+.tip .close {
+  font-weight: bold;
+  color: red;
+  text-align: center;
+  background: #ddd9;
+  padding: 0.5rem 0.8rem 0.5rem 0.6rem;
+  cursor: pointer;
+}
+
+.tip .close:hover {
+  background: #ddd;
 }
 
 .fullResult {

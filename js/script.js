@@ -23,7 +23,8 @@ var res_cnt = document.querySelector("#res_cnt"); // Results found Count
 
 getLocalUser(); // greet user if exists
 if (you_obj_res.Rollno != 0) {
-  document.querySelector("#rem").innerText = "Hi," + name;
+  document.querySelector("#rem").innerHTML =
+    "Hi, " + name + '<span id="edit">🖊</span>';
 }
 
 setTimeout(change, 1000); // auto change to full_year in 3 sec.
@@ -294,6 +295,7 @@ function render() {
   if (your_res) {
     you.innerHTML = "";
     you.appendChild(create(your_res));
+    you.innerHTML += `<span id="edit" onclick="togglePopup()" title="Edit Your Roll No.">🖊</span>`;
   } else {
     you.innerHTML = "<span id ='rem'>You are not Here..!</span>";
   }
@@ -413,6 +415,19 @@ function getLocalUser() {
     you_obj_res = { Rollno: 0, Name: "There" };
   }
   if (you_obj_res) name = toTitleCase(you_obj_res.Name.split("S/D")[0]);
+}
+
+// Tip
+(function load_tip() {
+  let tip = localStorage.getItem("tip");
+  if (!tip) {
+    document.querySelector(".tip").style.display = "block";
+  }
+})();
+
+function tip_close() {
+  localStorage.setItem("tip", true);
+  document.querySelector(".tip").style.display = "none";
 }
 
 // Save csv

@@ -70,13 +70,6 @@ body {
     border-radius: 5px;
     // font-weight: bold;
   }
-  .tip {
-    @extend .desc;
-    position: absolute;
-    bottom: 1rem;
-    // font-style: italic;
-    font-variant-caps: all-small-caps;
-  }
   form {
     width: 100%;
     text-align: center;
@@ -93,6 +86,34 @@ body {
     width: 90%;
     max-width: 700px;
     background: #000e;
+  }
+}
+
+.tip {
+  color: #00b91f;
+  display: none;
+  background: #eee;
+  border-radius: 5px;
+  width: fit-content;
+  // min-width: 50rem;
+  overflow: hidden;
+  margin: 0 auto;
+  // font-style: italic;
+  font-variant-caps: all-small-caps;
+  span {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+  }
+  .close {
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    background: #ddd9;
+    padding: 0.5rem 0.8rem 0.5rem 0.6rem;
+    cursor: pointer;
+    &:hover {
+      background: #ddd;
+    }
   }
 }
 
