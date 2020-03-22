@@ -213,8 +213,8 @@ function fullResult(roll, el) {
       // window.open(`https://nithp.herokuapp.com/result/student?roll=${roll}`);
     })
     .catch(err => {
-      console.log(err);
-      // window.open(`https://nithp.herokuapp.com/result/student?roll=${roll}`);
+      console.log("Error : " + err);
+      window.open(`https://nithp.herokuapp.com/result/student?roll=${roll}`);
     });
 }
 

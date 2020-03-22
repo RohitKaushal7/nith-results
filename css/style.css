@@ -431,6 +431,8 @@ body {
 
 .ser img {
   width: 1rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .ser:focus-within img {

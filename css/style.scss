@@ -336,6 +336,7 @@ body {
   height: 3rem;
   & img {
     width: 1rem;
+    transition: all 0.2s;
   }
   &:focus-within img {
     width: 0;
