@@ -629,8 +629,8 @@ select {
 }
 
 .container > div:hover {
-  -webkit-box-shadow: 0px 3px 7px 1px #0002;
-          box-shadow: 0px 3px 7px 1px #0002;
+  -webkit-box-shadow: 0px 3px 12px 2px #0002;
+          box-shadow: 0px 3px 12px 2px #0002;
 }
 
 .container > div[data-base="9.5"] {

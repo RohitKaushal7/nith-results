@@ -146,11 +146,17 @@ let con = document.querySelector(".fullResult");
 con.addEventListener("dblclick", function(e) {
   con.style.display = "none";
 });
-function fullResult(roll) {
+function fullResult(roll, el) {
+  console.log(arguments);
+  document.body.style.cursor = "wait";
+  el.style.cursor = "wait";
   fetch(`https://nithp.herokuapp.com/api/result/student/${roll}`)
     .then(res => res.json())
     .then(res => {
+      document.body.style.cursor = "initial";
+      el.style.cursor = "initial";
       console.log(res);
+
       con.style.display = "flex";
       con.innerHTML = "";
       con.innerHTML += `
@@ -272,8 +278,10 @@ function create(stud) {
   );
   node.setAttribute("title", "Click to view Complete Result");
 
-  node.addEventListener("click", () => {
-    fullResult(stud.Rollno);
+  node.addEventListener("click", e => {
+    e.target.style.cursor = "busy";
+    e.target.style.filter = "drop-shadow(10px -10px 2px #0003)";
+    fullResult(stud.Rollno, e.target);
   });
 
   return node;
