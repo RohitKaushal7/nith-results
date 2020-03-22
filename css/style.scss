@@ -15,7 +15,6 @@ $c-hidden: #795548;
 
 * {
   box-sizing: border-box;
-  transition: all 0.2s;
   margin: 0;
   padding: 0;
   font-family: "roboto";
@@ -131,6 +130,8 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  transition: all 0.2s;
+  animation: pop 0.5s;
 
   .stInfo {
     max-width: 50em;
@@ -476,6 +477,7 @@ select {
   height: auto;
 
   > div {
+    transition: all 0.2s;
     width: 16rem;
     height: 10rem;
     background: $card-color;

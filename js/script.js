@@ -147,7 +147,6 @@ con.addEventListener("dblclick", function(e) {
   con.style.display = "none";
 });
 function fullResult(roll, el) {
-  console.log(arguments);
   document.body.style.cursor = "wait";
   el.style.cursor = "wait";
   fetch(`https://nithp.herokuapp.com/api/result/student/${roll}`)
@@ -155,7 +154,7 @@ function fullResult(roll, el) {
     .then(res => {
       document.body.style.cursor = "initial";
       el.style.cursor = "initial";
-      console.log(res);
+      // console.log(res);
 
       con.style.display = "flex";
       con.innerHTML = "";
@@ -461,6 +460,12 @@ function csv() {
   a.click();
   document.body.removeChild(a);
 }
+
+// window.addEventListener("resize", () => {
+//   clear();
+//   render();
+//   console.log("resized");
+// });
 
 // Helper Fuctions // ----------------------------------------------------------------------------------------------------
 function toTitleCase(str) {
