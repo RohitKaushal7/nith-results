@@ -305,7 +305,7 @@ function render() {
     you.appendChild(create(your_res));
     you.innerHTML += `<span id="edit" onclick="togglePopup()" title="Edit Your Roll No.">🖊</span>`;
   } else {
-    you.innerHTML = "<span id ='rem'>You are not Here..!</span>";
+    you.innerHTML = `<span id ='rem'>You are not Here..!<span id="edit" onclick="togglePopup()" title="Edit Your Roll No.">🖊</span></span>`;
   }
 
   // Render the divs
@@ -383,10 +383,12 @@ function togglePopup() {
 }
 
 // Esc popup
-popup.addEventListener("keydown", function(e) {
+popup.addEventListener("keyup", function(e) {
   if (e.keyCode == 27) togglePopup();
 });
-
+popup.addEventListener("dblclick", function(e) {
+  togglePopup();
+});
 // store User rollNo on LocalStorage
 document.querySelector("#form_you_inp").addEventListener("submit", function(e) {
   e.preventDefault(e);
