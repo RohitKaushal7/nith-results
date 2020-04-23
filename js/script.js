@@ -47,7 +47,7 @@ function change() {
   }
 
   xhr.send();
-  xhr.onreadystatechange = function() {
+  xhr.onreadystatechange = function () {
     if (xhr.readyState == 4) {
       if (xhr.status == 200) {
         data = JSON.parse(xhr.responseText);
@@ -74,7 +74,7 @@ function cs_toggle() {
 
 // Search
 var ser = document.querySelector('input[type="search"]');
-ser.addEventListener("keyup", function(e) {
+ser.addEventListener("keyup", function (e) {
   if (
     [
       13,
@@ -143,7 +143,7 @@ ser.addEventListener("keyup", function(e) {
 
 // Get Full Result
 let con = document.querySelector(".fullResult");
-con.addEventListener("dblclick", function(e) {
+con.addEventListener("dblclick", function (e) {
   con.style.display = "none";
 });
 function fullResult(roll, el) {
@@ -168,8 +168,8 @@ function fullResult(roll, el) {
         <div class="stcg">
           <div class="cp">${res.cgpi}</div>
           <div class="cp_total">${
-            res.summary[res.summary.length - 1].cgpi_total
-          }</div>
+        res.summary[res.summary.length - 1].cgpi_total
+        }</div>
         </div>
         </div>
         `;
@@ -307,6 +307,12 @@ function render() {
     you.innerHTML = `<span id ='rem'>You are not Here..!<span id="edit" onclick="togglePopup()" title="Edit Your Roll No.">🖊</span></span>`;
   }
 
+  // Statastics 
+  let mean = data.reduce((acc, cur) => acc + Number(cur.Sgpa != "0" ? cur.Cgpa : 0), 0) / (data.length - data.filter((st => st.Sgpa == "0")).length);
+  console.log(mean);
+  document.querySelector('#stats').innerHTML = `Avg : ${mean.toFixed(3)}`;
+
+
   // Render the divs
   let i = 0;
   for (const stud of data) {
@@ -382,14 +388,14 @@ function togglePopup() {
 }
 
 // Esc popup
-popup.addEventListener("keyup", function(e) {
+popup.addEventListener("keyup", function (e) {
   if (e.keyCode == 27) togglePopup();
 });
-popup.addEventListener("dblclick", function(e) {
+popup.addEventListener("dblclick", function (e) {
   togglePopup();
 });
 // store User rollNo on LocalStorage
-document.querySelector("#form_you_inp").addEventListener("submit", function(e) {
+document.querySelector("#form_you_inp").addEventListener("submit", function (e) {
   e.preventDefault(e);
   tmp = document.querySelector("#you_inp").value;
   console.log(tmp);
@@ -469,7 +475,7 @@ function csv() {
 
 // Helper Fuctions // ----------------------------------------------------------------------------------------------------
 function toTitleCase(str) {
-  return str.replace(/\w\S*/g, function(txt) {
+  return str.replace(/\w\S*/g, function (txt) {
     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
   });
 }
