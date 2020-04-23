@@ -309,7 +309,6 @@ function render() {
 
   // Statastics 
   let mean = data.reduce((acc, cur) => acc + Number(cur.Sgpa != "0" ? cur.Cgpa : 0), 0) / (data.length - data.filter((st => st.Sgpa == "0")).length);
-  console.log(mean);
   document.querySelector('#stats').innerHTML = `Avg : ${mean.toFixed(3)}`;
 
 
@@ -508,12 +507,3 @@ function DenseRanks(data) {
     }
   }
 }
-
-// Logs
-// console.log(
-//   "%cHi There. %c \nhere is the available functions from console.\n\n%ccsv() %c : to download csv file of the current data.\n\n",
-//   "color:#555; font-size:1.5rem;",
-//   "color:#555;",
-//   "color:#555; font-weight:bold;",
-//   "color:#555;"
-// );
