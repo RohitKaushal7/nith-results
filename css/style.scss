@@ -124,7 +124,7 @@ body {
   z-index: 11;
   padding: 1em 2em;
   font-size: 12px;
-  background: #eee;
+  background: linear-gradient(#fff,#eee);
   // display: flex;
   display: none;
   flex-direction: column;
@@ -136,7 +136,7 @@ body {
   .stInfo {
     max-width: 50em;
     padding: 1em 2em;
-    background: #fff;
+    // background: #fff;
     display: flex;
     border-radius: 1em;
     width: 100%;
@@ -195,11 +195,11 @@ body {
       * {
         font-family: monospace;
       }
-      width: 24%;
+      width: 23%;
       min-width: 15em;
       // background: #ddd;
       padding: 0.5em;
-      margin: 0.5em;
+      margin: 0.8em;
       // border-radius: 0.5em;
 
       @media (max-width: 980px) {
@@ -210,7 +210,7 @@ body {
         display: flex;
         padding: 0.5em 1em;
         font-size: 1.5em;
-        background: #fff;
+        // background: #fff;
         margin-bottom: 0.5em;
         justify-content: space-between;
         align-items: center;

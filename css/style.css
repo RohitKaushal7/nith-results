@@ -128,7 +128,8 @@ body {
   z-index: 11;
   padding: 1em 2em;
   font-size: 12px;
-  background: #eee;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+  background: linear-gradient(#fff, #eee);
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -149,7 +150,6 @@ body {
 .fullResult .stInfo {
   max-width: 50em;
   padding: 1em 2em;
-  background: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -240,10 +240,10 @@ body {
 }
 
 .fullResult .stSemesters .sem {
-  width: 24%;
+  width: 23%;
   min-width: 15em;
   padding: 0.5em;
-  margin: 0.5em;
+  margin: 0.8em;
 }
 
 .fullResult .stSemesters .sem * {
@@ -262,7 +262,6 @@ body {
   display: flex;
   padding: 0.5em 1em;
   font-size: 1.5em;
-  background: #fff;
   margin-bottom: 0.5em;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
