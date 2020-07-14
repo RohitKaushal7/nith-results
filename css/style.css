@@ -388,11 +388,13 @@ body {
 
 .header .main-heading .date {
   font-size: 0.5em;
-  width: 3.5rem;
+  min-width: 3.5rem;
   font-weight: bold;
   padding: 0.2rem 0.4rem;
   border-radius: 5px;
-  background: #00bcd4;
+  background: #e70c85;
+  -webkit-box-shadow: 0 0 10px 1px #e70c8599;
+          box-shadow: 0 0 10px 1px #e70c8599;
   color: white;
 }
 
