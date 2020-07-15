@@ -297,6 +297,9 @@ body {
   & > * {
     font-family: "Source Sans Pro", "Open Sans", "ZCOOL KuaiLe";
   }
+  .logo{
+    filter: brightness(1.1) saturate(2);
+  }
   .main-heading {
     display: flex;
     flex-direction: column;

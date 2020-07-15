@@ -376,6 +376,11 @@ body {
   font-family: "Source Sans Pro", "Open Sans", "ZCOOL KuaiLe";
 }
 
+.header .logo {
+  -webkit-filter: brightness(1.1) saturate(2);
+          filter: brightness(1.1) saturate(2);
+}
+
 .header .main-heading {
   display: -webkit-box;
   display: -ms-flexbox;

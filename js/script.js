@@ -195,7 +195,7 @@ function fullResult(roll, el) {
             sub.className = "sub";
             sub.innerHTML = `
                 <div class="code">${subj.subject}</div>
-                <div class="grade ${subj.grade}">${subj.grade}</div>
+                <div class="grade ${subj.grade}">${Number(subj.sub_gp) / Number(subj.sub_point)}</div>
               `;
             subs.appendChild(sub);
           }
