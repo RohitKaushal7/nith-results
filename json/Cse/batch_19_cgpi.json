@@ -146,6 +146,18 @@
     {
         "Rank": "13",
         "G_rank": "0",
+        "Name": "GAURAV PANDEY",
+        "Rollno": "195102",
+        "Gender": "",
+        "Year": "1",
+        "Cgpa": "9.71",
+        "Sgpa": "9.71",
+        "Points": "233",
+        "Branch": "Cse"
+    },
+    {
+        "Rank": "14",
+        "G_rank": "0",
         "Name": "SPRIHA GAUTAM",
         "Rollno": "195006",
         "Gender": "",
@@ -153,18 +165,6 @@
         "Cgpa": "9.67",
         "Sgpa": "9.67",
         "Points": "232",
-        "Branch": "Cse"
-    },
-    {
-        "Rank": "14",
-        "G_rank": "0",
-        "Name": "GAURAV PANDEY",
-        "Rollno": "195102",
-        "Gender": "",
-        "Year": "1",
-        "Cgpa": "9.58",
-        "Sgpa": "9.58",
-        "Points": "230",
         "Branch": "Cse"
     },
     {
@@ -218,6 +218,18 @@
     {
         "Rank": "19",
         "G_rank": "0",
+        "Name": "VISHWAS ARYA",
+        "Rollno": "195091",
+        "Gender": "",
+        "Year": "1",
+        "Cgpa": "9.5",
+        "Sgpa": "9.5",
+        "Points": "228",
+        "Branch": "Cse"
+    },
+    {
+        "Rank": "20",
+        "G_rank": "0",
         "Name": "RITESH KUMAR",
         "Rollno": "195069",
         "Gender": "",
@@ -228,7 +240,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "20",
+        "Rank": "21",
         "G_rank": "0",
         "Name": "SATYAM KUMAR",
         "Rollno": "195063",
@@ -240,7 +252,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "21",
+        "Rank": "22",
         "G_rank": "0",
         "Name": "AKSH SHARMA",
         "Rollno": "195019",
@@ -252,22 +264,10 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "22",
+        "Rank": "23",
         "G_rank": "0",
         "Name": "ANUBHAV KUMAR RAO",
         "Rollno": "195041",
-        "Gender": "",
-        "Year": "1",
-        "Cgpa": "9.38",
-        "Sgpa": "9.38",
-        "Points": "225",
-        "Branch": "Cse"
-    },
-    {
-        "Rank": "23",
-        "G_rank": "0",
-        "Name": "VISHWAS ARYA",
-        "Rollno": "195091",
         "Gender": "",
         "Year": "1",
         "Cgpa": "9.38",
@@ -506,18 +506,6 @@
     {
         "Rank": "43",
         "G_rank": "0",
-        "Name": "RAGHAV",
-        "Rollno": "195093",
-        "Gender": "",
-        "Year": "1",
-        "Cgpa": "8.83",
-        "Sgpa": "8.83",
-        "Points": "212",
-        "Branch": "Cse"
-    },
-    {
-        "Rank": "44",
-        "G_rank": "0",
         "Name": "DEEPAK THAKUR",
         "Rollno": "195051",
         "Gender": "",
@@ -528,7 +516,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "45",
+        "Rank": "44",
         "G_rank": "0",
         "Name": "TARKESHWAR KUMAR",
         "Rollno": "195117",
@@ -540,7 +528,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "46",
+        "Rank": "45",
         "G_rank": "0",
         "Name": "ROHIT KUMAR GOYAL",
         "Rollno": "195089",
@@ -552,7 +540,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "47",
+        "Rank": "46",
         "G_rank": "0",
         "Name": "HITESH MALAV",
         "Rollno": "195092",
@@ -564,10 +552,22 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "48",
+        "Rank": "47",
         "G_rank": "0",
         "Name": "KHUSHI MITTAL",
         "Rollno": "195061",
+        "Gender": "",
+        "Year": "1",
+        "Cgpa": "8.71",
+        "Sgpa": "8.71",
+        "Points": "209",
+        "Branch": "Cse"
+    },
+    {
+        "Rank": "48",
+        "G_rank": "0",
+        "Name": "RAGHAV",
+        "Rollno": "195093",
         "Gender": "",
         "Year": "1",
         "Cgpa": "8.71",
@@ -638,18 +638,6 @@
     {
         "Rank": "54",
         "G_rank": "0",
-        "Name": "RISHABH GANGWAR",
-        "Rollno": "195103",
-        "Gender": "",
-        "Year": "1",
-        "Cgpa": "8.58",
-        "Sgpa": "8.58",
-        "Points": "206",
-        "Branch": "Cse"
-    },
-    {
-        "Rank": "55",
-        "G_rank": "0",
         "Name": "VAIBHAV KASHYAP",
         "Rollno": "195010",
         "Gender": "",
@@ -660,7 +648,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "56",
+        "Rank": "55",
         "G_rank": "0",
         "Name": "SHIVAM PRATAP SINGH",
         "Rollno": "195079",
@@ -672,7 +660,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "57",
+        "Rank": "56",
         "G_rank": "0",
         "Name": "MONU KUMAR",
         "Rollno": "195083",
@@ -684,7 +672,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "58",
+        "Rank": "57",
         "G_rank": "0",
         "Name": "SHWETAL SONI",
         "Rollno": "195034",
@@ -696,7 +684,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "59",
+        "Rank": "58",
         "G_rank": "0",
         "Name": "VAISHNAVI",
         "Rollno": "195047",
@@ -708,7 +696,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "60",
+        "Rank": "59",
         "G_rank": "0",
         "Name": "SHAURYA SHARMA",
         "Rollno": "195014",
@@ -720,7 +708,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "61",
+        "Rank": "60",
         "G_rank": "0",
         "Name": "GAUTAM VERMA",
         "Rollno": "195036",
@@ -732,7 +720,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "62",
+        "Rank": "61",
         "G_rank": "0",
         "Name": "MOHD SALMAAN",
         "Rollno": "195088",
@@ -744,7 +732,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "63",
+        "Rank": "62",
         "G_rank": "0",
         "Name": "RAHUL NEMIWAL",
         "Rollno": "195097",
@@ -756,10 +744,22 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "64",
+        "Rank": "63",
         "G_rank": "0",
         "Name": "HARSHIT",
         "Rollno": "195073",
+        "Gender": "",
+        "Year": "1",
+        "Cgpa": "8.33",
+        "Sgpa": "8.33",
+        "Points": "200",
+        "Branch": "Cse"
+    },
+    {
+        "Rank": "64",
+        "G_rank": "0",
+        "Name": "RISHABH GANGWAR",
+        "Rollno": "195103",
         "Gender": "",
         "Year": "1",
         "Cgpa": "8.33",
@@ -1022,6 +1022,18 @@
     {
         "Rank": "86",
         "G_rank": "0",
+        "Name": "ANKITA CHANDRA",
+        "Rollno": "195095",
+        "Gender": "",
+        "Year": "1",
+        "Cgpa": "7.75",
+        "Sgpa": "7.75",
+        "Points": "186",
+        "Branch": "Cse"
+    },
+    {
+        "Rank": "87",
+        "G_rank": "0",
         "Name": "KUNAL CHANDEL",
         "Rollno": "195004",
         "Gender": "",
@@ -1032,7 +1044,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "87",
+        "Rank": "88",
         "G_rank": "0",
         "Name": "NIKHIL SHARMA",
         "Rollno": "195044",
@@ -1044,7 +1056,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "88",
+        "Rank": "89",
         "G_rank": "0",
         "Name": "NEELAM MANDHOTRA",
         "Rollno": "195026",
@@ -1056,7 +1068,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "89",
+        "Rank": "90",
         "G_rank": "0",
         "Name": "MAHENDRA SINGH",
         "Rollno": "195085",
@@ -1068,7 +1080,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "90",
+        "Rank": "91",
         "G_rank": "0",
         "Name": "INDUJA KALA",
         "Rollno": "195013",
@@ -1080,7 +1092,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "91",
+        "Rank": "92",
         "G_rank": "0",
         "Name": "YOGESH",
         "Rollno": "195053",
@@ -1092,22 +1104,10 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "92",
+        "Rank": "93",
         "G_rank": "0",
         "Name": "ANUPAM KUMAR",
         "Rollno": "195050",
-        "Gender": "",
-        "Year": "1",
-        "Cgpa": "7.5",
-        "Sgpa": "7.5",
-        "Points": "180",
-        "Branch": "Cse"
-    },
-    {
-        "Rank": "93",
-        "G_rank": "0",
-        "Name": "ANKITA CHANDRA",
-        "Rollno": "195095",
         "Gender": "",
         "Year": "1",
         "Cgpa": "7.5",
@@ -1142,18 +1142,6 @@
     {
         "Rank": "96",
         "G_rank": "0",
-        "Name": "HARNARAYAN SINGH",
-        "Rollno": "195094",
-        "Gender": "",
-        "Year": "1",
-        "Cgpa": "7.42",
-        "Sgpa": "7.42",
-        "Points": "178",
-        "Branch": "Cse"
-    },
-    {
-        "Rank": "97",
-        "G_rank": "0",
         "Name": "PRERNA",
         "Rollno": "195020",
         "Gender": "",
@@ -1164,10 +1152,22 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "98",
+        "Rank": "97",
         "G_rank": "0",
         "Name": "UJJWAL BORASI",
         "Rollno": "195074",
+        "Gender": "",
+        "Year": "1",
+        "Cgpa": "7.12",
+        "Sgpa": "7.12",
+        "Points": "171",
+        "Branch": "Cse"
+    },
+    {
+        "Rank": "98",
+        "G_rank": "0",
+        "Name": "SARVAGYA SINGH",
+        "Rollno": "195101",
         "Gender": "",
         "Year": "1",
         "Cgpa": "7.12",
@@ -1202,13 +1202,13 @@
     {
         "Rank": "101",
         "G_rank": "0",
-        "Name": "ANMOL BANSAL",
-        "Rollno": "195098",
+        "Name": "HARNARAYAN SINGH",
+        "Rollno": "195094",
         "Gender": "",
         "Year": "1",
-        "Cgpa": "7",
-        "Sgpa": "7",
-        "Points": "168",
+        "Cgpa": "7.04",
+        "Sgpa": "7.04",
+        "Points": "169",
         "Branch": "Cse"
     },
     {
@@ -1226,18 +1226,6 @@
     {
         "Rank": "103",
         "G_rank": "0",
-        "Name": "SARVAGYA SINGH",
-        "Rollno": "195101",
-        "Gender": "",
-        "Year": "1",
-        "Cgpa": "6.88",
-        "Sgpa": "6.88",
-        "Points": "165",
-        "Branch": "Cse"
-    },
-    {
-        "Rank": "104",
-        "G_rank": "0",
         "Name": "RIYA CHAUHAN",
         "Rollno": "195045",
         "Gender": "",
@@ -1245,6 +1233,18 @@
         "Cgpa": "6.83",
         "Sgpa": "6.83",
         "Points": "164",
+        "Branch": "Cse"
+    },
+    {
+        "Rank": "104",
+        "G_rank": "0",
+        "Name": "ANMOL BANSAL",
+        "Rollno": "195098",
+        "Gender": "",
+        "Year": "1",
+        "Cgpa": "6.75",
+        "Sgpa": "6.75",
+        "Points": "162",
         "Branch": "Cse"
     },
     {
@@ -1278,9 +1278,9 @@
         "Rollno": "195099",
         "Gender": "",
         "Year": "1",
-        "Cgpa": "6.29",
-        "Sgpa": "6.29",
-        "Points": "151",
+        "Cgpa": "6.42",
+        "Sgpa": "6.42",
+        "Points": "154",
         "Branch": "Cse"
     },
     {
@@ -1398,9 +1398,9 @@
         "Rollno": "195100",
         "Gender": "",
         "Year": "1",
-        "Cgpa": "2.92",
-        "Sgpa": "2.92",
-        "Points": "70",
+        "Cgpa": "2.42",
+        "Sgpa": "2.42",
+        "Points": "58",
         "Branch": "Cse"
     },
     {

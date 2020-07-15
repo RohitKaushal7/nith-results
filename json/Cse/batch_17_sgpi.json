@@ -578,6 +578,18 @@
     {
         "Rank": "49",
         "G_rank": "0",
+        "Name": "ANSHUL WALIA",
+        "Rollno": "17535",
+        "Gender": "",
+        "Year": "3",
+        "Cgpa": "8.18",
+        "Sgpa": "8.75",
+        "Points": "859",
+        "Branch": "Cse"
+    },
+    {
+        "Rank": "50",
+        "G_rank": "0",
         "Name": "GAURAV",
         "Rollno": "17512",
         "Gender": "",
@@ -588,7 +600,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "50",
+        "Rank": "51",
         "G_rank": "0",
         "Name": "AMIT KUMAR SINGH",
         "Rollno": "17526",
@@ -600,7 +612,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "51",
+        "Rank": "52",
         "G_rank": "0",
         "Name": "DIGVIJAY JANARTHA",
         "Rollno": "17534",
@@ -609,18 +621,6 @@
         "Cgpa": "8.24",
         "Sgpa": "8.75",
         "Points": "865",
-        "Branch": "Cse"
-    },
-    {
-        "Rank": "52",
-        "G_rank": "0",
-        "Name": "ANSHUL WALIA",
-        "Rollno": "17535",
-        "Gender": "",
-        "Year": "3",
-        "Cgpa": "8.18",
-        "Sgpa": "8.75",
-        "Points": "859",
         "Branch": "Cse"
     },
     {
@@ -830,6 +830,18 @@
     {
         "Rank": "70",
         "G_rank": "0",
+        "Name": "VINEET",
+        "Rollno": "17592",
+        "Gender": "",
+        "Year": "3",
+        "Cgpa": "6.79",
+        "Sgpa": "8.12",
+        "Points": "713",
+        "Branch": "Cse"
+    },
+    {
+        "Rank": "71",
+        "G_rank": "0",
         "Name": "SAURABH SHARMA",
         "Rollno": "17543",
         "Gender": "",
@@ -840,7 +852,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "71",
+        "Rank": "72",
         "G_rank": "0",
         "Name": "ABHISHEK MISHRA",
         "Rollno": "17569",
@@ -852,7 +864,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "72",
+        "Rank": "73",
         "G_rank": "0",
         "Name": "YOGENDRA PREMPAL SINGH",
         "Rollno": "17551",
@@ -864,7 +876,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "73",
+        "Rank": "74",
         "G_rank": "0",
         "Name": "SUKHJINDER SINGH",
         "Rollno": "17507",
@@ -876,7 +888,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "74",
+        "Rank": "75",
         "G_rank": "0",
         "Name": "AMAN",
         "Rollno": "17510",
@@ -888,7 +900,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "75",
+        "Rank": "76",
         "G_rank": "0",
         "Name": "RISHABH KAUNDAL",
         "Rollno": "17513",
@@ -900,7 +912,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "76",
+        "Rank": "77",
         "G_rank": "0",
         "Name": "DINESH",
         "Rollno": "17590",
@@ -912,7 +924,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "77",
+        "Rank": "78",
         "G_rank": "0",
         "Name": "SARTHAK SHARMA",
         "Rollno": "17528",
@@ -924,7 +936,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "78",
+        "Rank": "79",
         "G_rank": "0",
         "Name": "PRADYUMAN",
         "Rollno": "17524",
@@ -933,18 +945,6 @@
         "Cgpa": "6.86",
         "Sgpa": "7.5",
         "Points": "720",
-        "Branch": "Cse"
-    },
-    {
-        "Rank": "79",
-        "G_rank": "0",
-        "Name": "VINEET",
-        "Rollno": "17592",
-        "Gender": "",
-        "Year": "3",
-        "Cgpa": "6.65",
-        "Sgpa": "7.5",
-        "Points": "698",
         "Branch": "Cse"
     },
     {

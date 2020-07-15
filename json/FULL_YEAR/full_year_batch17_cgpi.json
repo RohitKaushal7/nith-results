@@ -1706,6 +1706,18 @@
     {
         "Rank": "143",
         "G_rank": "0",
+        "Name": "VISHAL PARMAR",
+        "Rollno": "17mi535",
+        "Gender": "",
+        "Year": "3",
+        "Cgpa": "8.44",
+        "Sgpa": "9.38",
+        "Points": "886",
+        "Branch": "Cse_dual"
+    },
+    {
+        "Rank": "144",
+        "G_rank": "0",
         "Name": "PAWAN RAMASWAMY",
         "Rollno": "17511",
         "Gender": "",
@@ -1716,7 +1728,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "144",
+        "Rank": "145",
         "G_rank": "0",
         "Name": "BHAVYA SAXENA",
         "Rollno": "17715",
@@ -1726,18 +1738,6 @@
         "Sgpa": "9.42",
         "Points": "861",
         "Branch": "Chemical"
-    },
-    {
-        "Rank": "145",
-        "G_rank": "0",
-        "Name": "VISHAL PARMAR",
-        "Rollno": "17mi535",
-        "Gender": "",
-        "Year": "3",
-        "Cgpa": "8.44",
-        "Sgpa": "9.38",
-        "Points": "886",
-        "Branch": "Cse_dual"
     },
     {
         "Rank": "146",
@@ -2402,18 +2402,6 @@
     {
         "Rank": "201",
         "G_rank": "0",
-        "Name": "SOMESH KUMAR",
-        "Rollno": "17747",
-        "Gender": "",
-        "Year": "3",
-        "Cgpa": "8.18",
-        "Sgpa": "9.5",
-        "Points": "843",
-        "Branch": "Chemical"
-    },
-    {
-        "Rank": "202",
-        "G_rank": "0",
         "Name": "ANSHUL WALIA",
         "Rollno": "17535",
         "Gender": "",
@@ -2422,6 +2410,18 @@
         "Sgpa": "8.75",
         "Points": "859",
         "Branch": "Cse"
+    },
+    {
+        "Rank": "202",
+        "G_rank": "0",
+        "Name": "SOMESH KUMAR",
+        "Rollno": "17747",
+        "Gender": "",
+        "Year": "3",
+        "Cgpa": "8.18",
+        "Sgpa": "9.5",
+        "Points": "843",
+        "Branch": "Chemical"
     },
     {
         "Rank": "203",
@@ -6134,6 +6134,18 @@
     {
         "Rank": "512",
         "G_rank": "0",
+        "Name": "VINEET",
+        "Rollno": "17592",
+        "Gender": "",
+        "Year": "3",
+        "Cgpa": "6.79",
+        "Sgpa": "8.12",
+        "Points": "713",
+        "Branch": "Cse"
+    },
+    {
+        "Rank": "513",
+        "G_rank": "0",
         "Name": "SHASHANK MAHICH",
         "Rollno": "17724",
         "Gender": "",
@@ -6144,7 +6156,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "513",
+        "Rank": "514",
         "G_rank": "0",
         "Name": "GUNEET SINGH REHILL",
         "Rollno": "17mi533",
@@ -6156,7 +6168,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "514",
+        "Rank": "515",
         "G_rank": "0",
         "Name": "TAPESH THAKUR",
         "Rollno": "17mi406",
@@ -6168,7 +6180,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "515",
+        "Rank": "516",
         "G_rank": "0",
         "Name": "ANKIT SHARMA",
         "Rollno": "17224",
@@ -6180,7 +6192,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "516",
+        "Rank": "517",
         "G_rank": "0",
         "Name": "HIMANSHU KAUNDAL",
         "Rollno": "17743",
@@ -6192,7 +6204,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "517",
+        "Rank": "518",
         "G_rank": "0",
         "Name": "ADARSH DOGRA",
         "Rollno": "17816",
@@ -6204,7 +6216,7 @@
         "Branch": "Material"
     },
     {
-        "Rank": "518",
+        "Rank": "519",
         "G_rank": "0",
         "Name": "PARAS ARORA",
         "Rollno": "17255",
@@ -6216,7 +6228,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "519",
+        "Rank": "520",
         "G_rank": "0",
         "Name": "MAYANK KUMAR SINGH",
         "Rollno": "17362",
@@ -6228,7 +6240,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "520",
+        "Rank": "521",
         "G_rank": "0",
         "Name": "PRATYUSH SHARMA",
         "Rollno": "17mi501",
@@ -6240,7 +6252,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "521",
+        "Rank": "522",
         "G_rank": "0",
         "Name": "CHANDAN SYAL",
         "Rollno": "17810",
@@ -6252,7 +6264,7 @@
         "Branch": "Material"
     },
     {
-        "Rank": "522",
+        "Rank": "523",
         "G_rank": "0",
         "Name": "VIVEK KUMAR",
         "Rollno": "17332",
@@ -6264,7 +6276,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "523",
+        "Rank": "524",
         "G_rank": "0",
         "Name": "AMAN KAPOOR",
         "Rollno": "17807",
@@ -6276,7 +6288,7 @@
         "Branch": "Material"
     },
     {
-        "Rank": "524",
+        "Rank": "525",
         "G_rank": "0",
         "Name": "PRACHI SHARMA",
         "Rollno": "17207",
@@ -6288,7 +6300,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "525",
+        "Rank": "526",
         "G_rank": "0",
         "Name": "SACHIN THAKUR",
         "Rollno": "17265",
@@ -6300,7 +6312,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "526",
+        "Rank": "527",
         "G_rank": "0",
         "Name": "KOMAL NEGI",
         "Rollno": "17mi530",
@@ -6312,7 +6324,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "527",
+        "Rank": "528",
         "G_rank": "0",
         "Name": "SAHIL",
         "Rollno": "17210",
@@ -6324,7 +6336,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "528",
+        "Rank": "529",
         "G_rank": "0",
         "Name": "KEVIN J KURIEN",
         "Rollno": "17463",
@@ -6336,7 +6348,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "529",
+        "Rank": "530",
         "G_rank": "0",
         "Name": "RAKESH KUMAR",
         "Rollno": "17746",
@@ -6346,18 +6358,6 @@
         "Sgpa": "7.83",
         "Points": "689",
         "Branch": "Chemical"
-    },
-    {
-        "Rank": "530",
-        "G_rank": "0",
-        "Name": "VINEET",
-        "Rollno": "17592",
-        "Gender": "",
-        "Year": "3",
-        "Cgpa": "6.65",
-        "Sgpa": "7.5",
-        "Points": "698",
-        "Branch": "Cse"
     },
     {
         "Rank": "531",
@@ -6938,6 +6938,18 @@
     {
         "Rank": "579",
         "G_rank": "0",
+        "Name": "RAHUL",
+        "Rollno": "17232",
+        "Gender": "",
+        "Year": "3",
+        "Cgpa": "6.14",
+        "Sgpa": "6.78",
+        "Points": "639",
+        "Branch": "Electrical"
+    },
+    {
+        "Rank": "580",
+        "G_rank": "0",
         "Name": "GAURAV BIJALWAN",
         "Rollno": "17389",
         "Gender": "",
@@ -6948,7 +6960,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "580",
+        "Rank": "581",
         "G_rank": "0",
         "Name": "AKSHAY CHOUDHARY",
         "Rollno": "17mi532",
@@ -6960,7 +6972,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "581",
+        "Rank": "582",
         "G_rank": "0",
         "Name": "ABHISHEK KUMAR",
         "Rollno": "17732",
@@ -6972,7 +6984,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "582",
+        "Rank": "583",
         "G_rank": "0",
         "Name": "SHUBHAM",
         "Rollno": "17179",
@@ -6984,7 +6996,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "583",
+        "Rank": "584",
         "G_rank": "0",
         "Name": "VIKASH CHOUDHARY",
         "Rollno": "17276",
@@ -6996,7 +7008,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "584",
+        "Rank": "585",
         "G_rank": "0",
         "Name": "ANEESH DHIMAN",
         "Rollno": "17328",
@@ -7008,7 +7020,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "585",
+        "Rank": "586",
         "G_rank": "0",
         "Name": "PAWAN SEHRAWAT",
         "Rollno": "17470",
@@ -7020,7 +7032,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "586",
+        "Rank": "587",
         "G_rank": "0",
         "Name": "GAURAV",
         "Rollno": "17mi517",
@@ -7032,7 +7044,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "587",
+        "Rank": "588",
         "G_rank": "0",
         "Name": "ANUBHAV SINGH",
         "Rollno": "17234",
@@ -7041,18 +7053,6 @@
         "Cgpa": "5.97",
         "Sgpa": "6.96",
         "Points": "621",
-        "Branch": "Electrical"
-    },
-    {
-        "Rank": "588",
-        "G_rank": "0",
-        "Name": "RAHUL",
-        "Rollno": "17232",
-        "Gender": "",
-        "Year": "3",
-        "Cgpa": "5.97",
-        "Sgpa": "6",
-        "Points": "639",
         "Branch": "Electrical"
     },
     {

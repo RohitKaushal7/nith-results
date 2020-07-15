@@ -386,18 +386,6 @@
     {
         "Rank": "33",
         "G_rank": "0",
-        "Name": "NAKSHTRA GOYAL",
-        "Rollno": "185531",
-        "Gender": "",
-        "Year": "2",
-        "Cgpa": "7.61",
-        "Sgpa": "8.32",
-        "Points": "449",
-        "Branch": "Cse_dual"
-    },
-    {
-        "Rank": "34",
-        "G_rank": "0",
         "Name": "AMISHI BANSAL",
         "Rollno": "185535",
         "Gender": "",
@@ -405,6 +393,18 @@
         "Cgpa": "7.44",
         "Sgpa": "8.32",
         "Points": "439",
+        "Branch": "Cse_dual"
+    },
+    {
+        "Rank": "34",
+        "G_rank": "0",
+        "Name": "NAKSHTRA GOYAL",
+        "Rollno": "185531",
+        "Gender": "",
+        "Year": "2",
+        "Cgpa": "7.61",
+        "Sgpa": "8.32",
+        "Points": "449",
         "Branch": "Cse_dual"
     },
     {

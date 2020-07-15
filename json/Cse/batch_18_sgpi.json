@@ -590,6 +590,18 @@
     {
         "Rank": "50",
         "G_rank": "0",
+        "Name": "ANKIT KUMAR",
+        "Rollno": "185086",
+        "Gender": "",
+        "Year": "2",
+        "Cgpa": "7.66",
+        "Sgpa": "8.32",
+        "Points": "452",
+        "Branch": "Cse"
+    },
+    {
+        "Rank": "51",
+        "G_rank": "0",
         "Name": "TANYA BHANDARI",
         "Rollno": "185093",
         "Gender": "",
@@ -600,7 +612,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "51",
+        "Rank": "52",
         "G_rank": "0",
         "Name": "AVINASH YADAV",
         "Rollno": "185058",
@@ -612,7 +624,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "52",
+        "Rank": "53",
         "G_rank": "0",
         "Name": "ARSHAD ALI",
         "Rollno": "185043",
@@ -621,18 +633,6 @@
         "Cgpa": "7.92",
         "Sgpa": "8.23",
         "Points": "467",
-        "Branch": "Cse"
-    },
-    {
-        "Rank": "53",
-        "G_rank": "0",
-        "Name": "ANKIT KUMAR",
-        "Rollno": "185086",
-        "Gender": "",
-        "Year": "2",
-        "Cgpa": "7.61",
-        "Sgpa": "8.18",
-        "Points": "449",
         "Branch": "Cse"
     },
     {

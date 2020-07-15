@@ -638,6 +638,18 @@
     {
         "Rank": "54",
         "G_rank": "0",
+        "Name": "ANKIT KUMAR",
+        "Rollno": "185086",
+        "Gender": "",
+        "Year": "2",
+        "Cgpa": "7.66",
+        "Sgpa": "8.32",
+        "Points": "452",
+        "Branch": "Cse"
+    },
+    {
+        "Rank": "55",
+        "G_rank": "0",
         "Name": "ATUL THAKUR",
         "Rollno": "185050",
         "Gender": "",
@@ -648,7 +660,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "55",
+        "Rank": "56",
         "G_rank": "0",
         "Name": "JAI SINGH MALHOTRA",
         "Rollno": "185006",
@@ -660,7 +672,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "56",
+        "Rank": "57",
         "G_rank": "0",
         "Name": "SATYAM KUMAR",
         "Rollno": "185083",
@@ -668,18 +680,6 @@
         "Year": "2",
         "Cgpa": "7.61",
         "Sgpa": "8.41",
-        "Points": "449",
-        "Branch": "Cse"
-    },
-    {
-        "Rank": "57",
-        "G_rank": "0",
-        "Name": "ANKIT KUMAR",
-        "Rollno": "185086",
-        "Gender": "",
-        "Year": "2",
-        "Cgpa": "7.61",
-        "Sgpa": "8.18",
         "Points": "449",
         "Branch": "Cse"
     },

@@ -902,6 +902,18 @@
     {
         "Rank": "76",
         "G_rank": "0",
+        "Name": "RAHUL",
+        "Rollno": "17232",
+        "Gender": "",
+        "Year": "3",
+        "Cgpa": "6.14",
+        "Sgpa": "6.78",
+        "Points": "639",
+        "Branch": "Electrical"
+    },
+    {
+        "Rank": "77",
+        "G_rank": "0",
         "Name": "VIKASH CHOUDHARY",
         "Rollno": "17276",
         "Gender": "",
@@ -912,7 +924,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "77",
+        "Rank": "78",
         "G_rank": "0",
         "Name": "ANUBHAV SINGH",
         "Rollno": "17234",
@@ -921,18 +933,6 @@
         "Cgpa": "5.97",
         "Sgpa": "6.96",
         "Points": "621",
-        "Branch": "Electrical"
-    },
-    {
-        "Rank": "78",
-        "G_rank": "0",
-        "Name": "RAHUL",
-        "Rollno": "17232",
-        "Gender": "",
-        "Year": "3",
-        "Cgpa": "5.97",
-        "Sgpa": "6",
-        "Points": "639",
         "Branch": "Electrical"
     },
     {

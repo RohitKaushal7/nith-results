@@ -326,29 +326,17 @@
     {
         "Rank": "28",
         "G_rank": "0",
-        "Name": "DEV MALOT",
-        "Rollno": "184053",
-        "Gender": "",
-        "Year": "2",
-        "Cgpa": "0.57",
-        "Sgpa": "8",
-        "Points": "8",
-        "Branch": "Ece"
-    },
-    {
-        "Rank": "29",
-        "G_rank": "0",
         "Name": "N. DURGA SANDEEP",
         "Rollno": "184054",
         "Gender": "",
         "Year": "2",
         "Cgpa": "7.59",
-        "Sgpa": "7.9",
-        "Points": "440",
+        "Sgpa": "7.91",
+        "Points": "448",
         "Branch": "Ece"
     },
     {
-        "Rank": "30",
+        "Rank": "29",
         "G_rank": "0",
         "Name": "MANISH KUMAR PUNIA",
         "Rollno": "184044",
@@ -360,7 +348,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "31",
+        "Rank": "30",
         "G_rank": "0",
         "Name": "YAJUR GAUR",
         "Rollno": "184036",
@@ -372,7 +360,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "32",
+        "Rank": "31",
         "G_rank": "0",
         "Name": "ANJALI RUHELA",
         "Rollno": "184073",
@@ -384,7 +372,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "33",
+        "Rank": "32",
         "G_rank": "0",
         "Name": "HEMANT SHARMA",
         "Rollno": "184095",
@@ -396,7 +384,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "34",
+        "Rank": "33",
         "G_rank": "0",
         "Name": "KALPANA PARASHAR",
         "Rollno": "184023",
@@ -408,7 +396,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "35",
+        "Rank": "34",
         "G_rank": "0",
         "Name": "PERAM RAJASEKHAR REDDY",
         "Rollno": "184083",
@@ -420,7 +408,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "36",
+        "Rank": "35",
         "G_rank": "0",
         "Name": "RAVI VERMA",
         "Rollno": "184020",
@@ -432,7 +420,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "37",
+        "Rank": "36",
         "G_rank": "0",
         "Name": "CHANDAN VERMA",
         "Rollno": "184031",
@@ -444,7 +432,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "38",
+        "Rank": "37",
         "G_rank": "0",
         "Name": "HARSH MINHAS",
         "Rollno": "184007",
@@ -456,7 +444,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "39",
+        "Rank": "38",
         "G_rank": "0",
         "Name": "ANSHUL PARAS",
         "Rollno": "184027",
@@ -468,7 +456,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "40",
+        "Rank": "39",
         "G_rank": "0",
         "Name": "RANI JAIRAJ",
         "Rollno": "184015",
@@ -480,7 +468,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "41",
+        "Rank": "40",
         "G_rank": "0",
         "Name": "AMIT CHAWLA",
         "Rollno": "184040",
@@ -492,7 +480,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "42",
+        "Rank": "41",
         "G_rank": "0",
         "Name": "AVANTIKA DHIMAN",
         "Rollno": "184001",
@@ -504,7 +492,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "43",
+        "Rank": "42",
         "G_rank": "0",
         "Name": "NITIN HARJAIT",
         "Rollno": "184012",
@@ -516,7 +504,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "44",
+        "Rank": "43",
         "G_rank": "0",
         "Name": "DHEERAJ VATTIKONDA",
         "Rollno": "184093",
@@ -528,7 +516,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "45",
+        "Rank": "44",
         "G_rank": "0",
         "Name": "SUGALI YOUGENDER",
         "Rollno": "184066",
@@ -540,7 +528,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "46",
+        "Rank": "45",
         "G_rank": "0",
         "Name": "SACHIN BHARDWAJ",
         "Rollno": "184014",
@@ -552,7 +540,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "47",
+        "Rank": "46",
         "G_rank": "0",
         "Name": "RITIK KUMAR",
         "Rollno": "184022",
@@ -564,7 +552,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "48",
+        "Rank": "47",
         "G_rank": "0",
         "Name": "NAVEEN KUMAR",
         "Rollno": "184092",
@@ -576,7 +564,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "49",
+        "Rank": "48",
         "G_rank": "0",
         "Name": "KARTIK RAUT",
         "Rollno": "184063",
@@ -588,7 +576,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "50",
+        "Rank": "49",
         "G_rank": "0",
         "Name": "TANUJA PAL",
         "Rollno": "184079",
@@ -600,7 +588,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "51",
+        "Rank": "50",
         "G_rank": "0",
         "Name": "SHUBHAM KUMAR",
         "Rollno": "184010",
@@ -612,7 +600,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "52",
+        "Rank": "51",
         "G_rank": "0",
         "Name": "KONUGANTI PREETHAM REDDY",
         "Rollno": "184070",
@@ -624,7 +612,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "53",
+        "Rank": "52",
         "G_rank": "0",
         "Name": "MOHAN SINGH",
         "Rollno": "184046",
@@ -636,7 +624,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "54",
+        "Rank": "53",
         "G_rank": "0",
         "Name": "ANUPAM SINGH",
         "Rollno": "184049",
@@ -648,7 +636,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "55",
+        "Rank": "54",
         "G_rank": "0",
         "Name": "AVNISH GAUTAM",
         "Rollno": "184008",
@@ -660,7 +648,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "56",
+        "Rank": "55",
         "G_rank": "0",
         "Name": "ABHISHEK RANA",
         "Rollno": "184021",
@@ -672,7 +660,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "57",
+        "Rank": "56",
         "G_rank": "0",
         "Name": "GEETANJALI KAMAL",
         "Rollno": "184047",
@@ -684,7 +672,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "58",
+        "Rank": "57",
         "G_rank": "0",
         "Name": "SAUMYA NEGI",
         "Rollno": "184004",
@@ -696,7 +684,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "59",
+        "Rank": "58",
         "G_rank": "0",
         "Name": "SHIVANG SINGH",
         "Rollno": "184009",
@@ -708,7 +696,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "60",
+        "Rank": "59",
         "G_rank": "0",
         "Name": "DIKSHA AGGARWAL",
         "Rollno": "184041",
@@ -720,7 +708,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "61",
+        "Rank": "60",
         "G_rank": "0",
         "Name": "PRIYASHA",
         "Rollno": "184086",
@@ -732,7 +720,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "62",
+        "Rank": "61",
         "G_rank": "0",
         "Name": "ISHA MITTAL",
         "Rollno": "184059",
@@ -744,7 +732,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "63",
+        "Rank": "62",
         "G_rank": "0",
         "Name": "NUNSAVATH NAVEEN KUMAR",
         "Rollno": "184061",
@@ -756,7 +744,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "64",
+        "Rank": "63",
         "G_rank": "0",
         "Name": "ARNAV JHAGTA",
         "Rollno": "184006",
@@ -768,7 +756,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "65",
+        "Rank": "64",
         "G_rank": "0",
         "Name": "SAURABH GOYAL",
         "Rollno": "184018",
@@ -780,7 +768,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "66",
+        "Rank": "65",
         "G_rank": "0",
         "Name": "PAWAN KUMAR",
         "Rollno": "184089",
@@ -792,7 +780,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "67",
+        "Rank": "66",
         "G_rank": "0",
         "Name": "RAHUL KOLISH",
         "Rollno": "184043",
@@ -804,7 +792,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "68",
+        "Rank": "67",
         "G_rank": "0",
         "Name": "EDE KESAVA CHANDRA",
         "Rollno": "184091",
@@ -816,7 +804,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "69",
+        "Rank": "68",
         "G_rank": "0",
         "Name": "MYAKALA PHANINDRA REDDY",
         "Rollno": "184068",
@@ -828,7 +816,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "70",
+        "Rank": "69",
         "G_rank": "0",
         "Name": "MEGHA SONI",
         "Rollno": "184084",
@@ -840,7 +828,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "71",
+        "Rank": "70",
         "G_rank": "0",
         "Name": "VYOMENDER MEHTA",
         "Rollno": "184074",
@@ -852,7 +840,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "72",
+        "Rank": "71",
         "G_rank": "0",
         "Name": "EKSHIKA",
         "Rollno": "184051",
@@ -864,7 +852,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "73",
+        "Rank": "72",
         "G_rank": "0",
         "Name": "INGIT SHARMA",
         "Rollno": "184094",
@@ -876,7 +864,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "74",
+        "Rank": "73",
         "G_rank": "0",
         "Name": "ISHIKA SINGH",
         "Rollno": "184028",
@@ -888,7 +876,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "75",
+        "Rank": "74",
         "G_rank": "0",
         "Name": "RAJAT THAKUR",
         "Rollno": "184038",
@@ -900,7 +888,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "76",
+        "Rank": "75",
         "G_rank": "0",
         "Name": "DHRUV PANWAR",
         "Rollno": "184019",
@@ -912,7 +900,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "77",
+        "Rank": "76",
         "G_rank": "0",
         "Name": "SUMRIT MUKKER",
         "Rollno": "184039",
@@ -924,7 +912,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "78",
+        "Rank": "77",
         "G_rank": "0",
         "Name": "AVINASH KUMAR PASWAN",
         "Rollno": "184090",
@@ -936,7 +924,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "79",
+        "Rank": "78",
         "G_rank": "0",
         "Name": "KATTA SAI YASWANTH",
         "Rollno": "184050",
@@ -948,7 +936,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "80",
+        "Rank": "79",
         "G_rank": "0",
         "Name": "SHIVIKA",
         "Rollno": "184011",
@@ -960,7 +948,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "81",
+        "Rank": "80",
         "G_rank": "0",
         "Name": "RITIKA KALOTRA",
         "Rollno": "184024",
@@ -972,7 +960,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "82",
+        "Rank": "81",
         "G_rank": "0",
         "Name": "MUSUNURU HANEESH SAI",
         "Rollno": "184030",
@@ -984,7 +972,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "83",
+        "Rank": "82",
         "G_rank": "0",
         "Name": "ADITYA KUMAR",
         "Rollno": "184082",
@@ -996,7 +984,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "84",
+        "Rank": "83",
         "G_rank": "0",
         "Name": "ABHISHEK SINGH",
         "Rollno": "184045",
@@ -1008,7 +996,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "85",
+        "Rank": "84",
         "G_rank": "0",
         "Name": "SAMRIDHI MISHRA",
         "Rollno": "184064",
@@ -1020,7 +1008,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "86",
+        "Rank": "85",
         "G_rank": "0",
         "Name": "GOVIND PATHANIA",
         "Rollno": "184035",
@@ -1032,7 +1020,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "87",
+        "Rank": "86",
         "G_rank": "0",
         "Name": "MANUPATI MANIDEEP",
         "Rollno": "184065",
@@ -1044,7 +1032,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "88",
+        "Rank": "87",
         "G_rank": "0",
         "Name": "ORSU ASISH",
         "Rollno": "184060",
@@ -1056,7 +1044,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "89",
+        "Rank": "88",
         "G_rank": "0",
         "Name": "BHOOMIREDDY ABHINAV REDDY",
         "Rollno": "184078",
@@ -1068,7 +1056,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "90",
+        "Rank": "89",
         "G_rank": "0",
         "Name": "GOURAV RAHI",
         "Rollno": "184088",
@@ -1080,7 +1068,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "91",
+        "Rank": "90",
         "G_rank": "0",
         "Name": "DHIRAJ CHARAN",
         "Rollno": "184076",
@@ -1092,7 +1080,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "92",
+        "Rank": "91",
         "G_rank": "0",
         "Name": "NITESH SHIVA",
         "Rollno": "184081",
@@ -1104,10 +1092,22 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "93",
+        "Rank": "92",
         "G_rank": "0",
         "Name": "SHAILZA",
         "Rollno": "184029",
+        "Gender": "",
+        "Year": "2",
+        "Cgpa": "0",
+        "Sgpa": "0",
+        "Points": "0",
+        "Branch": "Ece"
+    },
+    {
+        "Rank": "93",
+        "G_rank": "0",
+        "Name": "DEV MALOT",
+        "Rollno": "184053",
         "Gender": "",
         "Year": "2",
         "Cgpa": "0",

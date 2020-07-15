@@ -998,6 +998,18 @@
     {
         "Rank": "84",
         "G_rank": "0",
+        "Name": "VISHAL PARMAR",
+        "Rollno": "17mi535",
+        "Gender": "",
+        "Year": "3",
+        "Cgpa": "8.44",
+        "Sgpa": "9.38",
+        "Points": "886",
+        "Branch": "Cse_dual"
+    },
+    {
+        "Rank": "85",
+        "G_rank": "0",
         "Name": "SHIVANSH THAKUR",
         "Rollno": "17579",
         "Gender": "",
@@ -1008,7 +1020,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "85",
+        "Rank": "86",
         "G_rank": "0",
         "Name": "MAYANK SINGH PARIHAR",
         "Rollno": "17568",
@@ -1020,7 +1032,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "86",
+        "Rank": "87",
         "G_rank": "0",
         "Name": "ABHISHEK RANA",
         "Rollno": "17553",
@@ -1032,7 +1044,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "87",
+        "Rank": "88",
         "G_rank": "0",
         "Name": "KANIKA KAPOOR",
         "Rollno": "17719",
@@ -1042,18 +1054,6 @@
         "Sgpa": "9.38",
         "Points": "835",
         "Branch": "Chemical"
-    },
-    {
-        "Rank": "88",
-        "G_rank": "0",
-        "Name": "VISHAL PARMAR",
-        "Rollno": "17mi535",
-        "Gender": "",
-        "Year": "3",
-        "Cgpa": "8.44",
-        "Sgpa": "9.38",
-        "Points": "886",
-        "Branch": "Cse_dual"
     },
     {
         "Rank": "89",
@@ -2810,18 +2810,6 @@
     {
         "Rank": "235",
         "G_rank": "0",
-        "Name": "DIGVIJAY JANARTHA",
-        "Rollno": "17534",
-        "Gender": "",
-        "Year": "3",
-        "Cgpa": "8.24",
-        "Sgpa": "8.75",
-        "Points": "865",
-        "Branch": "Cse"
-    },
-    {
-        "Rank": "236",
-        "G_rank": "0",
         "Name": "ANSHUL WALIA",
         "Rollno": "17535",
         "Gender": "",
@@ -2829,6 +2817,18 @@
         "Cgpa": "8.18",
         "Sgpa": "8.75",
         "Points": "859",
+        "Branch": "Cse"
+    },
+    {
+        "Rank": "236",
+        "G_rank": "0",
+        "Name": "DIGVIJAY JANARTHA",
+        "Rollno": "17534",
+        "Gender": "",
+        "Year": "3",
+        "Cgpa": "8.24",
+        "Sgpa": "8.75",
+        "Points": "865",
         "Branch": "Cse"
     },
     {
@@ -4442,6 +4442,18 @@
     {
         "Rank": "371",
         "G_rank": "0",
+        "Name": "VINEET",
+        "Rollno": "17592",
+        "Gender": "",
+        "Year": "3",
+        "Cgpa": "6.79",
+        "Sgpa": "8.12",
+        "Points": "713",
+        "Branch": "Cse"
+    },
+    {
+        "Rank": "372",
+        "G_rank": "0",
         "Name": "ABHISHEK KUMAR SHARMA",
         "Rollno": "17572",
         "Gender": "",
@@ -4452,7 +4464,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "372",
+        "Rank": "373",
         "G_rank": "0",
         "Name": "SHUBHAM GUPTA",
         "Rollno": "17750",
@@ -4464,7 +4476,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "373",
+        "Rank": "374",
         "G_rank": "0",
         "Name": "SHIVANSH KUMAR",
         "Rollno": "17823",
@@ -4476,7 +4488,7 @@
         "Branch": "Material"
     },
     {
-        "Rank": "374",
+        "Rank": "375",
         "G_rank": "0",
         "Name": "G KHARTHEESVAR",
         "Rollno": "17mi525",
@@ -4488,7 +4500,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "375",
+        "Rank": "376",
         "G_rank": "0",
         "Name": "VAIBHAV DEEP",
         "Rollno": "17mi453",
@@ -4500,7 +4512,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "376",
+        "Rank": "377",
         "G_rank": "0",
         "Name": "UMESH THAKUR",
         "Rollno": "17mi401",
@@ -4512,7 +4524,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "377",
+        "Rank": "378",
         "G_rank": "0",
         "Name": "DHARMENDRA SINGH",
         "Rollno": "17277",
@@ -4524,7 +4536,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "378",
+        "Rank": "379",
         "G_rank": "0",
         "Name": "VIVEK PAL",
         "Rollno": "17261",
@@ -4536,7 +4548,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "379",
+        "Rank": "380",
         "G_rank": "0",
         "Name": "SUMIT KUMAR",
         "Rollno": "17212",
@@ -4548,7 +4560,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "380",
+        "Rank": "381",
         "G_rank": "0",
         "Name": "NAGESH SINGH",
         "Rollno": "17358",
@@ -4560,7 +4572,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "381",
+        "Rank": "382",
         "G_rank": "0",
         "Name": "KESHAV KUMAR MISHRA",
         "Rollno": "17711",
@@ -4572,7 +4584,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "382",
+        "Rank": "383",
         "G_rank": "0",
         "Name": "SUNIL REWAD",
         "Rollno": "17172",
@@ -4584,7 +4596,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "383",
+        "Rank": "384",
         "G_rank": "0",
         "Name": "ASHISH VERMA",
         "Rollno": "17392",
@@ -4596,7 +4608,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "384",
+        "Rank": "385",
         "G_rank": "0",
         "Name": "ANURAG SRIVASTAVA",
         "Rollno": "17371",
@@ -4608,7 +4620,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "385",
+        "Rank": "386",
         "G_rank": "0",
         "Name": "ANKUSH DHAMIJA",
         "Rollno": "17363",
@@ -4620,7 +4632,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "386",
+        "Rank": "387",
         "G_rank": "0",
         "Name": "HARIT YADAV",
         "Rollno": "17mi418",
@@ -4632,7 +4644,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "387",
+        "Rank": "388",
         "G_rank": "0",
         "Name": "RAHUL VERMA",
         "Rollno": "17mi434",
@@ -4644,7 +4656,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "388",
+        "Rank": "389",
         "G_rank": "0",
         "Name": "ASEEM KALTA",
         "Rollno": "17mi431",
@@ -4656,7 +4668,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "389",
+        "Rank": "390",
         "G_rank": "0",
         "Name": "DEEP RANJAN",
         "Rollno": "17mi416",
@@ -4668,7 +4680,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "390",
+        "Rank": "391",
         "G_rank": "0",
         "Name": "SAURABH SHARMA",
         "Rollno": "17543",
@@ -4680,7 +4692,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "391",
+        "Rank": "392",
         "G_rank": "0",
         "Name": "ABHISHEK MISHRA",
         "Rollno": "17569",
@@ -4692,7 +4704,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "392",
+        "Rank": "393",
         "G_rank": "0",
         "Name": "SHRIYA DWIVEDI",
         "Rollno": "17635",
@@ -4704,7 +4716,7 @@
         "Branch": "Architecture"
     },
     {
-        "Rank": "393",
+        "Rank": "394",
         "G_rank": "0",
         "Name": "SARTHAK SOOD",
         "Rollno": "17716",
@@ -4716,7 +4728,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "394",
+        "Rank": "395",
         "G_rank": "0",
         "Name": "VIBHAS SHARMA",
         "Rollno": "17710",
@@ -4728,7 +4740,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "395",
+        "Rank": "396",
         "G_rank": "0",
         "Name": "MANICK",
         "Rollno": "17mi515",
@@ -4740,7 +4752,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "396",
+        "Rank": "397",
         "G_rank": "0",
         "Name": "PRAGAY SHOURYA MOUDGIL",
         "Rollno": "17120",
@@ -4752,7 +4764,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "397",
+        "Rank": "398",
         "G_rank": "0",
         "Name": "VIKASH KUMAR",
         "Rollno": "17125",
@@ -4764,7 +4776,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "398",
+        "Rank": "399",
         "G_rank": "0",
         "Name": "ANKIT KUMAR MEENA",
         "Rollno": "17145",
@@ -4776,7 +4788,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "399",
+        "Rank": "400",
         "G_rank": "0",
         "Name": "KANAV MAHAJAN",
         "Rollno": "17215",
@@ -4788,7 +4800,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "400",
+        "Rank": "401",
         "G_rank": "0",
         "Name": "ASHOK MEENA",
         "Rollno": "17247",
@@ -4800,7 +4812,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "401",
+        "Rank": "402",
         "G_rank": "0",
         "Name": "NITIN GORA",
         "Rollno": "17311",
@@ -4812,7 +4824,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "402",
+        "Rank": "403",
         "G_rank": "0",
         "Name": "MUKUL CHANDRAKANT MAHADIK",
         "Rollno": "17469",
@@ -4824,7 +4836,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "403",
+        "Rank": "404",
         "G_rank": "0",
         "Name": "YOGENDRA PREMPAL SINGH",
         "Rollno": "17551",
@@ -4836,7 +4848,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "404",
+        "Rank": "405",
         "G_rank": "0",
         "Name": "MANSI TANJILA",
         "Rollno": "17622",
@@ -4848,7 +4860,7 @@
         "Branch": "Architecture"
     },
     {
-        "Rank": "405",
+        "Rank": "406",
         "G_rank": "0",
         "Name": "SAWAN BHARATI JARYAL",
         "Rollno": "17211",
@@ -4860,7 +4872,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "406",
+        "Rank": "407",
         "G_rank": "0",
         "Name": "ASHISH KUMAR",
         "Rollno": "17235",
@@ -4872,7 +4884,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "407",
+        "Rank": "408",
         "G_rank": "0",
         "Name": "VIVEK KUMAR",
         "Rollno": "17254",
@@ -4884,7 +4896,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "408",
+        "Rank": "409",
         "G_rank": "0",
         "Name": "GOURAV AGGRAWAL",
         "Rollno": "17219",
@@ -4896,7 +4908,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "409",
+        "Rank": "410",
         "G_rank": "0",
         "Name": "KUNAL",
         "Rollno": "17109",
@@ -4908,7 +4920,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "410",
+        "Rank": "411",
         "G_rank": "0",
         "Name": "RAJAT BHARDWAJ",
         "Rollno": "17461",
@@ -4920,7 +4932,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "411",
+        "Rank": "412",
         "G_rank": "0",
         "Name": "SURABHI",
         "Rollno": "17723",
@@ -4932,7 +4944,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "412",
+        "Rank": "413",
         "G_rank": "0",
         "Name": "AKSHIT",
         "Rollno": "17749",
@@ -4944,7 +4956,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "413",
+        "Rank": "414",
         "G_rank": "0",
         "Name": "KARTIKEY TEWARI",
         "Rollno": "17mi551",
@@ -4956,7 +4968,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "414",
+        "Rank": "415",
         "G_rank": "0",
         "Name": "DHRUV THAKUR",
         "Rollno": "17228",
@@ -4968,7 +4980,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "415",
+        "Rank": "416",
         "G_rank": "0",
         "Name": "KESHAV BHATT",
         "Rollno": "17359",
@@ -4980,7 +4992,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "416",
+        "Rank": "417",
         "G_rank": "0",
         "Name": "SAKSHAM KUMAR SHARMA",
         "Rollno": "17403",
@@ -4992,7 +5004,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "417",
+        "Rank": "418",
         "G_rank": "0",
         "Name": "ANKUR",
         "Rollno": "17mi457",
@@ -5004,7 +5016,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "418",
+        "Rank": "419",
         "G_rank": "0",
         "Name": "SUMIT SHARMA",
         "Rollno": "17758",
@@ -5016,7 +5028,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "419",
+        "Rank": "420",
         "G_rank": "0",
         "Name": "DEV KANT KUMAR CHOUHAN",
         "Rollno": "17mi541",
@@ -5028,7 +5040,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "420",
+        "Rank": "421",
         "G_rank": "0",
         "Name": "ROHAN SHARMA",
         "Rollno": "17233",
@@ -5040,7 +5052,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "421",
+        "Rank": "422",
         "G_rank": "0",
         "Name": "KARUN PRATEEK SINGH",
         "Rollno": "17310",
@@ -5052,7 +5064,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "422",
+        "Rank": "423",
         "G_rank": "0",
         "Name": "HARIOM JAT",
         "Rollno": "17467",
@@ -5064,7 +5076,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "423",
+        "Rank": "424",
         "G_rank": "0",
         "Name": "NAVDEESHWAR SUMAN",
         "Rollno": "17436",
@@ -5076,7 +5088,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "424",
+        "Rank": "425",
         "G_rank": "0",
         "Name": "JITTEN JASWAL",
         "Rollno": "17757",
@@ -5088,7 +5100,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "425",
+        "Rank": "426",
         "G_rank": "0",
         "Name": "ATUL MOTHIA",
         "Rollno": "17701",
@@ -5100,7 +5112,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "426",
+        "Rank": "427",
         "G_rank": "0",
         "Name": "ROHIT ROY",
         "Rollno": "17754",
@@ -5112,7 +5124,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "427",
+        "Rank": "428",
         "G_rank": "0",
         "Name": "RAKESH KUMAR",
         "Rollno": "17746",
@@ -5124,7 +5136,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "428",
+        "Rank": "429",
         "G_rank": "0",
         "Name": "AYUSH CHAMOLA",
         "Rollno": "17373",
@@ -5136,7 +5148,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "429",
+        "Rank": "430",
         "G_rank": "0",
         "Name": "PRIYANSHI KANWAR",
         "Rollno": "17437",
@@ -5148,7 +5160,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "430",
+        "Rank": "431",
         "G_rank": "0",
         "Name": "POOJA",
         "Rollno": "17408",
@@ -5160,7 +5172,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "431",
+        "Rank": "432",
         "G_rank": "0",
         "Name": "SUKHJINDER SINGH",
         "Rollno": "17507",
@@ -5172,7 +5184,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "432",
+        "Rank": "433",
         "G_rank": "0",
         "Name": "KALPANSH VERMA",
         "Rollno": "17281",
@@ -5184,7 +5196,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "433",
+        "Rank": "434",
         "G_rank": "0",
         "Name": "MANSI KAPOOR",
         "Rollno": "17603",
@@ -5196,7 +5208,7 @@
         "Branch": "Architecture"
     },
     {
-        "Rank": "434",
+        "Rank": "435",
         "G_rank": "0",
         "Name": "RAHUL SHARMA",
         "Rollno": "17440",
@@ -5208,7 +5220,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "435",
+        "Rank": "436",
         "G_rank": "0",
         "Name": "AYUSH SHARMA",
         "Rollno": "17mi405",
@@ -5220,7 +5232,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "436",
+        "Rank": "437",
         "G_rank": "0",
         "Name": "AMANDEEP POONI",
         "Rollno": "17mi523",
@@ -5232,7 +5244,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "437",
+        "Rank": "438",
         "G_rank": "0",
         "Name": "ROHAN AZAD",
         "Rollno": "17264",
@@ -5244,7 +5256,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "438",
+        "Rank": "439",
         "G_rank": "0",
         "Name": "ANKIT CHOUDHARY",
         "Rollno": "17103",
@@ -5256,7 +5268,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "439",
+        "Rank": "440",
         "G_rank": "0",
         "Name": "KUMAR BHIVESH SHARMA",
         "Rollno": "17347",
@@ -5268,7 +5280,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "440",
+        "Rank": "441",
         "G_rank": "0",
         "Name": "DIVYANSHU",
         "Rollno": "17377",
@@ -5280,7 +5292,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "441",
+        "Rank": "442",
         "G_rank": "0",
         "Name": "MAYANK KUMAR SINGH",
         "Rollno": "17362",
@@ -5292,7 +5304,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "442",
+        "Rank": "443",
         "G_rank": "0",
         "Name": "AMAN",
         "Rollno": "17510",
@@ -5304,7 +5316,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "443",
+        "Rank": "444",
         "G_rank": "0",
         "Name": "RISHABH KAUNDAL",
         "Rollno": "17513",
@@ -5316,7 +5328,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "444",
+        "Rank": "445",
         "G_rank": "0",
         "Name": "PRATYUSH SHARMA",
         "Rollno": "17mi501",
@@ -5328,7 +5340,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "445",
+        "Rank": "446",
         "G_rank": "0",
         "Name": "JATIN AERY",
         "Rollno": "17291",
@@ -5340,7 +5352,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "446",
+        "Rank": "447",
         "G_rank": "0",
         "Name": "MEDA. CHANDRA SHEKAR",
         "Rollno": "17230",
@@ -5352,7 +5364,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "447",
+        "Rank": "448",
         "G_rank": "0",
         "Name": "SHASHIKANT",
         "Rollno": "17316",
@@ -5364,7 +5376,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "448",
+        "Rank": "449",
         "G_rank": "0",
         "Name": "RITIK DUTT",
         "Rollno": "17351",
@@ -5376,7 +5388,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "449",
+        "Rank": "450",
         "G_rank": "0",
         "Name": "HRITIK BANSAL",
         "Rollno": "17491",
@@ -5388,7 +5400,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "450",
+        "Rank": "451",
         "G_rank": "0",
         "Name": "KASHISH KALSI",
         "Rollno": "17mi507",
@@ -5400,7 +5412,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "451",
+        "Rank": "452",
         "G_rank": "0",
         "Name": "TAARUSH VASHISHT",
         "Rollno": "17mi433",
@@ -5412,7 +5424,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "452",
+        "Rank": "453",
         "G_rank": "0",
         "Name": "HARSHITA SINGH",
         "Rollno": "17mi448",
@@ -5424,7 +5436,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "453",
+        "Rank": "454",
         "G_rank": "0",
         "Name": "BHUPENDER MEENA",
         "Rollno": "17250",
@@ -5436,7 +5448,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "454",
+        "Rank": "455",
         "G_rank": "0",
         "Name": "ROBIN DUTT",
         "Rollno": "17203",
@@ -5448,7 +5460,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "455",
+        "Rank": "456",
         "G_rank": "0",
         "Name": "NITIN KUMAR MAURYA",
         "Rollno": "17428",
@@ -5460,7 +5472,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "456",
+        "Rank": "457",
         "G_rank": "0",
         "Name": "ASHISH GOUTAM",
         "Rollno": "17484",
@@ -5472,7 +5484,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "457",
+        "Rank": "458",
         "G_rank": "0",
         "Name": "DINESH",
         "Rollno": "17590",
@@ -5484,7 +5496,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "458",
+        "Rank": "459",
         "G_rank": "0",
         "Name": "KARTIK KOUNDAL",
         "Rollno": "17mi512",
@@ -5496,7 +5508,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "459",
+        "Rank": "460",
         "G_rank": "0",
         "Name": "DIKSHA",
         "Rollno": "17mi415",
@@ -5508,7 +5520,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "460",
+        "Rank": "461",
         "G_rank": "0",
         "Name": "PARAS ARORA",
         "Rollno": "17255",
@@ -5520,7 +5532,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "461",
+        "Rank": "462",
         "G_rank": "0",
         "Name": "ABHINAV BHARDWAJ",
         "Rollno": "17107",
@@ -5532,7 +5544,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "462",
+        "Rank": "463",
         "G_rank": "0",
         "Name": "SARTHAK SHARMA",
         "Rollno": "17528",
@@ -5544,7 +5556,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "463",
+        "Rank": "464",
         "G_rank": "0",
         "Name": "KOMAL NEGI",
         "Rollno": "17mi530",
@@ -5556,7 +5568,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "464",
+        "Rank": "465",
         "G_rank": "0",
         "Name": "PRASHANT KUMAR",
         "Rollno": "17284",
@@ -5568,7 +5580,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "465",
+        "Rank": "466",
         "G_rank": "0",
         "Name": "RISHABH SHARMA",
         "Rollno": "17263",
@@ -5580,7 +5592,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "466",
+        "Rank": "467",
         "G_rank": "0",
         "Name": "SATYAM SHARMA",
         "Rollno": "17201",
@@ -5592,7 +5604,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "467",
+        "Rank": "468",
         "G_rank": "0",
         "Name": "SHIVANSH VASHISTHA",
         "Rollno": "17466",
@@ -5604,7 +5616,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "468",
+        "Rank": "469",
         "G_rank": "0",
         "Name": "LAKSHAY KHIDTTA",
         "Rollno": "17338",
@@ -5616,7 +5628,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "469",
+        "Rank": "470",
         "G_rank": "0",
         "Name": "CHANDAN SHARMA",
         "Rollno": "17611",
@@ -5628,7 +5640,7 @@
         "Branch": "Architecture"
     },
     {
-        "Rank": "470",
+        "Rank": "471",
         "G_rank": "0",
         "Name": "SARVESH SHUKLA",
         "Rollno": "17223",
@@ -5640,7 +5652,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "471",
+        "Rank": "472",
         "G_rank": "0",
         "Name": "PRADHUMAN SINGH JODHA",
         "Rollno": "17283",
@@ -5652,7 +5664,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "472",
+        "Rank": "473",
         "G_rank": "0",
         "Name": "BHAVESH KANAV SINGH",
         "Rollno": "17205",
@@ -5664,7 +5676,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "473",
+        "Rank": "474",
         "G_rank": "0",
         "Name": "PRADYUMAN",
         "Rollno": "17524",
@@ -5673,18 +5685,6 @@
         "Cgpa": "6.86",
         "Sgpa": "7.5",
         "Points": "720",
-        "Branch": "Cse"
-    },
-    {
-        "Rank": "474",
-        "G_rank": "0",
-        "Name": "VINEET",
-        "Rollno": "17592",
-        "Gender": "",
-        "Year": "3",
-        "Cgpa": "6.65",
-        "Sgpa": "7.5",
-        "Points": "698",
         "Branch": "Cse"
     },
     {
@@ -6626,6 +6626,18 @@
     {
         "Rank": "553",
         "G_rank": "0",
+        "Name": "RAHUL",
+        "Rollno": "17232",
+        "Gender": "",
+        "Year": "3",
+        "Cgpa": "6.14",
+        "Sgpa": "6.78",
+        "Points": "639",
+        "Branch": "Electrical"
+    },
+    {
+        "Rank": "554",
+        "G_rank": "0",
         "Name": "SHUBHAM",
         "Rollno": "17179",
         "Gender": "",
@@ -6636,7 +6648,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "554",
+        "Rank": "555",
         "G_rank": "0",
         "Name": "SHREYA SHEELUP",
         "Rollno": "17608",
@@ -6648,7 +6660,7 @@
         "Branch": "Architecture"
     },
     {
-        "Rank": "555",
+        "Rank": "556",
         "G_rank": "0",
         "Name": "DOUDIKTHANG",
         "Rollno": "17478",
@@ -6660,7 +6672,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "556",
+        "Rank": "557",
         "G_rank": "0",
         "Name": "ALOK KUMAR MISHRA",
         "Rollno": "17721",
@@ -6672,7 +6684,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "557",
+        "Rank": "558",
         "G_rank": "0",
         "Name": "ABHISHEK KUMAR",
         "Rollno": "17732",
@@ -6684,7 +6696,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "558",
+        "Rank": "559",
         "G_rank": "0",
         "Name": "PRASHANT CHANCHAL",
         "Rollno": "17121",
@@ -6696,7 +6708,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "559",
+        "Rank": "560",
         "G_rank": "0",
         "Name": "LOPSANG RINGCHEN",
         "Rollno": "17629",
@@ -6708,7 +6720,7 @@
         "Branch": "Architecture"
     },
     {
-        "Rank": "560",
+        "Rank": "561",
         "G_rank": "0",
         "Name": "HIMANSHU KAUNDAL",
         "Rollno": "17743",
@@ -6720,7 +6732,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "561",
+        "Rank": "562",
         "G_rank": "0",
         "Name": "TARUN KASHAV",
         "Rollno": "17610",
@@ -6732,7 +6744,7 @@
         "Branch": "Architecture"
     },
     {
-        "Rank": "562",
+        "Rank": "563",
         "G_rank": "0",
         "Name": "PANKAJ HARITWAL",
         "Rollno": "17184",
@@ -6744,7 +6756,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "563",
+        "Rank": "564",
         "G_rank": "0",
         "Name": "ADARSH JHARIYA",
         "Rollno": "17490",
@@ -6756,7 +6768,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "564",
+        "Rank": "565",
         "G_rank": "0",
         "Name": "PUSHKAR SHARMA",
         "Rollno": "17370",
@@ -6768,7 +6780,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "565",
+        "Rank": "566",
         "G_rank": "0",
         "Name": "BHUPENDER DATT SHARMA",
         "Rollno": "17483",
@@ -6780,7 +6792,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "566",
+        "Rank": "567",
         "G_rank": "0",
         "Name": "HAQ NIZAR AHAMED",
         "Rollno": "17557",
@@ -6792,7 +6804,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "567",
+        "Rank": "568",
         "G_rank": "0",
         "Name": "ABHAY ATTRI",
         "Rollno": "17315",
@@ -6804,7 +6816,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "568",
+        "Rank": "569",
         "G_rank": "0",
         "Name": "HARSH VARDHAN KATOCH",
         "Rollno": "17433",
@@ -6816,7 +6828,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "569",
+        "Rank": "570",
         "G_rank": "0",
         "Name": "SOURAV VERMA",
         "Rollno": "17609",
@@ -6828,7 +6840,7 @@
         "Branch": "Architecture"
     },
     {
-        "Rank": "570",
+        "Rank": "571",
         "G_rank": "0",
         "Name": "ANIRUDH MADHUSUDAN",
         "Rollno": "17208",
@@ -6840,7 +6852,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "571",
+        "Rank": "572",
         "G_rank": "0",
         "Name": "RAJNAYAN RAJHANS BHAGAT",
         "Rollno": "17594",
@@ -6852,7 +6864,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "572",
+        "Rank": "573",
         "G_rank": "0",
         "Name": "AYUSH BHATIA",
         "Rollno": "17218",
@@ -6864,7 +6876,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "573",
+        "Rank": "574",
         "G_rank": "0",
         "Name": "ANUP KUMAR",
         "Rollno": "17273",
@@ -6876,7 +6888,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "574",
+        "Rank": "575",
         "G_rank": "0",
         "Name": "NIKHIL SAINI",
         "Rollno": "17118",
@@ -6888,7 +6900,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "575",
+        "Rank": "576",
         "G_rank": "0",
         "Name": "MRIDUL KOUNDAL",
         "Rollno": "17259",
@@ -6900,7 +6912,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "576",
+        "Rank": "577",
         "G_rank": "0",
         "Name": "NISHANT BANSAL",
         "Rollno": "17245",
@@ -6912,7 +6924,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "577",
+        "Rank": "578",
         "G_rank": "0",
         "Name": "KEVIN J KURIEN",
         "Rollno": "17463",
@@ -6924,7 +6936,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "578",
+        "Rank": "579",
         "G_rank": "0",
         "Name": "KONA JAHNAVI SRI NAGA KRISHNA SAI",
         "Rollno": "17642",
@@ -6936,7 +6948,7 @@
         "Branch": "Architecture"
     },
     {
-        "Rank": "579",
+        "Rank": "580",
         "G_rank": "0",
         "Name": "ANKIT KUMAR",
         "Rollno": "17163",
@@ -6948,7 +6960,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "580",
+        "Rank": "581",
         "G_rank": "0",
         "Name": "MOHD AFTAB",
         "Rollno": "17384",
@@ -6960,7 +6972,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "581",
+        "Rank": "582",
         "G_rank": "0",
         "Name": "VARUN SHARMA",
         "Rollno": "17343",
@@ -6972,7 +6984,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "582",
+        "Rank": "583",
         "G_rank": "0",
         "Name": "PRAG KOUNDAL",
         "Rollno": "17538",
@@ -6984,7 +6996,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "583",
+        "Rank": "584",
         "G_rank": "0",
         "Name": "VIBHASH CHOUDHARY",
         "Rollno": "17mi410",
@@ -6996,7 +7008,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "584",
+        "Rank": "585",
         "G_rank": "0",
         "Name": "KEVIN BINZ VARGHESE",
         "Rollno": "17329",
@@ -7008,7 +7020,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "585",
+        "Rank": "586",
         "G_rank": "0",
         "Name": "AYUSH JAIN",
         "Rollno": "17577",
@@ -7020,7 +7032,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "586",
+        "Rank": "587",
         "G_rank": "0",
         "Name": "NEETISH DOGRA",
         "Rollno": "17mi403",
@@ -7032,7 +7044,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "587",
+        "Rank": "588",
         "G_rank": "0",
         "Name": "TUSHAR MAHAJAN",
         "Rollno": "17464",
@@ -7044,7 +7056,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "588",
+        "Rank": "589",
         "G_rank": "0",
         "Name": "ATUL",
         "Rollno": "17429",
@@ -7056,7 +7068,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "589",
+        "Rank": "590",
         "G_rank": "0",
         "Name": "ADITYA KUMAR",
         "Rollno": "17mi452",
@@ -7068,7 +7080,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "590",
+        "Rank": "591",
         "G_rank": "0",
         "Name": "RADHESHYAM BISHNOI",
         "Rollno": "17151",
@@ -7080,7 +7092,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "591",
+        "Rank": "592",
         "G_rank": "0",
         "Name": "ANEESH DHIMAN",
         "Rollno": "17328",
@@ -7092,7 +7104,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "592",
+        "Rank": "593",
         "G_rank": "0",
         "Name": "NAVEEN KUMAR",
         "Rollno": "17272",
@@ -7104,7 +7116,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "593",
+        "Rank": "594",
         "G_rank": "0",
         "Name": "RAHUL SHARMA",
         "Rollno": "17mi426",
@@ -7116,7 +7128,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "594",
+        "Rank": "595",
         "G_rank": "0",
         "Name": "VIKASH CHOUDHARY",
         "Rollno": "17276",
@@ -7128,7 +7140,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "595",
+        "Rank": "596",
         "G_rank": "0",
         "Name": "VIVEK GUSAIN",
         "Rollno": "17445",
@@ -7140,7 +7152,7 @@
         "Branch": "Ece"
     },
     {
-        "Rank": "596",
+        "Rank": "597",
         "G_rank": "0",
         "Name": "TUSHAR SHARMA",
         "Rollno": "17753",
@@ -7152,7 +7164,7 @@
         "Branch": "Chemical"
     },
     {
-        "Rank": "597",
+        "Rank": "598",
         "G_rank": "0",
         "Name": "AKSHAY CHOUDHARY",
         "Rollno": "17mi532",
@@ -7164,7 +7176,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "598",
+        "Rank": "599",
         "G_rank": "0",
         "Name": "AJAY SINGH",
         "Rollno": "17364",
@@ -7174,18 +7186,6 @@
         "Sgpa": "6.09",
         "Points": "650",
         "Branch": "Mechanical"
-    },
-    {
-        "Rank": "599",
-        "G_rank": "0",
-        "Name": "RAHUL",
-        "Rollno": "17232",
-        "Gender": "",
-        "Year": "3",
-        "Cgpa": "5.97",
-        "Sgpa": "6",
-        "Points": "639",
-        "Branch": "Electrical"
     },
     {
         "Rank": "600",

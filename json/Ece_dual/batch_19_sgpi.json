@@ -98,6 +98,18 @@
     {
         "Rank": "9",
         "G_rank": "0",
+        "Name": "ISHAN AGARWAL",
+        "Rollno": "194540",
+        "Gender": "",
+        "Year": "1",
+        "Cgpa": "9.12",
+        "Sgpa": "9.12",
+        "Points": "219",
+        "Branch": "Ece_dual"
+    },
+    {
+        "Rank": "10",
+        "G_rank": "0",
         "Name": "POORVANSH MAHAJAN",
         "Rollno": "194504",
         "Gender": "",
@@ -108,7 +120,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "10",
+        "Rank": "11",
         "G_rank": "0",
         "Name": "RANA PRAFFUL RAJENDRA SINGH",
         "Rollno": "194574",
@@ -120,7 +132,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "11",
+        "Rank": "12",
         "G_rank": "0",
         "Name": "SHUBHAM GUPTA",
         "Rollno": "194563",
@@ -132,7 +144,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "12",
+        "Rank": "13",
         "G_rank": "0",
         "Name": "AYUSH",
         "Rollno": "194557",
@@ -144,7 +156,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "13",
+        "Rank": "14",
         "G_rank": "0",
         "Name": "MUKUL GOYAL",
         "Rollno": "194558",
@@ -156,7 +168,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "14",
+        "Rank": "15",
         "G_rank": "0",
         "Name": "SUKRITI SOOD",
         "Rollno": "194505",
@@ -168,7 +180,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "15",
+        "Rank": "16",
         "G_rank": "0",
         "Name": "ANAND CHAURASIYA",
         "Rollno": "194572",
@@ -180,7 +192,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "16",
+        "Rank": "17",
         "G_rank": "0",
         "Name": "NALIN KUMAR",
         "Rollno": "194533",
@@ -192,7 +204,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "17",
+        "Rank": "18",
         "G_rank": "0",
         "Name": "SHEFALI KANOJIA",
         "Rollno": "194564",
@@ -204,7 +216,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "18",
+        "Rank": "19",
         "G_rank": "0",
         "Name": "ARYAN GUPTA",
         "Rollno": "194507",
@@ -216,7 +228,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "19",
+        "Rank": "20",
         "G_rank": "0",
         "Name": "MAYUR GUPTA",
         "Rollno": "194571",
@@ -228,7 +240,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "20",
+        "Rank": "21",
         "G_rank": "0",
         "Name": "ARUSHI SHARMA",
         "Rollno": "194506",
@@ -240,7 +252,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "21",
+        "Rank": "22",
         "G_rank": "0",
         "Name": "ADHYAN MAHAJAN",
         "Rollno": "194538",
@@ -252,7 +264,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "22",
+        "Rank": "23",
         "G_rank": "0",
         "Name": "HARSHUL MATHUR",
         "Rollno": "194566",
@@ -264,7 +276,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "23",
+        "Rank": "24",
         "G_rank": "0",
         "Name": "RITIKA",
         "Rollno": "194510",
@@ -276,7 +288,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "24",
+        "Rank": "25",
         "G_rank": "0",
         "Name": "AKHILESH MEHRA",
         "Rollno": "194531",
@@ -288,7 +300,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "25",
+        "Rank": "26",
         "G_rank": "0",
         "Name": "AABHA",
         "Rollno": "194569",
@@ -300,7 +312,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "26",
+        "Rank": "27",
         "G_rank": "0",
         "Name": "SAHIL DHIMAN",
         "Rollno": "194502",
@@ -312,7 +324,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "27",
+        "Rank": "28",
         "G_rank": "0",
         "Name": "RITIK DHIMAN",
         "Rollno": "194508",
@@ -324,7 +336,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "28",
+        "Rank": "29",
         "G_rank": "0",
         "Name": "VASUNDHRA THAKUR",
         "Rollno": "194517",
@@ -336,7 +348,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "29",
+        "Rank": "30",
         "G_rank": "0",
         "Name": "VASVI SOOD",
         "Rollno": "194512",
@@ -348,7 +360,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "30",
+        "Rank": "31",
         "G_rank": "0",
         "Name": "SMILE GULERIA",
         "Rollno": "194516",
@@ -360,7 +372,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "31",
+        "Rank": "32",
         "G_rank": "0",
         "Name": "PRIYANSHU",
         "Rollno": "194524",
@@ -372,7 +384,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "32",
+        "Rank": "33",
         "G_rank": "0",
         "Name": "SATYAM CHAUHAN",
         "Rollno": "194532",
@@ -384,7 +396,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "33",
+        "Rank": "34",
         "G_rank": "0",
         "Name": "URVASHI",
         "Rollno": "194511",
@@ -396,7 +408,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "34",
+        "Rank": "35",
         "G_rank": "0",
         "Name": "SHIVAM KUMAR",
         "Rollno": "194521",
@@ -408,7 +420,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "35",
+        "Rank": "36",
         "G_rank": "0",
         "Name": "MANISH",
         "Rollno": "194549",
@@ -420,7 +432,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "36",
+        "Rank": "37",
         "G_rank": "0",
         "Name": "YASHASWINI SHARMA",
         "Rollno": "194551",
@@ -432,7 +444,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "37",
+        "Rank": "38",
         "G_rank": "0",
         "Name": "SRIJAN",
         "Rollno": "194523",
@@ -444,7 +456,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "38",
+        "Rank": "39",
         "G_rank": "0",
         "Name": "SAHIL JHAJHARIA",
         "Rollno": "194575",
@@ -453,18 +465,6 @@
         "Cgpa": "7.67",
         "Sgpa": "7.67",
         "Points": "184",
-        "Branch": "Ece_dual"
-    },
-    {
-        "Rank": "39",
-        "G_rank": "0",
-        "Name": "ISHAN AGARWAL",
-        "Rollno": "194540",
-        "Gender": "",
-        "Year": "1",
-        "Cgpa": "7.62",
-        "Sgpa": "7.62",
-        "Points": "183",
         "Branch": "Ece_dual"
     },
     {

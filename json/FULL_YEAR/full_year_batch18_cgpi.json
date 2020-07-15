@@ -3626,6 +3626,18 @@
     {
         "Rank": "303",
         "G_rank": "0",
+        "Name": "ANKIT KUMAR",
+        "Rollno": "185086",
+        "Gender": "",
+        "Year": "2",
+        "Cgpa": "7.66",
+        "Sgpa": "8.32",
+        "Points": "452",
+        "Branch": "Cse"
+    },
+    {
+        "Rank": "304",
+        "G_rank": "0",
         "Name": "ATUL THAKUR",
         "Rollno": "185050",
         "Gender": "",
@@ -3636,7 +3648,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "304",
+        "Rank": "305",
         "G_rank": "0",
         "Name": "ARNAV CHAUHAN",
         "Rollno": "188010",
@@ -3648,7 +3660,7 @@
         "Branch": "Material"
     },
     {
-        "Rank": "305",
+        "Rank": "306",
         "G_rank": "0",
         "Name": "SHUBHANGI GUPTA",
         "Rollno": "186011",
@@ -3660,7 +3672,7 @@
         "Branch": "Architecture"
     },
     {
-        "Rank": "306",
+        "Rank": "307",
         "G_rank": "0",
         "Name": "ANUJ KUMAR",
         "Rollno": "181011",
@@ -3672,7 +3684,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "307",
+        "Rank": "308",
         "G_rank": "0",
         "Name": "ANKITA",
         "Rollno": "183082",
@@ -3684,7 +3696,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "308",
+        "Rank": "309",
         "G_rank": "0",
         "Name": "SARITA KUMARI",
         "Rollno": "184544",
@@ -3696,7 +3708,7 @@
         "Branch": "Ece_dual"
     },
     {
-        "Rank": "309",
+        "Rank": "310",
         "G_rank": "0",
         "Name": "JAI SINGH MALHOTRA",
         "Rollno": "185006",
@@ -3708,7 +3720,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "310",
+        "Rank": "311",
         "G_rank": "0",
         "Name": "SHER ALAM",
         "Rollno": "183091",
@@ -3720,7 +3732,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "311",
+        "Rank": "312",
         "G_rank": "0",
         "Name": "RAVI KANT SHARMA",
         "Rollno": "183037",
@@ -3732,7 +3744,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "312",
+        "Rank": "313",
         "G_rank": "0",
         "Name": "SATYAM KUMAR",
         "Rollno": "185083",
@@ -3744,7 +3756,7 @@
         "Branch": "Cse"
     },
     {
-        "Rank": "313",
+        "Rank": "314",
         "G_rank": "0",
         "Name": "NAKSHTRA GOYAL",
         "Rollno": "185531",
@@ -3754,18 +3766,6 @@
         "Sgpa": "8.32",
         "Points": "449",
         "Branch": "Cse_dual"
-    },
-    {
-        "Rank": "314",
-        "G_rank": "0",
-        "Name": "ANKIT KUMAR",
-        "Rollno": "185086",
-        "Gender": "",
-        "Year": "2",
-        "Cgpa": "7.61",
-        "Sgpa": "8.18",
-        "Points": "449",
-        "Branch": "Cse"
     },
     {
         "Rank": "315",
@@ -3871,8 +3871,8 @@
         "Gender": "",
         "Year": "2",
         "Cgpa": "7.59",
-        "Sgpa": "7.9",
-        "Points": "440",
+        "Sgpa": "7.91",
+        "Points": "448",
         "Branch": "Ece"
     },
     {
@@ -4082,6 +4082,18 @@
     {
         "Rank": "341",
         "G_rank": "0",
+        "Name": "VANDANA BOORA",
+        "Rollno": "184535",
+        "Gender": "",
+        "Year": "2",
+        "Cgpa": "7.51",
+        "Sgpa": "7.59",
+        "Points": "443",
+        "Branch": "Ece_dual"
+    },
+    {
+        "Rank": "342",
+        "G_rank": "0",
         "Name": "SHIVANG UPADHYAY",
         "Rollno": "185515",
         "Gender": "",
@@ -4092,7 +4104,7 @@
         "Branch": "Cse_dual"
     },
     {
-        "Rank": "342",
+        "Rank": "343",
         "G_rank": "0",
         "Name": "YATIN BHATT",
         "Rollno": "182090",
@@ -4102,18 +4114,6 @@
         "Sgpa": "7.77",
         "Points": "443",
         "Branch": "Electrical"
-    },
-    {
-        "Rank": "343",
-        "G_rank": "0",
-        "Name": "VANDANA BOORA",
-        "Rollno": "184535",
-        "Gender": "",
-        "Year": "2",
-        "Cgpa": "7.51",
-        "Sgpa": "7.59",
-        "Points": "443",
-        "Branch": "Ece_dual"
     },
     {
         "Rank": "344",
@@ -8642,18 +8642,6 @@
     {
         "Rank": "721",
         "G_rank": "0",
-        "Name": "DEV MALOT",
-        "Rollno": "184053",
-        "Gender": "",
-        "Year": "2",
-        "Cgpa": "0.57",
-        "Sgpa": "8",
-        "Points": "8",
-        "Branch": "Ece"
-    },
-    {
-        "Rank": "722",
-        "G_rank": "0",
         "Name": "MONIKA",
         "Rollno": "181030",
         "Gender": "",
@@ -8664,7 +8652,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "723",
+        "Rank": "722",
         "G_rank": "0",
         "Name": "RITIK VERMA",
         "Rollno": "181018",
@@ -8676,7 +8664,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "724",
+        "Rank": "723",
         "G_rank": "0",
         "Name": "SAURAV JAKHAR",
         "Rollno": "181050",
@@ -8688,7 +8676,7 @@
         "Branch": "Civil"
     },
     {
-        "Rank": "725",
+        "Rank": "724",
         "G_rank": "0",
         "Name": "ARJIT KUTLEHRIA",
         "Rollno": "183047",
@@ -8700,7 +8688,7 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "726",
+        "Rank": "725",
         "G_rank": "0",
         "Name": "ANIKET SHARMA",
         "Rollno": "183070",
@@ -8712,10 +8700,22 @@
         "Branch": "Mechanical"
     },
     {
-        "Rank": "727",
+        "Rank": "726",
         "G_rank": "0",
         "Name": "SHAILZA",
         "Rollno": "184029",
+        "Gender": "",
+        "Year": "2",
+        "Cgpa": "0",
+        "Sgpa": "0",
+        "Points": "0",
+        "Branch": "Ece"
+    },
+    {
+        "Rank": "727",
+        "G_rank": "0",
+        "Name": "DEV MALOT",
+        "Rollno": "184053",
         "Gender": "",
         "Year": "2",
         "Cgpa": "0",

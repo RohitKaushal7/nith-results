@@ -866,6 +866,18 @@
     {
         "Rank": "73",
         "G_rank": "0",
+        "Name": "RAHUL",
+        "Rollno": "17232",
+        "Gender": "",
+        "Year": "3",
+        "Cgpa": "6.14",
+        "Sgpa": "6.78",
+        "Points": "639",
+        "Branch": "Electrical"
+    },
+    {
+        "Rank": "74",
+        "G_rank": "0",
         "Name": "ANIRUDH MADHUSUDAN",
         "Rollno": "17208",
         "Gender": "",
@@ -876,7 +888,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "74",
+        "Rank": "75",
         "G_rank": "0",
         "Name": "AYUSH BHATIA",
         "Rollno": "17218",
@@ -888,7 +900,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "75",
+        "Rank": "76",
         "G_rank": "0",
         "Name": "ANUP KUMAR",
         "Rollno": "17273",
@@ -900,7 +912,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "76",
+        "Rank": "77",
         "G_rank": "0",
         "Name": "NISHANT BANSAL",
         "Rollno": "17245",
@@ -912,7 +924,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "77",
+        "Rank": "78",
         "G_rank": "0",
         "Name": "MRIDUL KOUNDAL",
         "Rollno": "17259",
@@ -924,7 +936,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "78",
+        "Rank": "79",
         "G_rank": "0",
         "Name": "NAVEEN KUMAR",
         "Rollno": "17272",
@@ -936,7 +948,7 @@
         "Branch": "Electrical"
     },
     {
-        "Rank": "79",
+        "Rank": "80",
         "G_rank": "0",
         "Name": "VIKASH CHOUDHARY",
         "Rollno": "17276",
@@ -945,18 +957,6 @@
         "Cgpa": "6.06",
         "Sgpa": "6.17",
         "Points": "630",
-        "Branch": "Electrical"
-    },
-    {
-        "Rank": "80",
-        "G_rank": "0",
-        "Name": "RAHUL",
-        "Rollno": "17232",
-        "Gender": "",
-        "Year": "3",
-        "Cgpa": "5.97",
-        "Sgpa": "6",
-        "Points": "639",
         "Branch": "Electrical"
     },
     {

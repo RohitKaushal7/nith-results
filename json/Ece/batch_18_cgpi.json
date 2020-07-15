@@ -391,8 +391,8 @@
         "Gender": "",
         "Year": "2",
         "Cgpa": "7.59",
-        "Sgpa": "7.9",
-        "Points": "440",
+        "Sgpa": "7.91",
+        "Points": "448",
         "Branch": "Ece"
     },
     {
@@ -1094,20 +1094,20 @@
     {
         "Rank": "92",
         "G_rank": "0",
-        "Name": "DEV MALOT",
-        "Rollno": "184053",
+        "Name": "SHAILZA",
+        "Rollno": "184029",
         "Gender": "",
         "Year": "2",
-        "Cgpa": "0.57",
-        "Sgpa": "8",
-        "Points": "8",
+        "Cgpa": "0",
+        "Sgpa": "0",
+        "Points": "0",
         "Branch": "Ece"
     },
     {
         "Rank": "93",
         "G_rank": "0",
-        "Name": "SHAILZA",
-        "Rollno": "184029",
+        "Name": "DEV MALOT",
+        "Rollno": "184053",
         "Gender": "",
         "Year": "2",
         "Cgpa": "0",
