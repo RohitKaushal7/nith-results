@@ -1,3 +1,5 @@
+// DISCLAIMER : I didn't knew React at the time I made this website. Thats why It is as It is.
+
 var container = document.querySelector(".container"); // Main Data Container
 
 // controllers
@@ -5,6 +7,16 @@ var branch;
 var batch;
 var cs = "c";
 var ranking = "S"; // real Ranks
+
+// theme
+var dark = localStorage.getItem('dark');
+if (dark === undefined) dark = 1;
+if (dark == 1) {
+  dark = 0;
+  toggleDark();
+} else {
+  document.body.classList.remove('dark');
+}
 
 var n_elem = 200; // Number of elements per page
 var limit = n_elem; // for pagination purpose
@@ -471,6 +483,27 @@ function csv() {
 //   render();
 //   console.log("resized");
 // });
+
+function toggleDark() {
+  let moon = document.querySelector('.dark_toggle')
+  let cover = document.querySelector('.dark_toggle .cover')
+  if (dark == 1) {
+    localStorage.setItem('dark', 0);
+    document.body.classList.remove('dark');
+    dark = 0;
+    cover.style.width = "2.5em";
+    cover.style.height = "2.5em";
+    cover.style.background = "#ffd700";
+  }
+  else {
+    localStorage.setItem('dark', 1);
+    document.body.classList.add('dark');
+    dark = 1;
+    cover.style.width = "1.7em";
+    cover.style.height = "1.7em";
+    cover.style.background = "#111";
+  }
+}
 
 // Helper Fuctions // ----------------------------------------------------------------------------------------------------
 function toTitleCase(str) {

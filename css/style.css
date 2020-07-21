@@ -32,6 +32,173 @@ body {
   overflow-x: hidden;
 }
 
+body * {
+  -webkit-transition: background 0.3s, color 1s;
+  transition: background 0.3s, color 1s;
+}
+
+body.dark {
+  -webkit-transition: background 0.3s, color 1s;
+  transition: background 0.3s, color 1s;
+  background: #000005;
+}
+
+body.dark ::-webkit-scrollbar {
+  color: #000;
+  background: #000 !important;
+}
+
+body.dark .popup {
+  background: #111;
+}
+
+body.dark .popup .title {
+  color: #fff !important;
+}
+
+body.dark .fullResult {
+  background: -webkit-gradient(linear, left top, left bottom, from(#111), to(#000));
+  background: linear-gradient(#111, #000);
+}
+
+body.dark .fullResult .stInfo {
+  color: #fff;
+}
+
+body.dark .fullResult .stInfo .stcg .cp_total {
+  color: #fff;
+}
+
+body.dark .fullResult .stInfo .stDesc {
+  color: #fff;
+}
+
+body.dark .fullResult .stInfo .stDesc .stName {
+  color: #fff;
+}
+
+body.dark .fullResult .stInfo .stDesc .stRoll {
+  color: #ccc;
+}
+
+body.dark .fullResult .stSemesters .sem {
+  color: #fff;
+}
+
+body.dark .fullResult .stSemesters .sem .stsg .sg {
+  color: #2196f3;
+}
+
+body.dark .fullResult .stSemesters .sem .subs {
+  color: #fff;
+}
+
+body.dark .fullResult .stSemesters .sem .subs .sub {
+  background: #222e;
+}
+
+body.dark .fullResult .stSemesters .sem .subs .sub .grade {
+  color: #fff;
+}
+
+body.dark .header {
+  color: #fff;
+}
+
+body.dark .footer {
+  background: #000;
+}
+
+body.dark .branch-con,
+body.dark .batch-con,
+body.dark .cs,
+body.dark .ranking-con,
+body.dark .ser {
+  background: #151515;
+  color: #aaa;
+}
+
+body.dark .branch-con *,
+body.dark .batch-con *,
+body.dark .cs *,
+body.dark .ranking-con *,
+body.dark .ser * {
+  background: #151515;
+  color: #aaa;
+}
+
+body.dark .you {
+  color: #fff;
+}
+
+body.dark .you .card {
+  background: transparent;
+}
+
+body.dark .card {
+  background: #151515ee;
+}
+
+body.dark .card .Rank {
+  color: #8f5be9;
+}
+
+body.dark .card .Name {
+  color: #fff;
+}
+
+body.dark .card .Cgpa {
+  color: #fff !important;
+}
+
+body.dark .card[data-rank="1"] {
+  background: #151515ee;
+  border-bottom: 4px solid #ffd700aa;
+}
+
+body.dark .card[data-rank="2"] {
+  background: #151515ee;
+  border-bottom: 4px solid #c0c0c0aa;
+}
+
+body.dark .card[data-rank="3"] {
+  background: #151515ee;
+  border-bottom: 4px solid #795548aa;
+}
+
+.dark_toggle {
+  opacity: 0.2;
+  position: absolute;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  width: 2em;
+  height: 2em;
+  background: #fff;
+  -webkit-box-shadow: 0 2px 5px 0px #0009;
+          box-shadow: 0 2px 5px 0px #0009;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  top: 1em;
+  left: 1em;
+}
+
+.dark_toggle:hover {
+  opacity: 1;
+}
+
+.dark_toggle .cover {
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #ffd700;
+  position: absolute;
+  left: -0.3em;
+  top: -0.3em;
+  border-radius: 50%;
+}
+
 .popup {
   position: fixed;
   top: 0%;
@@ -363,7 +530,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0.5rem 2rem;
+  padding: 5rem 2rem;
   color: #231f20;
   font-size: 1.2rem;
 }

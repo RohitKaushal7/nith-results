@@ -29,6 +29,9 @@
 </head>
 
 <body>
+  <div class="dark_toggle" onclick="toggleDark()" title="toggle Dark Mode">
+    <div class="cover"></div>
+  </div>
   <div class="popup">
     <div class="title">Hi There</div>
     <div class="desc">
@@ -76,7 +79,7 @@
   <div class="ctrl" onchange="change()">
     <div class="ser">
       <img src="pics/search.svg" alt="" />
-      <input type="search" placeholder='Search RollNo, Name, CGPA, #_Rank, "property":"value"' />
+      <input type="search" placeholder='Search RollNo, Name, CGPA, Rank, "property":"value"' />
     </div>
     <div class="branch-con">
       <select name="branch" id="branch" title="Branch" onchange="change()">
