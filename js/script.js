@@ -540,3 +540,8 @@ function DenseRanks(data) {
     }
   }
 }
+
+// Hit Count
+fetch('https://api.countapi.xyz/hit/rohitkaushal7/nith_results').then(res => res.json()).then(res => {
+    document.querySelector("#count").innerHTML = res.value;
+})

@@ -625,6 +625,7 @@ select {
   transform-style: preserve-3d;
   cursor: default;
   height: auto;
+  min-height: 30vh;
 
   > div {
     transition: all 0.2s;
@@ -955,6 +956,7 @@ select {
   display: flex;
   background: #eee;
   // position: absolute;
+  position: relative;
   width: 100%;
   bottom: 0;
   flex-direction: column;
@@ -965,6 +967,17 @@ select {
   box-shadow: inset 0 5px 5px #1113;
   margin-top: 2rem;
   color: #333;
+
+  #count{
+    position: absolute;
+    bottom: 0em;
+    padding: 0.2em 3em;
+    border-radius: 0.4em;
+    font-family: fantasy;
+    color: #aaa;
+    font-weight: bold;
+    font-size: smaller;
+  }
 
   #me {
     margin: 0.2rem;
