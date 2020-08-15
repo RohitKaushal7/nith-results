@@ -1,6 +1,6 @@
 // DISCLAIMER : I didn't knew React at the time I made this website. Thats why It is as It is.
 
-const VERSION = 'AUG_2020';
+const VERSION = 'AUG_2020 v0.1';
 
 let _cacheVersion = localStorage.getItem('VERSION');
 if (_cacheVersion != VERSION) {
@@ -77,7 +77,7 @@ async function change(e) {
   } else if (branch == "FULL_YEAR") {
     url = `./json/${branch}/full_year_batch${batch}_${cs}gpi.json`;
   } else {
-    url = `https://nithp.herokuapp.com/api/result/student?branch=${branch}&roll=${batch}%&limit=150`
+    url = `https://nithp.herokuapp.com/api/result/student?branch=${branch}&roll=${batch}%&limit=200`
     if (next_cursor) {
       url += `&next_cursor=${next_cursor}`
     }
@@ -124,13 +124,24 @@ async function change(e) {
       localStorage.setItem(VERSION + ':::' + url, JSON.stringify(response))
 
     } else {
-      let res = await fetch(url);
-      if (res.status == 200) {
-        response = await res.json();
-        data = response.data;
-        next_cursor = null;
-        localStorage.setItem(VERSION + ':::' + url, JSON.stringify(response))
+      let res;
+      let _data = [];
+      let _next_cursor = '';
+      do {
+        res = await fetch(`${url}&next_cursor=${_next_cursor}`);
+        let jso = await res.json();
+        _data = _data.concat(jso.data);
+        _next_cursor = jso.pagination.next_cursor;
+        console.log('fetching next row from ' + _next_cursor);
+      } while (_next_cursor != '');
+
+      if (progress) {
+        progress.parentElement.style.display = 'none';
       }
+
+      data = _data;
+      response = { data: _data, pagination: { next_cursor: '' } };
+      localStorage.setItem(VERSION + ':::' + url, JSON.stringify(response))
     }
   }
 
@@ -398,11 +409,11 @@ function create(stud) {
 
 // render `data` > divs in the container // ----------------------------------------------------------------------------------------------------
 function render() {
-  // limit = limit < data.length ? limit : data.length;
+  limit = limit < data.length ? limit : data.length;
   // enable page-navigation buttons if data exceeds n_elem
   let _pg = document.querySelector(".nav");
   if (_pg) {
-    if (response.pagination.next_cursor != '') {
+    if (data.length > n_elem) {
       console.info("Pagination ON");
       _pg.style.display = "flex";
     } else {
@@ -466,17 +477,16 @@ function clear() {
 
 // Pagination navigation // ----------------------------------------------------------------------------------------------------
 function next() {
-  // clear();
-  // p_data = res || data;
-  // limit += n_elem;
-  // limit = limit > p_data.length ? p_data.length : limit;
-  // for (i = Math.max(0, limit - n_elem); i < limit; ++i) {
-  //   if (Number(p_data[i].Cgpa)) {
-  //     container.appendChild(create(p_data[i]));
-  //   }
-  // }
-  next_cursor = response.pagination.next_cursor;
-  change();
+  clear();
+  p_data = res || data;
+  limit += n_elem;
+  limit = limit > p_data.length ? p_data.length : limit;
+  for (i = Math.max(0, limit - n_elem); i < limit; ++i) {
+    if (Number(p_data[i].cgpi)) {
+      container.appendChild(create(p_data[i]));
+    }
+  }
+
 }
 
 function prev() {
@@ -485,7 +495,7 @@ function prev() {
   limit -= n_elem;
   limit = limit < n_elem ? n_elem : limit;
   for (i = Math.max(0, limit - n_elem); i < limit; ++i) {
-    if (Number(p_data[i].Cgpa)) {
+    if (Number(p_data[i].cgpi)) {
       container.appendChild(create(p_data[i]));
     }
   }
