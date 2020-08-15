@@ -779,7 +779,7 @@ select {
   width: 100%;
   max-width: 500px;
   padding: 1rem 3rem;
-  margin: 1rem auto;
+  margin: 0rem auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1423,16 +1423,21 @@ select {
 }
 
 /* Progress Bar */
+#loading {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 .progress {
   position: relative;
-  height: 10px !important;
+  height: 5px !important;
   width: 100% !important;
   display: block;
   width: 100%;
   background-color: #acece6;
   border-radius: 2px;
   background-clip: padding-box;
-  margin: 0.5rem 0 1rem 0;
+  margin: 0.2rem 0 1rem 0;
   overflow: hidden;
 }
 
@@ -1443,13 +1448,14 @@ select {
   bottom: 0;
   width: 0%;
   background-color: #26a69a;
+  background-color: #2196f3;
   -webkit-transition: width .3s linear;
   transition: width .3s linear;
 }
 
 .progress .indeterminate {
   background-color: #26a69a;
-  background-color: #e70c85;
+  background-color: #2196f3;
 }
 
 .progress .indeterminate:before {

@@ -20,6 +20,7 @@ if (_cacheVersion != VERSION) {
 
 var container = document.querySelector(".container"); // Main Data Container
 let progress = document.querySelector('.progress .determinate');
+let loading = document.querySelector('#loading');
 
 // controllers
 var branch;
@@ -68,7 +69,7 @@ async function change(e) {
   branch = document.querySelector("#branch").value;
   batch = document.querySelector("#batch").value;
   ranking = document.querySelector("#ranking").value;
-  // progress.parentElement.style.display = 'block';
+  loading.style.opacity = '1';
 
   let url;
 
@@ -159,7 +160,7 @@ async function change(e) {
   else if (ranking == "O") OrdinalRanks(data);
 
   clear();
-  // progress.parentElement.style.display = 'none'
+  loading.style.opacity = '0';
   render();
 }
 
@@ -252,11 +253,14 @@ con.addEventListener("dblclick", function (e) {
 function fullResult(roll, el) {
   document.body.style.cursor = "wait";
   el.style.cursor = "wait";
+  loading.style.opacity = '1';
+
   fetch(`https://nithp.herokuapp.com/api/result/student/${roll}`)
     .then(res => res.json())
     .then(res => {
       document.body.style.cursor = "initial";
       el.style.cursor = "initial";
+      loading.style.opacity = '0';
       // console.log(res);
 
       con.style.display = "flex";
@@ -669,6 +673,6 @@ function OrdinalRanks(data) {
 }
 
 // Hit Count
-fetch('https://api.countapi.xyz/hit/rohitkaushal7/nith_results').then(res => res.json()).then(res => {
-  document.querySelector("#count").innerHTML = res.value;
-})
+// fetch('https://api.countapi.xyz/hit/rohitkaushal7/nith_results').then(res => res.json()).then(res => {
+//   document.querySelector("#count").innerHTML = res.value;
+// })
