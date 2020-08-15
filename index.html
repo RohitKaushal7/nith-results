@@ -73,37 +73,34 @@
     <img src="./pics/clay.png" alt="" class="logo" />
     <div class="main-heading">
       <b>NITH RESULTS</b>
-      <span class="date">Jul 2020 : updated final year (8th Sem) only.</span>
+      <span class="date">Aug 2020</span>
     </div>
   </div>
-  <div class="ctrl" onchange="change()">
+  <div class="ctrl">
     <div class="ser">
       <img src="pics/search.svg" alt="" />
       <input type="search" placeholder='Search RollNo, Name, CGPA, Rank, "property":"value"' />
     </div>
     <div class="branch-con">
-      <select name="branch" id="branch" title="Branch" onchange="change()">
+      <select name="branch" id="branch" title="Branch" onchange="change(event)">
         <option disabled>📑 Branch </option>
         <option selected value="FULL_COLLEGE">FULL_COLLEGE</option>
-        <option value="FULL_YEAR">FULL_YEAR</option>
+        <!-- <option value="FULL_YEAR">FULL_YEAR</option> -->
         <option value="Architecture">Architecture</option>
         <option value="Chemical">Chemical</option>
         <option value="Civil">Civil</option>
         <option value="Cse">Cse</option>
         <option value="Cse_dual">Cse_dual</option>
-        <option value="Cse_una">Cse_una</option>
         <option value="Ece">Ece</option>
         <option value="Ece_dual">Ece_dual</option>
-        <option value="Ece_una">Ece_una</option>
         <option value="Electrical">Electrical</option>
         <option value="Material">Material</option>
         <option value="Mechanical">Mechanical</option>
-        <option value="IT_una">IT_una</option>
       </select>
     </div>
 
     <div class="batch-con">
-      <select name="batch" id="batch" title="Batch" onchange="change()">
+      <select name="batch" id="batch" title="Batch" onchange="change(event)">
         <option disabled>🎓 Batch </option>
         <option selected value="19">19</option>
         <option value="18">18</option>
@@ -115,7 +112,7 @@
       Cg
     </div>
     <div class="batch-con ranking-con">
-      <select name="ranking" id="ranking" title="Ranking" onchange="change()">
+      <select name="ranking" id="ranking" title="Ranking" onchange="change(event)">
         <option disabled>🏆 Ranking </option>
         <option selected value="S">Standard '1224'</option>
         <option value="D">Dense '1223'</option>
@@ -138,7 +135,13 @@
   <div id="res_cnt"></div>
 
   <div id="stats"></div>
+  <div class="progress">
+    <div class="determinate"></div>
+  </div>
   <div class="container">
+    <div class="progress">
+      <div class="indeterminate"></div>
+    </div>
     <!-- Data -->
   </div>
 
@@ -155,7 +158,7 @@
       <a href="https://github.com/RohitKaushal7">Rohit Kaushal</a>.</span>
     <span id="ref">data fetched from
       <a href="https://github.com/srbcheema1/Nith_results">github.com/srbcheema1/Nith_results</a></span>
-    <span id="ref">full result :
+    <span id="ref">full result & application API :
       <a href="https://nithp.herokuapp.com/">nithp.herokuapp.com/</a></span>
     <span id="count">hits</span>
   </div>

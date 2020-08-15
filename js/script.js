@@ -1,6 +1,25 @@
 // DISCLAIMER : I didn't knew React at the time I made this website. Thats why It is as It is.
 
+const VERSION = 'AUG_2020';
+
+let _cacheVersion = localStorage.getItem('VERSION');
+if (_cacheVersion != VERSION) {
+  localStorage.setItem('VERSION', VERSION);
+  console.log('Clearing Cache for New Version.');
+  for (let i = 0; i < 100; ++i) {
+    let key = localStorage.key(i);
+    if (!key) {
+      break;
+    }
+    if (key.includes(':::')) {
+      console.log('CLEARED CACHE - ', key);
+      localStorage.removeItem(key);
+    }
+  }
+}
+
 var container = document.querySelector(".container"); // Main Data Container
+let progress = document.querySelector('.progress .determinate');
 
 // controllers
 var branch;
@@ -20,8 +39,9 @@ if (dark == 1) {
 
 var n_elem = 200; // Number of elements per page
 var limit = n_elem; // for pagination purpose
+var next_cursor;
 
-var xhr;
+var response;
 var data; // XHR response data
 var res; // Search Result
 var your_res; // Local user result if exists in the current page (`data`)
@@ -34,7 +54,7 @@ var name; // User name S/D stripped
 var res_cnt = document.querySelector("#res_cnt"); // Results found Count
 
 getLocalUser(); // greet user if exists
-if (you_obj_res.Rollno != 0) {
+if (you_obj_res.roll != 0) {
   document.querySelector("#rem").innerHTML =
     "Hi, " + name + '<span id="edit">🖊</span>';
 }
@@ -42,34 +62,92 @@ if (you_obj_res.Rollno != 0) {
 setTimeout(change, 1000); // auto change to full_year in 3 sec.
 
 // change branch or year. > Sends XHR
-function change() {
+async function change(e) {
+  // if (e) console.log(e.target.value);
   limit = n_elem;
-  clear();
   branch = document.querySelector("#branch").value;
   batch = document.querySelector("#batch").value;
   ranking = document.querySelector("#ranking").value;
-  xhr = new XMLHttpRequest();
+  // progress.parentElement.style.display = 'block';
+
+  let url;
 
   if (branch == "FULL_COLLEGE") {
-    xhr.open("get", `./json/${branch}/full_college_${cs}gpi.json`);
+    url = `FULL_COLLEGE`;
   } else if (branch == "FULL_YEAR") {
-    xhr.open("get", `./json/${branch}/full_year_batch${batch}_${cs}gpi.json`);
+    url = `./json/${branch}/full_year_batch${batch}_${cs}gpi.json`;
   } else {
-    xhr.open("get", `./json/${branch}/batch_${batch}_${cs}gpi.json`);
+    url = `https://nithp.herokuapp.com/api/result/student?branch=${branch}&roll=${batch}%&limit=150`
+    if (next_cursor) {
+      url += `&next_cursor=${next_cursor}`
+    }
   }
 
-  xhr.send();
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4) {
-      if (xhr.status == 200) {
-        data = JSON.parse(xhr.responseText);
-        if (ranking == "S") StandardRanks(data);
-        else if (ranking == "D") DenseRanks(data);
 
-        render();
+  let _response = localStorage.getItem(VERSION + ':::' + url);
+
+  if (_response) {
+    cacheHit = true;
+    response = JSON.parse(_response);
+    data = response.data;
+    next_cursor = null;
+    console.log('CACHE HIT', VERSION + ':::' + url);
+    if (progress) {
+      progress.parentElement.style.display = 'none';
+    }
+  }
+  else {
+    if (['FULL_COLLEGE', 'FULL_YEAR'].includes(branch)) {
+      console.log('FULL COLLEGE');
+      let res;
+      let _data = [];
+      let _next_cursor = '';
+      do {
+        res = await fetch(`https://nithp.herokuapp.com/api/result/student?limit=3000&next_cursor=${_next_cursor}`);
+        let jso = await res.json();
+        _data = _data.concat(jso.data);
+        _next_cursor = jso.pagination.next_cursor;
+        console.log('fetching next row from ' + _next_cursor);
+
+        if (progress) {
+          let _pro = _data.length / 3000;
+          progress.style.width = _pro * 100 + '%';
+        }
+      } while (_next_cursor != '');
+
+      if (progress) {
+        progress.parentElement.style.display = 'none';
+      }
+
+      data = _data;
+      response = { data: _data, pagination: { next_cursor: '' } };
+      localStorage.setItem(VERSION + ':::' + url, JSON.stringify(response))
+
+    } else {
+      let res = await fetch(url);
+      if (res.status == 200) {
+        response = await res.json();
+        data = response.data;
+        next_cursor = null;
+        localStorage.setItem(VERSION + ':::' + url, JSON.stringify(response))
       }
     }
-  };
+  }
+
+  data = data.sort((a, b) => {
+    if (cs == 'c') {
+      return Number(b.cgpi) - Number(a.cgpi)
+    }
+    else {
+      return Number(b.sgpi) - Number(a.sgpi)
+    }
+  })
+
+  if (ranking == "S") StandardRanks(data);
+  else if (ranking == "D") DenseRanks(data);
+  clear();
+  // progress.parentElement.style.display = 'none'
+  render();
 }
 
 // CGPA / SGPA toggle
@@ -172,17 +250,29 @@ function fullResult(roll, el) {
       con.innerHTML = "";
       con.innerHTML += `
         <div class="stInfo">
-        <div class="stDesc">
-          <div class="stName">${res.name}</div>
-          <div class="stRoll">${res.roll} ${res.branch}</div>
-          
-        </div>
-        <div class="stcg">
-          <div class="cp">${res.cgpi}</div>
-          <div class="cp_total">${
+          <div class="stDesc">
+            <div class="stName">${res.name}</div>
+            <div class="stRoll">${res.roll} ${res.branch}</div>
+            
+          </div>
+          <div class="stcg">
+            <div class="cp">${res.cgpi}</div>
+            <div class="cp_total">${
         res.summary[res.summary.length - 1].cgpi_total
-        }</div>
-        </div>
+        }
+            </div>
+          </div>
+          <div class="ranks">
+              <div class="rk">
+                <span class="rkt">#_ ${res.rank.class.cgpi}</span> class
+              </div>
+              <div class="rk">
+                <span class="rkt">#_ ${res.rank.year.cgpi}</span> year
+              </div>
+              <div class="rk">
+                <span class="rkt">#_ ${res.rank.college.cgpi}</span> college
+              </div>
+          </div>
         </div>
         `;
       let stSemesters = document.createElement("div");
@@ -237,47 +327,53 @@ function create(stud) {
 
   let Name = document.createElement("div");
   Name.className = "Name";
-  Name.innerText = stud.Name.split("S/D")[0];
+  Name.innerText = stud.name.split("S/D")[0];
   // Name.title = "Name";
+
   let Rollno = document.createElement("div");
   Rollno.className = "Rollno";
-  Rollno.innerText = stud.Rollno;
-  Rollno.title = "Rollno";
+  Rollno.innerText = stud.roll;
+  // Rollno.title = "Rollno";
+
   let Rank = document.createElement("div");
   Rank.className = "Rank";
   Rank.innerText = "#_" + stud.Rank;
   // Rank.title = "Rank";
+
   let Cgpa = document.createElement("div");
   Cgpa.className = "Cgpa";
-  Cgpa.innerText = cs == "c" ? stud.Cgpa : stud.Sgpa;
+  Cgpa.innerText = cs == "c" ? stud.cgpi : stud.sgpi;
   Cgpa.title = cs == "c" ? "Cgpa" : "Sgpa";
+
   let Sgpa = document.createElement("div");
   Sgpa.className = "Sgpa";
-  Sgpa.innerText = cs == "c" ? stud.Sgpa : stud.Cgpa;
+  Sgpa.innerText = cs == "c" ? stud.sgpi : stud.cgpi;
   Sgpa.title = cs == "c" ? "Sgpa" : "Cgpa";
-  let Points = document.createElement("div");
-  Points.className = "Points";
-  Points.innerText = stud.Points;
-  Points.title = "Points";
+
+  // let Points = document.createElement("div");
+  // Points.className = "Points";
+  // Points.innerText = stud.Points;
+  // Points.title = "Points";
 
   if (branch == "FULL_COLLEGE") {
     // + Branch, Year
     let Branch = document.createElement("div");
     Branch.className = "Branch";
-    Branch.innerText = stud.Branch;
+    Branch.innerText = stud.branch;
+
     let Year = document.createElement("div");
     Year.className = "Year";
-    Year.innerText = stud.Year;
-    node.append(Rank, Name, Rollno, Branch, Year, Points, Sgpa, Cgpa);
+    Year.innerText = stud.roll.slice(0, 2);
+    node.append(Rank, Name, Rollno, Branch, Year, Sgpa, Cgpa);
   } else if (branch == "FULL_YEAR") {
     // + Branch
     let Branch = document.createElement("div");
     Branch.className = "Branch";
-    Branch.innerText = stud.Branch;
-    node.append(Rank, Name, Rollno, Branch, Points, Sgpa, Cgpa);
+    Branch.innerText = stud.branch;
+    node.append(Rank, Name, Rollno, Branch, Sgpa, Cgpa);
   } else {
     // +
-    node.append(Rank, Name, Rollno, Points, Sgpa, Cgpa);
+    node.append(Rank, Name, Rollno, Sgpa, Cgpa);
   }
 
   node.setAttribute("data-rank", stud.Rank);
@@ -292,7 +388,7 @@ function create(stud) {
   node.addEventListener("click", e => {
     e.target.style.cursor = "busy";
     e.target.style.filter = "drop-shadow(10px -10px 2px #0003)";
-    fullResult(stud.Rollno, e.target);
+    fullResult(stud.roll, e.target);
   });
 
   return node;
@@ -300,17 +396,22 @@ function create(stud) {
 
 // render `data` > divs in the container // ----------------------------------------------------------------------------------------------------
 function render() {
-  limit = limit < data.length ? limit : data.length;
+  // limit = limit < data.length ? limit : data.length;
   // enable page-navigation buttons if data exceeds n_elem
-  if (data.length > n_elem) {
-    document.querySelector(".nav").style.display = "flex";
-  } else {
-    document.querySelector(".nav").style.display = "none";
+  let _pg = document.querySelector(".nav");
+  if (_pg) {
+    if (response.pagination.next_cursor != '') {
+      console.info("Pagination ON");
+      _pg.style.display = "flex";
+    } else {
+      console.info("Pagination OFF");
+      _pg.style.display = "none";
+    }
   }
 
   // find User result
   getLocalUser();
-  your_res = data.filter(obj => obj.Rollno == you_obj_res.Rollno)[0];
+  your_res = data.filter(obj => obj.roll == you_obj_res.roll)[0];
   if (your_res) {
     you.innerHTML = "";
     you.appendChild(create(your_res));
@@ -320,7 +421,7 @@ function render() {
   }
 
   // Statastics 
-  let mean = data.reduce((acc, cur) => acc + Number(cur.Sgpa != "0" ? cur.Cgpa : 0), 0) / (data.length - data.filter((st => st.Sgpa == "0")).length);
+  let mean = data.reduce((acc, cur) => acc + Number(cur.sgpi != "0" ? cur.cgpi : 0), 0) / (data.length - data.filter((st => st.sgpi == "0")).length);
   document.querySelector('#stats').innerHTML = `Avg : ${mean.toFixed(3)}`;
 
 
@@ -335,7 +436,7 @@ function render() {
 
 // Renders with animation
 function renderSmooth(div, i, n = 50) {
-  if (Number(div.Cgpa)) {
+  if (Number(div.cgpi)) {
     if (i < n) {
       // animations delay for some first divs
       anim_div = create(div);
@@ -345,10 +446,15 @@ function renderSmooth(div, i, n = 50) {
       container.appendChild(create(div));
     }
   }
+  else {
+    // console.log('SKIPPED ', div.roll, ' -NO CGPA');
+  }
 }
 
 // Clears the Container
 function clear() {
+
+  console.log('Clearing OUTPUT');
   let divs = document.querySelectorAll(".container > div");
 
   for (var div of divs) {
@@ -358,15 +464,17 @@ function clear() {
 
 // Pagination navigation // ----------------------------------------------------------------------------------------------------
 function next() {
-  clear();
-  p_data = res || data;
-  limit += n_elem;
-  limit = limit > p_data.length ? p_data.length : limit;
-  for (i = Math.max(0, limit - n_elem); i < limit; ++i) {
-    if (Number(p_data[i].Cgpa)) {
-      container.appendChild(create(p_data[i]));
-    }
-  }
+  // clear();
+  // p_data = res || data;
+  // limit += n_elem;
+  // limit = limit > p_data.length ? p_data.length : limit;
+  // for (i = Math.max(0, limit - n_elem); i < limit; ++i) {
+  //   if (Number(p_data[i].Cgpa)) {
+  //     container.appendChild(create(p_data[i]));
+  //   }
+  // }
+  next_cursor = response.pagination.next_cursor;
+  change();
 }
 
 function prev() {
@@ -440,7 +548,7 @@ function getLocalUser() {
   } else {
     you_obj_res = { Rollno: 0, Name: "There" };
   }
-  if (you_obj_res) name = toTitleCase(you_obj_res.Name.split("S/D")[0]);
+  if (you_obj_res) name = toTitleCase(you_obj_res.name.split("S/D")[0]);
 }
 
 // Tip
@@ -458,10 +566,10 @@ function tip_close() {
 
 // Save csv
 function csv() {
-  let text = "Rollno,Name,Branch,Year,Points,Sgpa,Cgpa\n";
-  sorted = data.sort((x, y) => Number(x.Rollno) - Number(y.Rollno));
+  let text = "Rollno,Name,Branch,Sgpa,Cgpa\n";
+  sorted = data.sort((x, y) => Number(x.roll) - Number(y.roll));
   for (const st of sorted) {
-    text += `${st.Rollno},${st.Name},${st.Branch},${st.Year},${st.Points},${st.Sgpa},${st.Cgpa}\n`;
+    text += `${st.roll},${st.name},${st.branch},${st.sgpi},${st.cgpi}\n`;
   }
   // console.log(text);
 
@@ -514,28 +622,30 @@ function toTitleCase(str) {
 
 function StandardRanks(data) {
   let k = 1;
+  data[0].Rank = 1;
   if (cs == "c") {
     for (let i = 1; i < data.length; ++i) {
-      if (data[i - 1].Cgpa != data[i].Cgpa) k = i + 1;
+      if (data[i - 1].cgpi != data[i].cgpi) k = i + 1;
       data[i].Rank = k;
     }
   } else {
     for (let i = 1; i < data.length; ++i) {
-      if (data[i - 1].Sgpa != data[i].Sgpa) k = i + 1;
+      if (data[i - 1].sgpi != data[i].sgpi) k = i + 1;
       data[i].Rank = k;
     }
   }
 }
 function DenseRanks(data) {
   let k = 1;
+  data[0].Rank = 1;
   if (cs == "c") {
     for (let i = 1; i < data.length; ++i) {
-      if (data[i - 1].Cgpa != data[i].Cgpa) k++;
+      if (data[i - 1].cgpi != data[i].cgpi) k++;
       data[i].Rank = k;
     }
   } else {
     for (let i = 1; i < data.length; ++i) {
-      if (data[i - 1].Sgpa != data[i].Sgpa) k++;
+      if (data[i - 1].sgpi != data[i].sgpi) k++;
       data[i].Rank = k;
     }
   }
@@ -543,5 +653,5 @@ function DenseRanks(data) {
 
 // Hit Count
 fetch('https://api.countapi.xyz/hit/rohitkaushal7/nith_results').then(res => res.json()).then(res => {
-    document.querySelector("#count").innerHTML = res.value;
+  document.querySelector("#count").innerHTML = res.value;
 })

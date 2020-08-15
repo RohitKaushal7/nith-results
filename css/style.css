@@ -335,6 +335,22 @@ body.dark .card[data-rank="3"] {
   margin: 0 0.5rem;
 }
 
+.fullResult .stInfo .ranks .rk {
+  color: #999;
+}
+
+.fullResult .stInfo .ranks .rk .rkt {
+  color: #2196f3;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.fullResult .stInfo .ranks .rk .rkt::first-letter {
+  color: #9c27b0;
+  font-size: smaller;
+}
+
 .fullResult .stInfo .stcg {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -560,7 +576,9 @@ body.dark .card[data-rank="3"] {
 
 .header .main-heading .date {
   font-size: 0.5em;
-  min-width: 3.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   font-weight: bold;
   padding: 0.2rem 0.4rem;
   border-radius: 5px;
@@ -962,6 +980,7 @@ select {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .Rank {
@@ -1400,6 +1419,122 @@ select {
 @supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
   .popup {
     background: white;
+  }
+}
+
+/* Progress Bar */
+.progress {
+  position: relative;
+  height: 10px !important;
+  width: 100% !important;
+  display: block;
+  width: 100%;
+  background-color: #acece6;
+  border-radius: 2px;
+  background-clip: padding-box;
+  margin: 0.5rem 0 1rem 0;
+  overflow: hidden;
+}
+
+.progress .determinate {
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  background-color: #26a69a;
+  -webkit-transition: width .3s linear;
+  transition: width .3s linear;
+}
+
+.progress .indeterminate {
+  background-color: #26a69a;
+  background-color: #e70c85;
+}
+
+.progress .indeterminate:before {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+          animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+.progress .indeterminate:after {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+          animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  -webkit-animation-delay: 1.15s;
+          animation-delay: 1.15s;
+}
+
+@-webkit-keyframes indeterminate {
+  0% {
+    left: -35%;
+    right: 100%;
+  }
+  60% {
+    left: 100%;
+    right: -90%;
+  }
+  100% {
+    left: 100%;
+    right: -90%;
+  }
+}
+
+@keyframes indeterminate {
+  0% {
+    left: -35%;
+    right: 100%;
+  }
+  60% {
+    left: 100%;
+    right: -90%;
+  }
+  100% {
+    left: 100%;
+    right: -90%;
+  }
+}
+
+@-webkit-keyframes indeterminate-short {
+  0% {
+    left: -200%;
+    right: 100%;
+  }
+  60% {
+    left: 107%;
+    right: -8%;
+  }
+  100% {
+    left: 107%;
+    right: -8%;
+  }
+}
+
+@keyframes indeterminate-short {
+  0% {
+    left: -200%;
+    right: 100%;
+  }
+  60% {
+    left: 107%;
+    right: -8%;
+  }
+  100% {
+    left: 107%;
+    right: -8%;
   }
 }
 /*# sourceMappingURL=style.css.map */
