@@ -145,6 +145,8 @@ async function change(e) {
 
   if (ranking == "S") StandardRanks(data);
   else if (ranking == "D") DenseRanks(data);
+  else if (ranking == "O") OrdinalRanks(data);
+
   clear();
   // progress.parentElement.style.display = 'none'
   render();
@@ -531,7 +533,7 @@ document.querySelector("#form_you_inp").addEventListener("submit", function (e) 
   if (you_obj) {
     save_str = JSON.stringify(you_obj);
   } else {
-    save_str = JSON.stringify({ Rollno: rollno_ip, Name: "There" });
+    save_str = JSON.stringify({ roll: rollno_ip, name: "There" });
   }
   console.log(save_str);
 
@@ -546,7 +548,7 @@ function getLocalUser() {
   if (you_id) {
     you_obj_res = JSON.parse(you_id);
   } else {
-    you_obj_res = { Rollno: 0, Name: "There" };
+    you_obj_res = { roll: 0, name: "There" };
   }
   if (you_obj_res) name = toTitleCase(you_obj_res.name.split("S/D")[0]);
 }
@@ -649,6 +651,11 @@ function DenseRanks(data) {
       data[i].Rank = k;
     }
   }
+}
+function OrdinalRanks(data) {
+  data.forEach((stud, i) => {
+    stud.Rank = i + 1;
+  })
 }
 
 // Hit Count

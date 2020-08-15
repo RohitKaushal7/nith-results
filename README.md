@@ -7,5 +7,5 @@
 > Find your rank in the Class or College.
 >
 > **Dependencies_** <br>
-> _[Data](https://github.com/srbcheema1/Nith_results)_ : by [Srb Cheema](https://github.com/srbcheema1) <br>
 > _[FullResult API](https://github.com/rohithill/nithp)_ : by [Rohit Hill](https://github.com/rohithill)<br>
+> _[Data](https://github.com/srbcheema1/Nith_results)_ : by [Srb Cheema](https://github.com/srbcheema1) <br>
