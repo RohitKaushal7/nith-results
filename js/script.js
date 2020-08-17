@@ -82,7 +82,7 @@ async function change(e) {
   if (branch == "FULL_COLLEGE") {
     url = `FULL_COLLEGE`;
   } else if (branch == "FULL_YEAR") {
-    url = `./json/${branch}/full_year_batch${batch}_${cs}gpi.json`;
+    url = `FULL_YEAR - ${batch}`;
   } else {
     url = `https://nithp.herokuapp.com/api/result/student?branch=${branch}&roll=${batch}%&limit=200`
     if (next_cursor) {
@@ -104,13 +104,40 @@ async function change(e) {
     }
   }
   else {
-    if (['FULL_COLLEGE', 'FULL_YEAR'].includes(branch)) {
+    if (branch == 'FULL_COLLEGE') {
       console.log('FULL COLLEGE');
       let res;
       let _data = [];
       let _next_cursor = '';
       do {
         res = await fetch(`https://nithp.herokuapp.com/api/result/student?limit=3000&next_cursor=${_next_cursor}`);
+        let jso = await res.json();
+        _data = _data.concat(jso.data);
+        _next_cursor = jso.pagination.next_cursor;
+        console.log('fetching next row from ' + _next_cursor);
+
+        if ($progress) {
+          let _pro = _data.length / 3000;
+          $progress.style.width = _pro * 100 + '%';
+        }
+      } while (_next_cursor != '');
+
+      if ($progress) {
+        $progress.parentElement.style.display = 'none';
+      }
+
+      data = _data;
+      response = { data: _data, pagination: { next_cursor: '' } };
+      localStorage.setItem(VERSION + ':::' + url, JSON.stringify(response))
+
+    }
+    else if (branch == 'FULL_YEAR') {
+      console.log('FULL_YEAR');
+      let res;
+      let _data = [];
+      let _next_cursor = '';
+      do {
+        res = await fetch(`https://nithp.herokuapp.com/api/result/student?roll=${batch}%&limit=3000&next_cursor=${_next_cursor}`);
         let jso = await res.json();
         _data = _data.concat(jso.data);
         _next_cursor = jso.pagination.next_cursor;
