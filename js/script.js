@@ -6,7 +6,7 @@ if (document.location.host != 'nith.netlify.app' && !document.location.host.incl
 }
 
 
-const VERSION = 'AUG_2020 v0.2';
+const VERSION = 'AUG_2020 v0.3';
 
 let _cacheVersion = localStorage.getItem('VERSION');
 if (_cacheVersion != VERSION) {
@@ -84,7 +84,7 @@ async function change(e) {
   } else if (branch == "FULL_YEAR") {
     url = `FULL_YEAR - ${batch}`;
   } else {
-    url = `https://nithp.herokuapp.com/api/result/student?branch=${branch}&roll=${batch}%&limit=200`
+    url = `${branch} - ${batch}`;
     if (next_cursor) {
       url += `&next_cursor=${next_cursor}`
     }
@@ -162,7 +162,7 @@ async function change(e) {
       let _data = [];
       let _next_cursor = '';
       do {
-        res = await fetch(`${url}&next_cursor=${_next_cursor}`);
+        res = await fetch(`https://nithp.herokuapp.com/api/result/student?branch=${branch}&roll=${batch}%&limit=200&next_cursor=${_next_cursor}`);
         let jso = await res.json();
         _data = _data.concat(jso.data);
         _next_cursor = jso.pagination.next_cursor;
