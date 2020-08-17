@@ -1,4 +1,4 @@
-// DISCLAIMER : I didn't knew React at the time I made this website. Thats why It is as It is.
+// DISCLAIMER : I didn't knew React at the time I made this website. Thats why It is as It is. XD
 
 // Redirect
 if (document.location.host != 'nith.netlify.app' && !document.location.host.includes('localhost')) {
@@ -24,9 +24,9 @@ if (_cacheVersion != VERSION) {
   }
 }
 
-var container = document.querySelector(".container"); // Main Data Container
-let progress = document.querySelector('.progress .determinate');
-let loading = document.querySelector('#loading');
+var $container = document.querySelector(".container"); // Main Data Container
+let $progress = document.querySelector('.progress .determinate');
+let $loading = document.querySelector('#loading');
 
 // controllers
 var branch;
@@ -53,12 +53,12 @@ var data; // XHR response data
 var res; // Search Result
 var your_res; // Local user result if exists in the current page (`data`)
 
-var you = document.querySelector("#you"); // Local Username / Result Container
+var $you = document.querySelector("#you"); // Local Username / Result Container
 var you_id; // JSON object - Local
 var you_obj_res; // User Object JSON.parse(you_id)
 var name; // User name S/D stripped
 
-var res_cnt = document.querySelector("#res_cnt"); // Results found Count
+var $res_cnt = document.querySelector("#res_cnt"); // Results found Count
 
 getLocalUser(); // greet user if exists
 if (you_obj_res.roll != 0) {
@@ -75,7 +75,7 @@ async function change(e) {
   branch = document.querySelector("#branch").value;
   batch = document.querySelector("#batch").value;
   ranking = document.querySelector("#ranking").value;
-  loading.style.opacity = '1';
+  $loading.style.opacity = '1';
 
   let url;
 
@@ -99,8 +99,8 @@ async function change(e) {
     data = response.data;
     next_cursor = null;
     console.log('CACHE HIT', VERSION + ':::' + url);
-    if (progress) {
-      progress.parentElement.style.display = 'none';
+    if ($progress) {
+      $progress.parentElement.style.display = 'none';
     }
   }
   else {
@@ -116,14 +116,14 @@ async function change(e) {
         _next_cursor = jso.pagination.next_cursor;
         console.log('fetching next row from ' + _next_cursor);
 
-        if (progress) {
+        if ($progress) {
           let _pro = _data.length / 3000;
-          progress.style.width = _pro * 100 + '%';
+          $progress.style.width = _pro * 100 + '%';
         }
       } while (_next_cursor != '');
 
-      if (progress) {
-        progress.parentElement.style.display = 'none';
+      if ($progress) {
+        $progress.parentElement.style.display = 'none';
       }
 
       data = _data;
@@ -142,8 +142,8 @@ async function change(e) {
         console.log('fetching next row from ' + _next_cursor);
       } while (_next_cursor != '');
 
-      if (progress) {
-        progress.parentElement.style.display = 'none';
+      if ($progress) {
+        $progress.parentElement.style.display = 'none';
       }
 
       data = _data;
@@ -166,7 +166,7 @@ async function change(e) {
   else if (ranking == "O") OrdinalRanks(data);
 
   clear();
-  loading.style.opacity = '0';
+  $loading.style.opacity = '0';
   render();
 }
 
@@ -183,8 +183,8 @@ function cs_toggle() {
 }
 
 // Search
-var ser = document.querySelector('input[type="search"]');
-ser.addEventListener("keyup", function (e) {
+var $ser = document.querySelector('input[type="search"]');
+$ser.addEventListener("keyup", function (e) {
   if (
     [
       13,
@@ -211,8 +211,8 @@ ser.addEventListener("keyup", function (e) {
   let ip = String(
     document.querySelector("input[type=search]").value
   ).toUpperCase();
-  let divs = document.querySelectorAll(".container > div");
-  res_cnt.innerHTML = "";
+  let $divs = document.querySelectorAll(".container > div");
+  $res_cnt.innerHTML = "";
 
   // in FULL SEARCH -search in the data[] instead of divs to find every result.
   if (branch == "FULL_COLLEGE" || branch == "FULL_YEAR") {
@@ -223,13 +223,13 @@ ser.addEventListener("keyup", function (e) {
           .indexOf(ip) != -1
     );
 
-    if (!ip && divs.length < 100) {
+    if (!ip && $divs.length < 100) {
       // refresh / clear the search when input is empty
       change();
     } else if (ip) {
       clear();
       if (res) {
-        res_cnt.innerHTML = res.length + " results found...";
+        $res_cnt.innerHTML = res.length + " results found...";
 
         for (let i = 0; i < Math.min(n_elem, res.length); ++i) {
           renderSmooth(res[i], i);
@@ -240,7 +240,7 @@ ser.addEventListener("keyup", function (e) {
 
   // search in DOM divs to avoid clearing the whole DOM.
   else {
-    for (var div of divs) {
+    for (var div of $divs) {
       str = String(div.innerText).toUpperCase();
       if (str.indexOf(ip) > -1) {
         div.style.display = "block";
@@ -252,26 +252,26 @@ ser.addEventListener("keyup", function (e) {
 });
 
 // Get Full Result
-let con = document.querySelector(".fullResult");
-con.addEventListener("dblclick", function (e) {
-  con.style.display = "none";
+let $con = document.querySelector(".fullResult");
+$con.addEventListener("dblclick", function (e) {
+  $con.style.display = "none";
 });
 function fullResult(roll, el) {
   document.body.style.cursor = "wait";
   el.style.cursor = "wait";
-  loading.style.opacity = '1';
+  $loading.style.opacity = '1';
 
   fetch(`https://nithp.herokuapp.com/api/result/student/${roll}`)
     .then(res => res.json())
     .then(res => {
       document.body.style.cursor = "initial";
       el.style.cursor = "initial";
-      loading.style.opacity = '0';
+      $loading.style.opacity = '0';
       // console.log(res);
 
-      con.style.display = "flex";
-      con.innerHTML = "";
-      con.innerHTML += `
+      $con.style.display = "flex";
+      $con.innerHTML = "";
+      $con.innerHTML += `
         <div class="stInfo">
           <div class="stDesc">
             <div class="stName">${res.name}</div>
@@ -328,9 +328,9 @@ function fullResult(roll, el) {
         }
         if (sem.innerHTML != "") stSemesters.appendChild(sem);
       }
-      con.appendChild(stSemesters);
+      $con.appendChild(stSemesters);
 
-      con.innerHTML += `<div>
+      $con.innerHTML += `<div>
                           <a href="https://nithp.herokuapp.com/result/student?roll=${roll}"> Source</a>
                           <i style="color:#666; margin-left:2rem;">Double click anywhere to close.</i>
                         </div>`;
@@ -421,14 +421,12 @@ function create(stud) {
 function render() {
   limit = limit < data.length ? limit : data.length;
   // enable page-navigation buttons if data exceeds n_elem
-  let _pg = document.querySelector(".nav");
-  if (_pg) {
+  let $pg = document.querySelector(".nav");
+  if ($pg) {
     if (data.length > n_elem) {
-      console.info("Pagination ON");
-      _pg.style.display = "flex";
+      $pg.style.display = "flex";
     } else {
-      console.info("Pagination OFF");
-      _pg.style.display = "none";
+      $pg.style.display = "none";
     }
   }
 
@@ -436,11 +434,11 @@ function render() {
   getLocalUser();
   your_res = data.filter(obj => obj.roll == you_obj_res.roll)[0];
   if (your_res) {
-    you.innerHTML = "";
-    you.appendChild(create(your_res));
-    you.innerHTML += `<span id="edit" onclick="togglePopup()" title="Edit Your Roll No.">🖊</span>`;
+    $you.innerHTML = "";
+    $you.appendChild(create(your_res));
+    $you.innerHTML += `<span id="edit" onclick="togglePopup()" title="Edit Your Roll No.">🖊</span>`;
   } else {
-    you.innerHTML = `<span id ='rem'>You are not Here..!<span id="edit" onclick="togglePopup()" title="Edit Your Roll No.">🖊</span></span>`;
+    $you.innerHTML = `<span id ='rem'>You are not Here..!<span id="edit" onclick="togglePopup()" title="Edit Your Roll No.">🖊</span></span>`;
   }
 
   // Statastics 
@@ -464,9 +462,9 @@ function renderSmooth(div, i, n = 50) {
       // animations delay for some first divs
       anim_div = create(div);
       anim_div.style.animationDelay = i / 50 + "s";
-      container.appendChild(anim_div);
+      $container.appendChild(anim_div);
     } else {
-      container.appendChild(create(div));
+      $container.appendChild(create(div));
     }
   }
   else {
@@ -477,10 +475,9 @@ function renderSmooth(div, i, n = 50) {
 // Clears the Container
 function clear() {
 
-  console.log('Clearing OUTPUT');
-  let divs = document.querySelectorAll(".container > div");
+  let $divs = document.querySelectorAll(".container > div");
 
-  for (var div of divs) {
+  for (var div of $divs) {
     div.parentElement.removeChild(div);
   }
 }
@@ -493,7 +490,7 @@ function next() {
   limit = limit > p_data.length ? p_data.length : limit;
   for (i = Math.max(0, limit - n_elem); i < limit; ++i) {
     if (Number(p_data[i].cgpi)) {
-      container.appendChild(create(p_data[i]));
+      $container.appendChild(create(p_data[i]));
     }
   }
 
@@ -506,33 +503,33 @@ function prev() {
   limit = limit < n_elem ? n_elem : limit;
   for (i = Math.max(0, limit - n_elem); i < limit; ++i) {
     if (Number(p_data[i].cgpi)) {
-      container.appendChild(create(p_data[i]));
+      $container.appendChild(create(p_data[i]));
     }
   }
 }
 
 // Local User Popup // ----------------------------------------------------------------------------------------------------
-var popup = document.querySelector(".popup");
+var $popup = document.querySelector(".popup");
 function togglePopup() {
-  if (popup.style.display == "none") {
-    popup.style.display = "flex";
-    popup.style.transform = "scale(1)";
-    popup.style.opacity = 1;
-    popup.querySelector("input").focus();
+  if ($popup.style.display == "none") {
+    $popup.style.display = "flex";
+    $popup.style.transform = "scale(1)";
+    $popup.style.opacity = 1;
+    $popup.querySelector("input").focus();
   } else {
     setTimeout(() => {
-      popup.style.display = "none";
+      $popup.style.display = "none";
     }, 1000);
-    popup.style.transform = "scale(1.1)";
-    popup.style.opacity = 0;
+    $popup.style.transform = "scale(1.1)";
+    $popup.style.opacity = 0;
   }
 }
 
 // Esc popup
-popup.addEventListener("keyup", function (e) {
+$popup.addEventListener("keyup", function (e) {
   if (e.keyCode == 27) togglePopup();
 });
-popup.addEventListener("dblclick", function (e) {
+$popup.addEventListener("dblclick", function (e) {
   togglePopup();
 });
 // store User rollNo on LocalStorage
@@ -615,23 +612,23 @@ function csv() {
 // });
 
 function toggleDark() {
-  let moon = document.querySelector('.dark_toggle')
-  let cover = document.querySelector('.dark_toggle .cover')
+  let $moon = document.querySelector('.dark_toggle')
+  let $cover = document.querySelector('.dark_toggle .cover')
   if (dark == 1) {
     localStorage.setItem('dark', 0);
     document.body.classList.remove('dark');
     dark = 0;
-    cover.style.width = "2.5em";
-    cover.style.height = "2.5em";
-    cover.style.background = "#ffd700";
+    $cover.style.width = "2.5em";
+    $cover.style.height = "2.5em";
+    $cover.style.background = "#ffd700";
   }
   else {
     localStorage.setItem('dark', 1);
     document.body.classList.add('dark');
     dark = 1;
-    cover.style.width = "1.7em";
-    cover.style.height = "1.7em";
-    cover.style.background = "#111";
+    $cover.style.width = "1.7em";
+    $cover.style.height = "1.7em";
+    $cover.style.background = "#111";
   }
 }
 
