@@ -1,5 +1,12 @@
 // DISCLAIMER : I didn't knew React at the time I made this website. Thats why It is as It is.
 
+// Redirect
+
+if (document.location.host != 'nith.netlify.app' && !document.location.host.includes('localhost')) {
+  document.location = 'https://nith.netlify.app';
+}
+
+
 const VERSION = 'AUG_2020 v0.1';
 
 let _cacheVersion = localStorage.getItem('VERSION');
@@ -673,6 +680,6 @@ function OrdinalRanks(data) {
 }
 
 // Hit Count
-// fetch('https://api.countapi.xyz/hit/rohitkaushal7/nith_results').then(res => res.json()).then(res => {
-//   document.querySelector("#count").innerHTML = res.value;
-// })
+fetch('https://api.countapi.xyz/hit/rohitkaushal7/nith_results').then(res => res.json()).then(res => {
+  document.querySelector("#count").innerHTML = res.value;
+})
