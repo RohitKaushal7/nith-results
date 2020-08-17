@@ -433,7 +433,6 @@ function create(stud) {
       ? "9.5"
       : parseInt(Cgpa.innerText)
   );
-  node.setAttribute("title", "Click to view Complete Result");
 
   node.addEventListener("click", e => {
     e.target.style.cursor = "busy";
