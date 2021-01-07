@@ -560,8 +560,7 @@ body.dark .card[data-rank="3"] {
 }
 
 .header .logo {
-  -webkit-filter: brightness(1.1) saturate(2);
-          filter: brightness(1.1) saturate(2);
+  margin-right: 0.5em;
 }
 
 .header .main-heading {
@@ -582,9 +581,9 @@ body.dark .card[data-rank="3"] {
   font-weight: bold;
   padding: 0.2rem 0.4rem;
   border-radius: 5px;
-  background: #e70c85;
-  -webkit-box-shadow: 0 0 10px 1px #e70c8599;
-          box-shadow: 0 0 10px 1px #e70c8599;
+  background: #2196f3;
+  -webkit-box-shadow: 0 0 10px 1px #00bcd466;
+          box-shadow: 0 0 10px 1px #00bcd466;
   color: white;
 }
 
@@ -1449,8 +1448,8 @@ select {
   width: 0%;
   background-color: #26a69a;
   background-color: #2196f3;
-  -webkit-transition: width .3s linear;
-  transition: width .3s linear;
+  -webkit-transition: width 0.3s linear;
+  transition: width 0.3s linear;
 }
 
 .progress .indeterminate {
@@ -1459,7 +1458,7 @@ select {
 }
 
 .progress .indeterminate:before {
-  content: '';
+  content: "";
   position: absolute;
   background-color: inherit;
   top: 0;
@@ -1471,7 +1470,7 @@ select {
 }
 
 .progress .indeterminate:after {
-  content: '';
+  content: "";
   position: absolute;
   background-color: inherit;
   top: 0;

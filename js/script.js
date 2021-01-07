@@ -1,32 +1,34 @@
 // DISCLAIMER : I didn't knew React at the time I made this website. Thats why It is as It is. XD
 
 // Redirect
-if (document.location.host != 'nith.netlify.app' && !document.location.host.includes('localhost')) {
-  document.location = 'https://nith.netlify.app';
+if (
+  document.location.host != "nith.netlify.app" &&
+  !document.location.host.includes("localhost")
+) {
+  document.location = "https://nith.netlify.app";
 }
 
+const VERSION = "JAN_2021 v0.1";
 
-const VERSION = 'AUG_2020 v0.3';
-
-let _cacheVersion = localStorage.getItem('VERSION');
+let _cacheVersion = localStorage.getItem("VERSION");
 if (_cacheVersion != VERSION) {
-  localStorage.setItem('VERSION', VERSION);
-  console.log('Clearing Cache for New Version.');
+  localStorage.setItem("VERSION", VERSION);
+  console.log("Clearing Cache for New Version.");
   for (let i = 0; i < 100; ++i) {
     let key = localStorage.key(i);
     if (!key) {
       break;
     }
-    if (key.includes(':::')) {
-      console.log('CLEARED CACHE - ', key);
+    if (key.includes(":::")) {
+      console.log("CLEARED CACHE - ", key);
       localStorage.removeItem(key);
     }
   }
 }
 
 var $container = document.querySelector(".container"); // Main Data Container
-let $progress = document.querySelector('.progress .determinate');
-let $loading = document.querySelector('#loading');
+let $progress = document.querySelector(".progress .determinate");
+let $loading = document.querySelector("#loading");
 
 // controllers
 var branch;
@@ -35,13 +37,13 @@ var cs = "c";
 var ranking = "S"; // real Ranks
 
 // theme
-var dark = localStorage.getItem('dark');
+var dark = localStorage.getItem("dark");
 if (dark === undefined) dark = 1;
 if (dark == 1) {
   dark = 0;
   toggleDark();
 } else {
-  document.body.classList.remove('dark');
+  document.body.classList.remove("dark");
 }
 
 var n_elem = 200; // Number of elements per page
@@ -75,7 +77,7 @@ async function change(e) {
   branch = document.querySelector("#branch").value;
   batch = document.querySelector("#batch").value;
   ranking = document.querySelector("#ranking").value;
-  $loading.style.opacity = '1';
+  $loading.style.opacity = "1";
 
   let url;
 
@@ -86,114 +88,114 @@ async function change(e) {
   } else {
     url = `${branch} - ${batch}`;
     if (next_cursor) {
-      url += `&next_cursor=${next_cursor}`
+      url += `&next_cursor=${next_cursor}`;
     }
   }
 
-
-  let _response = localStorage.getItem(VERSION + ':::' + url);
+  let _response = localStorage.getItem(VERSION + ":::" + url);
 
   if (_response) {
     cacheHit = true;
     response = JSON.parse(_response);
     data = response.data;
     next_cursor = null;
-    console.log('CACHE HIT', VERSION + ':::' + url);
+    console.log("CACHE HIT", VERSION + ":::" + url);
     if ($progress) {
-      $progress.parentElement.style.display = 'none';
+      $progress.parentElement.style.display = "none";
     }
-  }
-  else {
-    if (branch == 'FULL_COLLEGE') {
-      console.log('FULL COLLEGE');
+  } else {
+    if (branch == "FULL_COLLEGE") {
+      console.log("FULL COLLEGE");
       let res;
       let _data = [];
-      let _next_cursor = '';
+      let _next_cursor = "";
       do {
-        res = await fetch(`https://nithp.herokuapp.com/api/result/student?limit=3000&next_cursor=${_next_cursor}`);
+        res = await fetch(
+          `https://nithp.herokuapp.com/api/result/student?limit=3000&next_cursor=${_next_cursor}`
+        );
         let jso = await res.json();
         _data = _data.concat(jso.data);
         _next_cursor = jso.pagination.next_cursor;
-        console.log('fetching next row from ' + _next_cursor);
+        console.log("fetching next row from " + _next_cursor);
 
         if ($progress) {
           let _pro = _data.length / 3000;
-          $progress.style.width = _pro * 100 + '%';
+          $progress.style.width = _pro * 100 + "%";
         }
-      } while (_next_cursor != '');
+      } while (_next_cursor != "");
 
       if ($progress) {
-        $progress.parentElement.style.display = 'none';
+        $progress.parentElement.style.display = "none";
       }
 
       data = _data;
-      response = { data: _data, pagination: { next_cursor: '' } };
-      localStorage.setItem(VERSION + ':::' + url, JSON.stringify(response))
-
-    }
-    else if (branch == 'FULL_YEAR') {
-      console.log('FULL_YEAR');
+      response = { data: _data, pagination: { next_cursor: "" } };
+      localStorage.setItem(VERSION + ":::" + url, JSON.stringify(response));
+    } else if (branch == "FULL_YEAR") {
+      console.log("FULL_YEAR");
       let res;
       let _data = [];
-      let _next_cursor = '';
+      let _next_cursor = "";
       do {
-        res = await fetch(`https://nithp.herokuapp.com/api/result/student?roll=${batch}%&limit=3000&next_cursor=${_next_cursor}`);
+        res = await fetch(
+          `https://nithp.herokuapp.com/api/result/student?roll=${batch}%&limit=3000&next_cursor=${_next_cursor}`
+        );
         let jso = await res.json();
         _data = _data.concat(jso.data);
         _next_cursor = jso.pagination.next_cursor;
-        console.log('fetching next row from ' + _next_cursor);
+        console.log("fetching next row from " + _next_cursor);
 
         if ($progress) {
           let _pro = _data.length / 3000;
-          $progress.style.width = _pro * 100 + '%';
+          $progress.style.width = _pro * 100 + "%";
         }
-      } while (_next_cursor != '');
+      } while (_next_cursor != "");
 
       if ($progress) {
-        $progress.parentElement.style.display = 'none';
+        $progress.parentElement.style.display = "none";
       }
 
       data = _data;
-      response = { data: _data, pagination: { next_cursor: '' } };
-      localStorage.setItem(VERSION + ':::' + url, JSON.stringify(response))
-
+      response = { data: _data, pagination: { next_cursor: "" } };
+      localStorage.setItem(VERSION + ":::" + url, JSON.stringify(response));
     } else {
       let res;
       let _data = [];
-      let _next_cursor = '';
+      let _next_cursor = "";
       do {
-        res = await fetch(`https://nithp.herokuapp.com/api/result/student?branch=${branch}&roll=${batch}%&limit=200&next_cursor=${_next_cursor}`);
+        res = await fetch(
+          `https://nithp.herokuapp.com/api/result/student?branch=${branch}&roll=${batch}%&limit=200&next_cursor=${_next_cursor}`
+        );
         let jso = await res.json();
         _data = _data.concat(jso.data);
         _next_cursor = jso.pagination.next_cursor;
-        console.log('fetching next row from ' + _next_cursor);
-      } while (_next_cursor != '');
+        console.log("fetching next row from " + _next_cursor);
+      } while (_next_cursor != "");
 
       if ($progress) {
-        $progress.parentElement.style.display = 'none';
+        $progress.parentElement.style.display = "none";
       }
 
       data = _data;
-      response = { data: _data, pagination: { next_cursor: '' } };
-      localStorage.setItem(VERSION + ':::' + url, JSON.stringify(response))
+      response = { data: _data, pagination: { next_cursor: "" } };
+      localStorage.setItem(VERSION + ":::" + url, JSON.stringify(response));
     }
   }
 
   data = data.sort((a, b) => {
-    if (cs == 'c') {
-      return Number(b.cgpi) - Number(a.cgpi)
+    if (cs == "c") {
+      return Number(b.cgpi) - Number(a.cgpi);
+    } else {
+      return Number(b.sgpi) - Number(a.sgpi);
     }
-    else {
-      return Number(b.sgpi) - Number(a.sgpi)
-    }
-  })
+  });
 
   if (ranking == "S") StandardRanks(data);
   else if (ranking == "D") DenseRanks(data);
   else if (ranking == "O") OrdinalRanks(data);
 
   clear();
-  $loading.style.opacity = '0';
+  $loading.style.opacity = "0";
   render();
 }
 
@@ -227,7 +229,7 @@ $ser.addEventListener("keyup", function (e) {
       55,
       56,
       57,
-      ...[...Array(26).keys()].map(x => 65 + x)
+      ...[...Array(26).keys()].map((x) => 65 + x),
     ].indexOf(e.keyCode) == -1
   ) {
     // console.log(e.keyCode,'skipped');
@@ -244,10 +246,7 @@ $ser.addEventListener("keyup", function (e) {
   // in FULL SEARCH -search in the data[] instead of divs to find every result.
   if (branch == "FULL_COLLEGE" || branch == "FULL_YEAR") {
     res = data.filter(
-      obj =>
-        JSON.stringify(obj)
-          .toUpperCase()
-          .indexOf(ip) != -1
+      (obj) => JSON.stringify(obj).toUpperCase().indexOf(ip) != -1
     );
 
     if (!ip && $divs.length < 100) {
@@ -286,14 +285,14 @@ $con.addEventListener("dblclick", function (e) {
 function fullResult(roll, el) {
   document.body.style.cursor = "wait";
   el.style.cursor = "wait";
-  $loading.style.opacity = '1';
+  $loading.style.opacity = "1";
 
   fetch(`https://nithp.herokuapp.com/api/result/student/${roll}`)
-    .then(res => res.json())
-    .then(res => {
+    .then((res) => res.json())
+    .then((res) => {
       document.body.style.cursor = "initial";
       el.style.cursor = "initial";
-      $loading.style.opacity = '0';
+      $loading.style.opacity = "0";
       // console.log(res);
 
       $con.style.display = "flex";
@@ -308,8 +307,8 @@ function fullResult(roll, el) {
           <div class="stcg">
             <div class="cp">${res.cgpi}</div>
             <div class="cp_total">${
-        res.summary[res.summary.length - 1].cgpi_total
-        }
+              res.summary[res.summary.length - 1].cgpi_total
+            }
             </div>
           </div>
           <div class="ranks">
@@ -328,7 +327,7 @@ function fullResult(roll, el) {
       let stSemesters = document.createElement("div");
       stSemesters.className = "stSemesters";
       for (let i = 8; i > 0; --i) {
-        let thisSem = res.result.filter(x => x.sem == i);
+        let thisSem = res.result.filter((x) => x.sem == i);
         let sem = document.createElement("div");
         sem.className = "sem";
         if (thisSem.length) {
@@ -347,7 +346,9 @@ function fullResult(roll, el) {
             sub.className = "sub";
             sub.innerHTML = `
                 <div class="code">${subj.subject}</div>
-                <div class="grade ${subj.grade}">${Number(subj.sub_gp) / Number(subj.sub_point)}</div>
+                <div class="grade ${subj.grade}">${
+              Number(subj.sub_gp) / Number(subj.sub_point)
+            }</div>
               `;
             subs.appendChild(sub);
           }
@@ -364,7 +365,7 @@ function fullResult(roll, el) {
 
       // window.open(`https://nithp.herokuapp.com/result/student?roll=${roll}`);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log("Error : " + err);
       window.open(`https://nithp.herokuapp.com/result/student?roll=${roll}`);
     });
@@ -434,7 +435,7 @@ function create(stud) {
       : parseInt(Cgpa.innerText)
   );
 
-  node.addEventListener("click", e => {
+  node.addEventListener("click", (e) => {
     e.target.style.cursor = "busy";
     e.target.style.filter = "drop-shadow(10px -10px 2px #0003)";
     fullResult(stud.roll, e.target);
@@ -458,7 +459,7 @@ function render() {
 
   // find User result
   getLocalUser();
-  your_res = data.filter(obj => obj.roll == you_obj_res.roll)[0];
+  your_res = data.filter((obj) => obj.roll == you_obj_res.roll)[0];
   if (your_res) {
     $you.innerHTML = "";
     $you.appendChild(create(your_res));
@@ -467,10 +468,11 @@ function render() {
     $you.innerHTML = `<span id ='rem'>You are not Here..!<span id="edit" onclick="togglePopup()" title="Edit Your Roll No.">🖊</span></span>`;
   }
 
-  // Statastics 
-  let mean = data.reduce((acc, cur) => acc + Number(cur.sgpi != "0" ? cur.cgpi : 0), 0) / (data.length - data.filter((st => st.sgpi == "0")).length);
-  document.querySelector('#stats').innerHTML = `Avg : ${mean.toFixed(3)}`;
-
+  // Statastics
+  let mean =
+    data.reduce((acc, cur) => acc + Number(cur.sgpi != "0" ? cur.cgpi : 0), 0) /
+    (data.length - data.filter((st) => st.sgpi == "0").length);
+  document.querySelector("#stats").innerHTML = `Avg : ${mean.toFixed(3)}`;
 
   // Render the divs
   let i = 0;
@@ -492,15 +494,13 @@ function renderSmooth(div, i, n = 50) {
     } else {
       $container.appendChild(create(div));
     }
-  }
-  else {
+  } else {
     // console.log('SKIPPED ', div.roll, ' -NO CGPA');
   }
 }
 
 // Clears the Container
 function clear() {
-
   let $divs = document.querySelectorAll(".container > div");
 
   for (var div of $divs) {
@@ -519,7 +519,6 @@ function next() {
       $container.appendChild(create(p_data[i]));
     }
   }
-
 }
 
 function prev() {
@@ -559,31 +558,30 @@ $popup.addEventListener("dblclick", function (e) {
   togglePopup();
 });
 // store User rollNo on LocalStorage
-document.querySelector("#form_you_inp").addEventListener("submit", function (e) {
-  e.preventDefault(e);
-  tmp = document.querySelector("#you_inp").value;
-  console.log(tmp);
-  rollno_ip = tmp != "" && tmp != null ? tmp : you_id;
-  you_obj = data.filter(
-    obj =>
-      JSON.stringify(obj)
-        .toUpperCase()
-        .indexOf(rollno_ip) != -1
-  )[0];
-  console.log(you_obj);
+document
+  .querySelector("#form_you_inp")
+  .addEventListener("submit", function (e) {
+    e.preventDefault(e);
+    tmp = document.querySelector("#you_inp").value;
+    console.log(tmp);
+    rollno_ip = tmp != "" && tmp != null ? tmp : you_id;
+    you_obj = data.filter(
+      (obj) => JSON.stringify(obj).toUpperCase().indexOf(rollno_ip) != -1
+    )[0];
+    console.log(you_obj);
 
-  let save_str;
-  if (you_obj) {
-    save_str = JSON.stringify(you_obj);
-  } else {
-    save_str = JSON.stringify({ roll: rollno_ip, name: "There" });
-  }
-  console.log(save_str);
+    let save_str;
+    if (you_obj) {
+      save_str = JSON.stringify(you_obj);
+    } else {
+      save_str = JSON.stringify({ roll: rollno_ip, name: "There" });
+    }
+    console.log(save_str);
 
-  localStorage.setItem("you_id", save_str);
-  change();
-  togglePopup();
-});
+    localStorage.setItem("you_id", save_str);
+    change();
+    togglePopup();
+  });
 
 // get the local user if it is in the localStorage
 function getLocalUser() {
@@ -638,19 +636,18 @@ function csv() {
 // });
 
 function toggleDark() {
-  let $moon = document.querySelector('.dark_toggle')
-  let $cover = document.querySelector('.dark_toggle .cover')
+  let $moon = document.querySelector(".dark_toggle");
+  let $cover = document.querySelector(".dark_toggle .cover");
   if (dark == 1) {
-    localStorage.setItem('dark', 0);
-    document.body.classList.remove('dark');
+    localStorage.setItem("dark", 0);
+    document.body.classList.remove("dark");
     dark = 0;
     $cover.style.width = "2.5em";
     $cover.style.height = "2.5em";
     $cover.style.background = "#ffd700";
-  }
-  else {
-    localStorage.setItem('dark', 1);
-    document.body.classList.add('dark');
+  } else {
+    localStorage.setItem("dark", 1);
+    document.body.classList.add("dark");
     dark = 1;
     $cover.style.width = "1.7em";
     $cover.style.height = "1.7em";
@@ -698,10 +695,12 @@ function DenseRanks(data) {
 function OrdinalRanks(data) {
   data.forEach((stud, i) => {
     stud.Rank = i + 1;
-  })
+  });
 }
 
 // Hit Count
-fetch('https://api.countapi.xyz/hit/rohitkaushal7/nith_results').then(res => res.json()).then(res => {
-  document.querySelector("#count").innerHTML = res.value;
-})
+fetch("https://api.countapi.xyz/hit/rohitkaushal7/nith_results")
+  .then((res) => res.json())
+  .then((res) => {
+    document.querySelector("#count").innerHTML = res.value;
+  });

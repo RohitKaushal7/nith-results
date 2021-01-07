@@ -42,26 +42,26 @@ body {
   height: auto;
   width: 100vw;
   overflow-x: hidden;
-  *{
+  * {
     transition: background 0.3s, color 1s;
   }
-  &.dark{
+  &.dark {
     transition: background 0.3s, color 1s;
-    background:#000005;
+    background: #000005;
     ::-webkit-scrollbar {
       color: #000;
       background: #000 !important;
     }
-    .popup{
+    .popup {
       background: #111;
-      .title{
+      .title {
         color: #fff !important;
       }
     }
-    .fullResult{
-      background: linear-gradient(#111,#000);
+    .fullResult {
+      background: linear-gradient(#111, #000);
       .stInfo {
-        color:#fff;
+        color: #fff;
         .stcg {
           .cp_total {
             color: #fff;
@@ -70,17 +70,17 @@ body {
         .stDesc {
           color: #fff;
           .stName {
-            color:#fff;
+            color: #fff;
           }
           .stRoll {
             color: #ccc;
           }
         }
       }
-    
+
       .stSemesters {
         .sem {
-          color:#fff;
+          color: #fff;
           .stsg {
             .sg {
               color: $info-color;
@@ -92,50 +92,50 @@ body {
               background: #222e;
               .grade {
                 color: #fff;
-              }              
+              }
             }
           }
         }
       }
     }
-    .header{
+    .header {
       color: #fff;
     }
-    .footer{
+    .footer {
       background: #000;
     }
     .branch-con,
     .batch-con,
     .cs,
     .ranking-con,
-    .ser{
+    .ser {
       background: #151515;
 
-      *{
+      * {
         background: #151515;
-        color:#aaa;
+        color: #aaa;
       }
-      color:#aaa;
+      color: #aaa;
     }
 
-    .you{
+    .you {
       color: #fff;
-      .card{
+      .card {
         background: transparent;
       }
     }
 
-    .card{
+    .card {
       background: #151515ee;
       // border: 2px solid #fff9;
-      .Rank{
+      .Rank {
         color: #8f5be9;
       }
-      .Name{
+      .Name {
         color: #fff;
       }
-      .Cgpa{
-        color:#fff !important;
+      .Cgpa {
+        color: #fff !important;
       }
       &[data-rank="1"] {
         background: #151515ee;
@@ -150,11 +150,10 @@ body {
         border-bottom: 4px solid #795548aa;
       }
     }
-
   }
 }
 
-.dark_toggle{
+.dark_toggle {
   opacity: 0.2;
   position: absolute;
   transform: scale(0.8);
@@ -166,14 +165,14 @@ body {
   transition: all 0.3s;
   top: 1em;
   left: 1em;
-  &:hover{
+  &:hover {
     opacity: 1;
   }
-  .cover{
+  .cover {
     width: 2.5em;
     height: 2.5em;
     transition: all 0.3s;
-    background:#ffd700;
+    background: #ffd700;
     // box-shadow: inset -2px -2px 10px 0px #fff9;
     position: absolute;
     left: -0.3em;
@@ -262,7 +261,7 @@ body {
   z-index: 11;
   padding: 1em 2em;
   font-size: 12px;
-  background: linear-gradient(#fff,#eee);
+  background: linear-gradient(#fff, #eee);
   // display: flex;
   display: none;
   flex-direction: column;
@@ -284,21 +283,19 @@ body {
       width: 100%;
       margin: 0 0.5rem;
     }
-    .ranks{
-      .rk{
+    .ranks {
+      .rk {
         color: #999;
-        .rkt{
-          color:$info-color;
+        .rkt {
+          color: $info-color;
           font-size: 1.1em;
           font-weight: bold;
           margin: 0;
 
-          &::first-letter{
-            color:$hash-color;
+          &::first-letter {
+            color: $hash-color;
             font-size: smaller;
           }
-
-
         }
       }
     }
@@ -453,8 +450,9 @@ body {
   & > * {
     font-family: "Source Sans Pro", "Open Sans", "ZCOOL KuaiLe";
   }
-  .logo{
-    filter: brightness(1.1) saturate(2);
+  .logo {
+    // filter: brightness(1.1) saturate(2);
+    margin-right: 0.5em;
   }
   .main-heading {
     display: flex;
@@ -466,8 +464,8 @@ body {
       font-weight: bold;
       padding: 0.2rem 0.4rem;
       border-radius: 5px;
-      background: #e70c85;
-      box-shadow: 0 0 10px 1px #e70c8599;
+      background: #2196f3;
+      box-shadow: 0 0 10px 1px #00bcd466;
       color: white;
     }
   }
@@ -629,7 +627,7 @@ select {
   color: #2196f3;
 }
 
-#stats{
+#stats {
   max-width: 1200px;
   width: 90%;
   margin: auto;
@@ -988,7 +986,7 @@ select {
   margin-top: 2rem;
   color: #333;
 
-  #count{
+  #count {
     position: absolute;
     bottom: 0em;
     padding: 0.2em 3em;
@@ -1118,13 +1116,11 @@ select {
   }
 }
 
-
-/// 
-
+///
 
 /* Progress Bar */
 
-#loading{
+#loading {
   transition: all 0.3s;
 }
 .progress {
@@ -1137,77 +1133,98 @@ select {
   border-radius: 2px;
   background-clip: padding-box;
   margin: 0.2rem 0 1rem 0;
-  overflow: hidden; }
-  .progress .determinate {
-    position: absolute;
-    background-color: inherit;
-    top: 0;
-    bottom: 0;
-    width: 0%;
-    background-color: #26a69a;
-    background-color: $info-color; 
-    transition: width .3s linear; }
-  .progress .indeterminate {
-    background-color: #26a69a; 
-    background-color: $info-color; 
-  }
-    .progress .indeterminate:before {
-      content: '';
-      position: absolute;
-      background-color: inherit;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      will-change: left, right;
-              animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite; }
-    .progress .indeterminate:after {
-      content: '';
-      position: absolute;
-      background-color: inherit;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      will-change: left, right;
-              animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-              animation-delay: 1.15s; }
+  overflow: hidden;
+}
+.progress .determinate {
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  background-color: #26a69a;
+  background-color: $info-color;
+  transition: width 0.3s linear;
+}
+.progress .indeterminate {
+  background-color: #26a69a;
+  background-color: $info-color;
+}
+.progress .indeterminate:before {
+  content: "";
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+.progress .indeterminate:after {
+  content: "";
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1)
+    infinite;
+  animation-delay: 1.15s;
+}
 
 @-webkit-keyframes indeterminate {
   0% {
     left: -35%;
-    right: 100%; }
+    right: 100%;
+  }
   60% {
     left: 100%;
-    right: -90%; }
+    right: -90%;
+  }
   100% {
     left: 100%;
-    right: -90%; } }
+    right: -90%;
+  }
+}
 @keyframes indeterminate {
   0% {
     left: -35%;
-    right: 100%; }
+    right: 100%;
+  }
   60% {
     left: 100%;
-    right: -90%; }
+    right: -90%;
+  }
   100% {
     left: 100%;
-    right: -90%; } }
+    right: -90%;
+  }
+}
 @-webkit-keyframes indeterminate-short {
   0% {
     left: -200%;
-    right: 100%; }
+    right: 100%;
+  }
   60% {
     left: 107%;
-    right: -8%; }
+    right: -8%;
+  }
   100% {
     left: 107%;
-    right: -8%; } }
+    right: -8%;
+  }
+}
 @keyframes indeterminate-short {
   0% {
     left: -200%;
-    right: 100%; }
+    right: 100%;
+  }
   60% {
     left: 107%;
-    right: -8%; }
+    right: -8%;
+  }
   100% {
     left: 107%;
-    right: -8%; } }
+    right: -8%;
+  }
+}
