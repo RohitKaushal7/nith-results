@@ -29,6 +29,7 @@ body {
   min-height: 100vh;
   height: auto;
   width: 100vw;
+  min-width: 360px;
   overflow-x: hidden;
 }
 
@@ -290,6 +291,7 @@ body.dark .card[data-rank="3"] {
 .fullResult {
   position: fixed;
   width: 100vw;
+  min-width: 360px;
   height: 100vh;
   overflow: scroll;
   z-index: 11;
@@ -1374,6 +1376,7 @@ select {
     padding: 0.5rem;
     height: 7rem;
     width: 90vw;
+    min-width: 360px;
     margin: auto;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
