@@ -158,7 +158,7 @@ body.dark .card[data-rank="1"] {
 
 body.dark .card[data-rank="2"] {
   background: #151515ee;
-  border-bottom: 4px solid #c0c0c0aa;
+  border-bottom: 4px solid #e6ebf1aa;
 }
 
 body.dark .card[data-rank="3"] {
@@ -917,7 +917,7 @@ select {
 }
 
 .container > div[data-rank="2"] {
-  background: #c0c0c0;
+  background: #e6ebf1;
   border: none;
 }
 
@@ -1290,9 +1290,9 @@ select {
 .footer #count {
   position: absolute;
   bottom: 0em;
-  padding: 0.2em 3em;
+  padding: 0.2em 3em 1em;
   border-radius: 0.4em;
-  font-family: fantasy;
+  font-family: monospace;
   color: #aaa;
   font-weight: bold;
   font-size: smaller;

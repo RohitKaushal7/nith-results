@@ -138,7 +138,9 @@
           <option value="O">Ordinal '1234'</option>
         </select>
       </div>
-      <div class="csv" onclick="csv()"><span>🔽</span> <span>csv</span></div>
+      <div class="csv" onclick="csv()" title="download result csv">
+        <span>.</span> <span>csv</span>
+      </div>
     </div>
 
     <div class="you" id="you" title="">
@@ -147,10 +149,10 @@
         Click to Remember You by Roll No.*
       </span>
     </div>
-    <div class="tip">
+    <!-- <div class="tip">
       <span class="content">View Full Result by clicking any card.</span
       ><span onclick="tip_close()" class="close">X</span>
-    </div>
+    </div> -->
     <div id="res_cnt"></div>
 
     <div class="progress" id="loading">
