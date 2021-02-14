@@ -1,4 +1,5 @@
-// DISCLAIMER : I didn't knew React at the time I made this website. Thats why It is as It is. XD
+// DISCLAIMER : I didn't knew React at the time I made this website. Thats why It is as It is. XD - I konw its Bad.
+// if using VS CODE : press ctrl+k,0 to collapse all, ctrl+k,j to reverse
 
 // Redirect
 if (
@@ -93,10 +94,25 @@ async function change(e) {
   }
 
   let _response = localStorage.getItem(VERSION + ":::" + url);
+  let cacheHit = false;
 
   if (_response) {
-    cacheHit = true;
-    response = JSON.parse(_response);
+    try {
+      response = JSON.parse(_response);
+      if (response.expires) {
+        if (new Date(response.expires).getTime() > new Date().getTime()) {
+          cacheHit = true;
+        } else {
+          console.log("Cache Expired - ", VERSION + ":::" + url);
+          localStorage.removeItem(VERSION + ":::" + url);
+        }
+      }
+    } catch (err) {
+      console.log("Parsing Error - ", err.message);
+    }
+  }
+
+  if (cacheHit) {
     data = response.data;
     next_cursor = null;
     console.log("CACHE HIT", VERSION + ":::" + url);
@@ -129,7 +145,11 @@ async function change(e) {
       }
 
       data = _data;
-      response = { data: _data, pagination: { next_cursor: "" } };
+      response = {
+        data: _data,
+        pagination: { next_cursor: "" },
+        expires: new Date().getTime() + 30 * 24 * 3600,
+      };
       localStorage.setItem(VERSION + ":::" + url, JSON.stringify(response));
     } else if (branch == "FULL_YEAR") {
       console.log("FULL_YEAR");
@@ -156,7 +176,11 @@ async function change(e) {
       }
 
       data = _data;
-      response = { data: _data, pagination: { next_cursor: "" } };
+      response = {
+        data: _data,
+        pagination: { next_cursor: "" },
+        expires: new Date().getTime() + 30 * 24 * 3600,
+      };
       localStorage.setItem(VERSION + ":::" + url, JSON.stringify(response));
     } else {
       let res;
@@ -177,7 +201,11 @@ async function change(e) {
       }
 
       data = _data;
-      response = { data: _data, pagination: { next_cursor: "" } };
+      response = {
+        data: _data,
+        pagination: { next_cursor: "" },
+        expires: new Date().getTime() + 30 * 24 * 3600,
+      };
       localStorage.setItem(VERSION + ":::" + url, JSON.stringify(response));
     }
   }
