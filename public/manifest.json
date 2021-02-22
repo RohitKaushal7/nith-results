@@ -1,0 +1,22 @@
+{
+  "short_name": "NITH Results",
+  "name": "NITH Results",
+  "icons": [
+    {
+      "src": "logos/chrome-extensionmanagementpage-48-48.png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "logos/chrome-favicon-16-16.png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "logos/chrome-installprocess-128-128.png",
+      "sizes": "128x128"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
