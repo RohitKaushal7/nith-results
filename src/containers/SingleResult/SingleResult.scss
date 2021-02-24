@@ -5,6 +5,15 @@ $primary-color: #000;
 $light-color: #777;
 $info-color: #2196f3;
 
+.loading {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+}
+
 .fullResult {
   width: 100vw;
   min-width: 360px;
@@ -17,14 +26,20 @@ $info-color: #2196f3;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  transition: all 0.2s;
   animation: pop 0.5s;
 
-  * {
-    transition: all 0.2s;
+  header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
   }
-
+  .home {
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
   .stInfo {
+    transition: all 0.4s;
     max-width: 50em;
     padding: 1em 2em;
     // background: #fff;

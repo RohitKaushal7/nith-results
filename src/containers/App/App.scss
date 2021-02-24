@@ -43,11 +43,8 @@ body {
   width: 100vw;
   min-width: 360px;
   overflow-x: hidden;
-  * {
-    transition: background 0.3s, color 1s;
-  }
+
   &.dark {
-    transition: background 0.3s, color 1s;
     background: #000005;
     ::-webkit-scrollbar {
       color: #000;
@@ -202,7 +199,7 @@ body {
 @keyframes pop {
   0% {
     opacity: 0;
-    transform: translate(0, 15px);
+    transform: translate(0, 20px);
   }
   100% {
     opacity: 1;
