@@ -1,0 +1,190 @@
+$card-color: #eee9;
+$rank-color: #673ab7;
+$hash-color: #9c27b0;
+$primary-color: #000;
+$light-color: #777;
+$info-color: #2196f3;
+
+.fullResult {
+  width: 100vw;
+  min-width: 360px;
+  height: 100vh;
+  overflow: scroll;
+  z-index: 11;
+  padding: 3em 2em;
+  font-size: 12px;
+  background: linear-gradient(#fff, #eee);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transition: all 0.2s;
+  animation: pop 0.5s;
+
+  * {
+    transition: all 0.2s;
+  }
+
+  .stInfo {
+    max-width: 50em;
+    padding: 1em 2em;
+    // background: #fff;
+    display: flex;
+    border-radius: 1em;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    * {
+      width: 100%;
+      margin: 0 0.5rem;
+    }
+    .ranks {
+      .rk {
+        color: #999;
+        .rkt {
+          color: $info-color;
+          font-size: 1.1em;
+          font-weight: bold;
+          margin: 0;
+
+          &::first-letter {
+            color: $hash-color;
+            font-size: smaller;
+          }
+        }
+      }
+    }
+    .stcg {
+      display: flex;
+      flex-direction: column;
+      .cp {
+        font-size: 2.5em;
+        font-weight: bold;
+      }
+      .cp_total {
+        font-size: 1.5em;
+        color: #666;
+      }
+    }
+    .stDesc {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      width: 200%;
+      color: #333;
+      .stName {
+        font-size: 2em;
+        text-align: left;
+      }
+      .stRoll {
+        align-items: left;
+        font-size: 1.5em;
+        color: #666;
+      }
+    }
+  }
+
+  .stSemesters {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    * {
+      border-radius: 0.3em;
+    }
+    margin: 2em 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow: scroll;
+
+    .sem {
+      * {
+        font-family: monospace;
+      }
+      width: 23%;
+      min-width: 15em;
+      // background: #ddd;
+      padding: 0.5em;
+      margin: 0.8em;
+      // border-radius: 0.5em;
+
+      @media (max-width: 980px) {
+        width: 100%;
+      }
+
+      .stsg {
+        display: flex;
+        padding: 0.5em 1em;
+        font-size: 1.5em;
+        // background: #fff;
+        margin-bottom: 0.5em;
+        justify-content: space-between;
+        align-items: center;
+        .semN {
+          text-align: left;
+          width: 60%;
+        }
+        .sg_total {
+          font-size: 0.5em;
+          color: green;
+        }
+        .sg {
+          color: $info-color;
+          text-align: center;
+        }
+        // border-radius: 0.5em;
+      }
+      .subs {
+        display: flex;
+        flex-direction: column;
+        color: #333;
+        // background: #fff5;
+
+        .sub {
+          display: flex;
+          background: #fffe;
+          margin-bottom: 0.2em;
+          .code {
+            padding: 0.5em 1em;
+            width: 80%;
+            font-size: 0.8em;
+          }
+          .grade {
+            // background: #45f;
+            color: #fff;
+            font-weight: bold;
+            margin: 0.5em;
+            padding: 0.2em 0.6em;
+            width: 15%;
+            text-align: center;
+          }
+          .A {
+            background: #45f;
+          }
+          .AB {
+            background: #45f;
+          }
+          .B {
+            background: #45f;
+          }
+          .BC {
+            background: #45f;
+          }
+          .C {
+            background: #45f;
+          }
+          .CD {
+            background: #45f;
+          }
+          .D {
+            background: #45f;
+          }
+          .F {
+            background: #d30012;
+          }
+        }
+      }
+    }
+  }
+}
