@@ -15,6 +15,7 @@ export default function Controls({
   setSearchString,
   cs,
   setCs,
+  downloadCSV,
 }) {
   const BATCHES = [
     { name: 19, value: 19 },
@@ -66,7 +67,7 @@ export default function Controls({
           type="search"
           value={searchString}
           onChange={handleSearchStringChange}
-          placeholder='Search RollNo, Name, CGPA, Rank, "property":"value"'
+          placeholder="Search by RollNo Name Branch cg:6.9 sg:9:0"
         />
       </div>
       <div className="branch-con">
@@ -119,8 +120,8 @@ export default function Controls({
           <option value="O">Ordinal '1234'</option>
         </select>
       </div>
-      <div className="csv" onClick={() => {}} title="download result csv">
-        <span>.</span> <span>csv</span>
+      <div className="csv" onClick={downloadCSV} title="download result csv">
+        <span>🍧</span>
       </div>
     </div>
   );

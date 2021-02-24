@@ -25,13 +25,24 @@ export default function Explorer({ history }) {
 
   const QUERY = new URLSearchParams(search);
 
+  let q_branch = QUERY.get("branch") ? QUERY.get("branch").toUpperCase() : null;
+  let q_batch = QUERY.get("batch");
+  let q_r = ["S", "D", "O"].includes(QUERY.get("r")) ? QUERY.get("r") : null;
+  let q_q = QUERY.get("q");
+  let q_cs = ["c", "s"].includes(QUERY.get("cs")) ? QUERY.get("cs") : null;
+  let q_p = Number(QUERY.get("p"))
+    ? Number(QUERY.get("p")) >= 0
+      ? Number(QUERY.get("p"))
+      : null
+    : null;
+
   // STATES
-  const [branch, setBranch] = useState(QUERY.get("branch") || "FULL_COLLEGE");
-  const [batch, setBatch] = useState(QUERY.get("batch") || LATEST_BATCH);
-  const [ranking, setRanking] = useState(QUERY.get("r") || "S");
-  const [searchString, setSearchString] = useState(QUERY.get("q") || "");
-  const [cs, setCs] = useState(QUERY.get("cs") || "c");
-  const [page, setPage] = useState(QUERY.get("p") || 0);
+  const [branch, setBranch] = useState(q_branch || "FULL_COLLEGE");
+  const [batch, setBatch] = useState(q_batch || LATEST_BATCH);
+  const [ranking, setRanking] = useState(q_r || "S");
+  const [searchString, setSearchString] = useState(q_q || "");
+  const [cs, setCs] = useState(q_cs || "c");
+  const [page, setPage] = useState(q_p || 0);
 
   const [data, setData] = useState();
   const [displayData, setDisplayData] = useState();
@@ -107,7 +118,11 @@ export default function Explorer({ history }) {
     if (!rankedData) return;
     let ss = searchString.toLocaleLowerCase();
     let _displayData = rankedData.filter((stud) => {
-      let str = stud.roll + " " + stud.name.toLocaleLowerCase() + " ";
+      let str = `${
+        stud.roll
+      } ${stud.name.toLocaleLowerCase()} ${stud.branch.toLowerCase()} cg:${
+        stud.cgpi
+      } sg:${stud.sgpi}`;
       return String(str).includes(ss);
     });
     setDisplayData(_displayData);
@@ -278,6 +293,41 @@ export default function Explorer({ history }) {
     return data;
   };
 
+  const handleCopy = (e) => {
+    e.preventDefault();
+    if (e.clipboardData) {
+      e.clipboardData.setData(
+        "text/plain",
+        `https://nith.netlify.app/?${
+          branch !== "FULL_COLLEGE" ? `branch=${branch}&batch=${batch}` : ""
+        }${cs === "s" ? `&cs=${cs}` : ""}${
+          ranking !== "S" ? `&r=${ranking}` : ""
+        }${page ? `&p=${page}` : ""}`
+      );
+    }
+  };
+
+  const downloadCSV = () => {
+    let text = "Rollno,Name,Branch,Sgpa,Cgpa\n";
+    let __data = JSON.parse(JSON.stringify(data));
+    __data.sort((x, y) => Number(x.roll) - Number(y.roll));
+    for (const st of __data) {
+      text += `${st.roll},${st.name},${st.branch},${st.sgpi},${st.cgpi}\n`;
+    }
+
+    let a = document.createElement("a");
+    a.setAttribute(
+      "href",
+      "data:text/csv;charset=utf-8," + encodeURIComponent(text)
+    );
+    a.setAttribute("download", `${branch}_${batch}.csv`);
+
+    a.style.display = "none";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
+
   // RENDER
   return (
     <div>
@@ -293,6 +343,7 @@ export default function Explorer({ history }) {
         setRanking={setRanking}
         cs={cs}
         setCs={setCs}
+        downloadCSV={downloadCSV}
       />
       {/* <div className="you" id="you" title="">
         <span id="rem">
@@ -300,6 +351,19 @@ export default function Explorer({ history }) {
           Click to Remember You by Roll No.*
         </span>
       </div> */}
+      <div
+        className="query"
+        onClick={() => document.execCommand("copy")}
+        onCopy={handleCopy}
+        title="copy link"
+      >
+        🐤
+        {`?${
+          branch !== "FULL_COLLEGE" ? `branch=${branch}&batch=${batch}` : ""
+        }${cs === "s" ? `&cs=${cs}` : ""}${
+          ranking !== "S" ? `&r=${ranking}` : ""
+        }${page ? `&p=${page}` : ""}`}
+      </div>
       <div id="res_cnt">{resultCount ? resultCount + " results..." : null}</div>
       <div className="container">
         {displayData
