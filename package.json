@@ -2,7 +2,6 @@
   "name": "nith-results",
   "version": "0.1.0",
   "private": true,
-  "homepage": "rohitkaushal7.github.io/nith-results",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
