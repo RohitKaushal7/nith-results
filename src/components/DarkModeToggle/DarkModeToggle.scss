@@ -1,0 +1,27 @@
+.dark_toggle {
+  opacity: 0.2;
+  position: absolute;
+  transform: scale(0.8);
+  width: 2em;
+  height: 2em;
+  background: #fff;
+  box-shadow: 0 2px 5px 0px #0009;
+  border-radius: 50%;
+  transition: all 0.3s;
+  top: 1em;
+  left: 1em;
+  &:hover {
+    opacity: 1;
+  }
+  .cover {
+    width: 2.5em;
+    height: 2.5em;
+    transition: all 0.3s;
+    background: #ffd700;
+    // box-shadow: inset -2px -2px 10px 0px #fff9;
+    position: absolute;
+    left: -0.3em;
+    top: -0.3em;
+    border-radius: 50%;
+  }
+}

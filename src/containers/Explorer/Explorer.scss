@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  perspective: 400px;
+  transform-style: preserve-3d;
+  cursor: default;
+  height: auto;
+  min-height: 30vh;
+}
+.pagination {
+  display: flex;
+  padding: 1em 2em;
+  justify-content: center;
+  align-items: center;
+
+  .page {
+    font-family: monospace;
+    font-weight: 0.5em;
+    color: rgb(0, 153, 255);
+  }
+
+  .btn {
+    padding: 0 1em;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      color: rgb(0, 153, 255);
+    }
+  }
+}
+.you {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem 3rem;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  > div {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    // background: #eee;
+    > div {
+      margin: 0 1rem;
+    }
+    & > .cgpa,
+    .sgpa,
+    .points {
+      position: static;
+      opacity: 1;
+    }
+  }
+}
+
+#res_cnt {
+  display: flex;
+  width: 100%;
+  height: 1em;
+  max-width: 500px;
+  padding: 1rem 3rem;
+  margin: 0rem auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  color: #2196f3;
+}

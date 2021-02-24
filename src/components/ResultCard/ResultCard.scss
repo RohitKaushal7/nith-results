@@ -1,0 +1,245 @@
+$card-color: #eee9;
+$rank-color: #673ab7;
+$hash-color: #9c27b0;
+$primary-color: #000;
+$light-color: #777;
+$info-color: #2196f3;
+
+$c1st: #ffd700;
+$c2nd: #e6ebf1;
+$c3rd: #ca780088;
+
+$c-hidden: #795548;
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  transition: all 0.2s;
+  width: 16rem;
+  height: 10rem;
+  background: $card-color;
+  margin: 1rem 2rem;
+  padding: 1.5rem 2rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  animation: pop 0.3s forwards;
+  opacity: 0;
+  transform: translate(0, 15px);
+
+  &:hover {
+    box-shadow: 0px 3px 12px 2px #0002;
+    .points,
+    .sgpa {
+      opacity: 1;
+    }
+  }
+
+  .name {
+    font-size: 1.1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-transform: uppercase;
+
+    // &:hover{
+    //   overflow: visible;
+    //   white-space: normal;
+    // }
+  }
+
+  .rank {
+    font-size: 2rem;
+    color: $rank-color;
+    &::first-letter {
+      font-size: 1.2rem;
+      color: $hash-color;
+    }
+  }
+  .rollno,
+  .branch,
+  .year {
+    color: $light-color;
+    display: inline-block;
+    margin-right: 0.5rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+  }
+  .cgpa {
+    display: inline-block;
+    width: 50px;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+  }
+  .sgpa,
+  .points {
+    display: inline-block;
+    position: absolute;
+  }
+
+  .sgpa {
+    bottom: 1.2rem;
+    right: 4.7rem;
+    opacity: 0;
+    font-size: 0.8rem;
+    color: $c-hidden;
+  }
+  .points {
+    bottom: 1.1rem;
+    right: 6.7rem;
+    opacity: 0;
+    color: $c-hidden;
+  }
+
+  &[data-base="9.5"] {
+    position: relative;
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      right: 1rem;
+      top: -1rem;
+      border-radius: 3px;
+      // transform: rotate(45deg);
+      width: 1rem;
+      height: 3rem;
+      background: hsla(340, 82%, 52%, 0.6);
+      animation: glow 1s alternate infinite;
+    }
+  }
+
+  &[data-base="9"] {
+    position: relative;
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      right: 1rem;
+      top: -1rem;
+      border-radius: 3px;
+      // transform: rotate(45deg);
+      width: 1rem;
+      height: 3rem;
+      background: fade-out($hash-color, 0.5);
+    }
+  }
+
+  &[data-base="8"] {
+    position: relative;
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      right: 1rem;
+      top: -1rem;
+      border-radius: 3px;
+      // transform: rotate(45deg);
+      width: 1rem;
+      height: 3rem;
+      background: fade-out($rank-color, 0.9);
+    }
+  }
+
+  &[data-rank="1"] {
+    background: $c1st;
+    border: none;
+    &::after {
+      display: none;
+    }
+    > .cgpa {
+      color: black;
+    }
+    > .rank {
+      position: relative;
+      &::before {
+        content: "1";
+        position: absolute;
+        right: -0.5rem;
+        color: #ababab;
+        mix-blend-mode: color-burn;
+        top: -2.7rem;
+        font-size: 5rem;
+        font-weight: bold;
+        opacity: 0.9;
+      }
+    }
+  }
+  &[data-rank="2"] {
+    background: $c2nd;
+    border: none;
+    &::after {
+      display: none;
+    }
+    > .cgpa {
+      color: black;
+    }
+    > .rank {
+      position: relative;
+      &::before {
+        content: "2";
+        position: absolute;
+        right: -0.5rem;
+        color: #ababab;
+        mix-blend-mode: color-burn;
+        top: -2.7rem;
+        font-size: 5rem;
+        font-weight: bold;
+        opacity: 0.9;
+      }
+    }
+  }
+  &[data-rank="3"] {
+    background: $c3rd;
+    border: none;
+    &::after {
+      display: none;
+    }
+    > .cgpa {
+      color: black;
+    }
+    > .rank {
+      position: relative;
+      &::before {
+        content: "3";
+        position: absolute;
+        right: -0.5rem;
+        color: #ababab;
+        mix-blend-mode: color-burn;
+        top: -2.7rem;
+        font-size: 5rem;
+        font-weight: bold;
+        opacity: 0.9;
+      }
+    }
+  }
+
+  @media (max-width: 980px) {
+    height: 8rem;
+    width: 13rem;
+    margin: 0.5rem 0.5rem;
+    padding: 0.5rem 1rem;
+    &[data-base="10"],
+    &[data-base="9.5"] {
+      &::after {
+        animation: none;
+      }
+    }
+  }
+  @media (max-width: 400px) {
+    height: 8rem;
+    width: 12rem;
+    margin: 0.3rem 0.3rem;
+    padding: 0.5rem 0.5rem;
+  }
+  @media (max-width: 320px) {
+    height: 7.5rem;
+    width: 11rem;
+    margin: 0.3rem 0.2rem;
+    padding: 0.5rem 0.5rem;
+  }
+}
