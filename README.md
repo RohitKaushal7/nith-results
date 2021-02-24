@@ -10,3 +10,5 @@
 > _[Results API](https://github.com/rohithill/nithp)_ maintained by _[Rohit Hill](https://github.com/rohithill)_<br>
 
 <!-- > _[Data](https://github.com/srbcheema1/Nith_results)_ : by [Srb Cheema](https://github.com/srbcheema1) <br> -->
+
+previously this project was done in **Vannila JS** 😅 currently in branch `vannila-js` <br>
