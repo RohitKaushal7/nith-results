@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Controls from "../../components/Controls/Controls";
+import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
+import RememberMe from "../../components/RememberMe/RememberMe";
+import ResultCard from "../../components/ResultCard/ResultCard";
+import GlobalContext from "../../context/GlobalContext";
 import "./Explorer.scss";
 
 const LATEST_BATCH = 19;
 const $progress = null;
 const VERSION = "Jan 2021";
+const LIMIT = 100;
 
 /**
  * This component renders all results of students
@@ -26,14 +31,31 @@ export default function Explorer({ history }) {
   const [ranking, setRanking] = useState(QUERY.get("r") || "S");
   const [searchString, setSearchString] = useState(QUERY.get("q") || "");
   const [cs, setCs] = useState(QUERY.get("cs") || "c");
+  const [page, setPage] = useState(QUERY.get("p") || 0);
 
   const [data, setData] = useState();
   const [displayData, setDisplayData] = useState();
+  const [rankedData, setRankedData] = useState();
 
-  const [darkMode, setDarkMode] = useState(false);
   const [loading, setLoading] = useState();
+  const [hits, setHits] = useState();
+  const [resultCount, setResultCount] = useState();
+
+  const { darkMode, setDarkMode } = useContext(GlobalContext);
 
   // EFFECTS
+
+  useEffect(() => {
+    if (window.location.host.includes("localhost")) {
+      return;
+    }
+    fetch("https://api.countapi.xyz/hit/rohitkaushal7/nith_results")
+      .then((res) => res.json())
+      .then((res) => {
+        setHits(res.value);
+      });
+  }, []);
+
   useEffect(() => {
     console.log("Fetch Data");
     fetchData(branch, batch)
@@ -54,47 +76,61 @@ export default function Explorer({ history }) {
 
   useEffect(() => {
     if (!data) return;
-    let _displayData;
-    if (!displayData) {
-      setDisplayData(data);
-      _displayData = JSON.parse(JSON.stringify(data));
-    } else {
-      _displayData = JSON.parse(JSON.stringify(displayData));
-    }
+    let _data = JSON.parse(JSON.stringify(data));
 
-    let _data;
-    switch (ranking) {
-      case "S":
-        _data = standardRanks(_displayData);
-        break;
-      case "D":
-        _data = denseRanks(_displayData);
-        break;
-      case "O":
-        _data = ordinalRanks(_displayData);
-        break;
-      default:
-        break;
-    }
-    setDisplayData(_data);
-    console.log(_data);
-  }, [ranking, data]);
-
-  useEffect(() => {
-    if (!displayData) return;
-    let _displayData = JSON.parse(JSON.stringify(displayData)).sort((a, b) => {
+    _data.sort((a, b) => {
       if (cs === "c") {
         return Number(b.cgpi) - Number(a.cgpi);
       } else {
         return Number(b.sgpi) - Number(a.sgpi);
       }
     });
-    setDisplayData(_displayData);
-  }, [cs]);
+
+    switch (ranking) {
+      case "S":
+        _data = standardRanks(_data);
+        break;
+      case "D":
+        _data = denseRanks(_data);
+        break;
+      case "O":
+        _data = ordinalRanks(_data);
+        break;
+      default:
+        break;
+    }
+    setRankedData(_data);
+    setDisplayData(_data);
+  }, [ranking, data, cs]);
 
   useEffect(() => {
-    console.log("Filter by string");
+    if (!rankedData) return;
+    let ss = searchString.toLocaleLowerCase();
+    let _displayData = rankedData.filter((stud) => {
+      let str = stud.roll + " " + stud.name.toLocaleLowerCase() + " ";
+      return String(str).includes(ss);
+    });
+    setDisplayData(_displayData);
+    setResultCount(searchString ? _displayData.length : null);
   }, [searchString]);
+
+  useEffect(() => {
+    // let $moon = document.querySelector(".dark_toggle");
+    let $cover = document.querySelector(".dark_toggle .cover");
+    if (darkMode === true) {
+      localStorage.setItem("dark", true);
+      document.body.classList.add("dark");
+      $cover.style.width = "1.7em";
+      $cover.style.height = "1.7em";
+      $cover.style.background = "#111";
+    } else {
+      localStorage.setItem("dark", false);
+      document.body.classList.remove("dark");
+      $cover.style.width = "2.5em";
+      $cover.style.height = "2.5em";
+      $cover.style.background = "#ffd700";
+    }
+  }, [darkMode]);
 
   // FUNCTIONS
 
@@ -257,6 +293,7 @@ export default function Explorer({ history }) {
     data.forEach((stud, i) => {
       stud.Rank = i + 1;
     });
+    return data;
   };
 
   // RENDER
@@ -275,6 +312,46 @@ export default function Explorer({ history }) {
         cs={cs}
         setCs={setCs}
       />
+      {/* <div className="you" id="you" title="">
+        <span id="rem">
+          <img src="pics/rem.svg" valign="middle" width="12" alt="" />
+          Click to Remember You by Roll No.*
+        </span>
+      </div> */}
+      <div id="res_cnt">{resultCount ? resultCount + " results..." : null}</div>
+      <div className="container">
+        {displayData
+          ?.slice(
+            page * LIMIT,
+            Math.min(page * LIMIT + LIMIT, displayData.length)
+          )
+          .map((stud) => (
+            <ResultCard key={stud.roll} stud={stud} cs={cs} />
+          ))}
+      </div>
+      {Math.floor(displayData?.length / LIMIT) ? (
+        <div className="pagination">
+          <div
+            className="btn"
+            onClick={() => setPage((page) => Math.max(0, page - 1))}
+          >
+            Prev
+          </div>
+          <div className="page">{page + 1}</div>
+          <div
+            className="btn"
+            onClick={() =>
+              setPage((page) =>
+                Math.min(page + 1, Math.floor(displayData.length / LIMIT))
+              )
+            }
+          >
+            Next
+          </div>
+        </div>
+      ) : null}
+      {/* <RememberMe /> */}
+      <Footer hits={hits} />
     </div>
   );
 }

@@ -2,6 +2,8 @@ import React from "react";
 
 import "./Controls.scss";
 
+import searchIcon from "../../assets/search.svg";
+
 export default function Controls({
   branch,
   setBranch,
@@ -59,7 +61,7 @@ export default function Controls({
   return (
     <div className="ctrl">
       <div className="ser">
-        <img src="pics/search.svg" alt="" />
+        <img src={searchIcon} alt="" />
         <input
           type="search"
           value={searchString}
