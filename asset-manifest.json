@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/rohitkaushal7.github.io/nith-results/static/css/main.f293ab74.chunk.css",
+    "main.js": "/rohitkaushal7.github.io/nith-results/static/js/main.c6b5d082.chunk.js",
+    "main.js.map": "/rohitkaushal7.github.io/nith-results/static/js/main.c6b5d082.chunk.js.map",
+    "runtime-main.js": "/rohitkaushal7.github.io/nith-results/static/js/runtime-main.48c63c46.js",
+    "runtime-main.js.map": "/rohitkaushal7.github.io/nith-results/static/js/runtime-main.48c63c46.js.map",
+    "static/js/2.e31b1ca1.chunk.js": "/rohitkaushal7.github.io/nith-results/static/js/2.e31b1ca1.chunk.js",
+    "static/js/2.e31b1ca1.chunk.js.map": "/rohitkaushal7.github.io/nith-results/static/js/2.e31b1ca1.chunk.js.map",
+    "static/js/3.f7e1d368.chunk.js": "/rohitkaushal7.github.io/nith-results/static/js/3.f7e1d368.chunk.js",
+    "static/js/3.f7e1d368.chunk.js.map": "/rohitkaushal7.github.io/nith-results/static/js/3.f7e1d368.chunk.js.map",
+    "index.html": "/rohitkaushal7.github.io/nith-results/index.html",
+    "static/css/main.f293ab74.chunk.css.map": "/rohitkaushal7.github.io/nith-results/static/css/main.f293ab74.chunk.css.map",
+    "static/js/2.e31b1ca1.chunk.js.LICENSE.txt": "/rohitkaushal7.github.io/nith-results/static/js/2.e31b1ca1.chunk.js.LICENSE.txt",
+    "static/media/search.fd2a70fa.svg": "/rohitkaushal7.github.io/nith-results/static/media/search.fd2a70fa.svg",
+    "static/media/snow1.916bf749.png": "/rohitkaushal7.github.io/nith-results/static/media/snow1.916bf749.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.48c63c46.js",
+    "static/js/2.e31b1ca1.chunk.js",
+    "static/css/main.f293ab74.chunk.css",
+    "static/js/main.c6b5d082.chunk.js"
+  ]
+}
