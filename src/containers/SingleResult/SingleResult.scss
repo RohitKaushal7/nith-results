@@ -114,6 +114,10 @@ $info-color: #2196f3;
     flex-wrap: wrap;
     overflow: scroll;
 
+    @media print {
+      justify-content: center;
+    }
+
     .sem {
       * {
         font-family: monospace;
@@ -129,6 +133,11 @@ $info-color: #2196f3;
 
       @media (max-width: 980px) {
         width: 100%;
+      }
+      @media print {
+        width: 45%;
+        margin: 1.5em 0.8em;
+        min-height: 20em;
       }
 
       .stsg {
