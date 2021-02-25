@@ -58,7 +58,11 @@ export default function SingleResult({ history, match }) {
       </header>
       <div className="stSemesters">
         {semesters.map((sem, i) => (
-          <div className="sem" key={i}>
+          <div
+            className="sem"
+            key={i}
+            style={{ animationDelay: i * 0.1 + "s" }}
+          >
             <div className="stsg">
               <div className="semN">Sem {sem[0].sem}</div>
               <div className="sg_total">
