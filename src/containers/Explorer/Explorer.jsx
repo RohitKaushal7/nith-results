@@ -115,6 +115,14 @@ export default function Explorer({ history }) {
   }, [ranking, data, cs]);
 
   useEffect(() => {
+    history.replace(
+      `/?${branch !== "FULL_COLLEGE" ? `branch=${branch}&batch=${batch}` : ""}${
+        cs === "s" ? `&cs=${cs}` : ""
+      }${ranking !== "S" ? `&r=${ranking}` : ""}${page ? `&p=${page}` : ""}`
+    );
+  }, [branch, batch, ranking, cs, page]);
+
+  useEffect(() => {
     if (!rankedData) return;
     let ss = searchString.toLocaleLowerCase();
     let _displayData = rankedData.filter((stud) => {
