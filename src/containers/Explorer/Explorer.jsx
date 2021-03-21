@@ -2,13 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import Controls from "../../components/Controls/Controls";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
+import Progress from "../../components/Progress";
 import RememberMe from "../../components/RememberMe/RememberMe";
 import ResultCard from "../../components/ResultCard/ResultCard";
 import GlobalContext from "../../context/GlobalContext";
 import "./Explorer.scss";
 
 const LATEST_BATCH = 19;
-const $progress = null;
 const VERSION = "Jan 2021";
 const LIMIT = 100;
 
@@ -156,6 +156,8 @@ export default function Explorer({ history }) {
       }
     }
 
+    setLoading(true);
+
     let _response = localStorage.getItem(VERSION + ":::" + url);
     let cacheHit = false;
 
@@ -195,10 +197,8 @@ export default function Explorer({ history }) {
           _data = _data.concat(jso.data);
           _next_cursor = jso.pagination.next_cursor;
 
-          if ($progress) {
-            let _pro = _data.length / 3000;
-            setLoading(_pro * 100);
-          }
+          let _pro = _data.length / 3000;
+          setLoading(_pro * 100);
         } while (_next_cursor != "");
 
         __data = _data;
@@ -222,10 +222,8 @@ export default function Explorer({ history }) {
           _data = _data.concat(jso.data);
           _next_cursor = jso.pagination.next_cursor;
 
-          if ($progress) {
-            let _pro = _data.length / 3000;
-            setLoading(_pro * 100);
-          }
+          let _pro = _data.length / 3000;
+          setLoading(_pro * 100);
         } while (_next_cursor != "");
 
         __data = _data;
@@ -247,6 +245,9 @@ export default function Explorer({ history }) {
           let jso = await res.json();
           _data = _data.concat(jso.data);
           _next_cursor = jso.pagination.next_cursor;
+
+          let _pro = _data.length / 3000;
+          setLoading(_pro * 100);
         } while (_next_cursor != "");
 
         __data = _data;
@@ -257,6 +258,7 @@ export default function Explorer({ history }) {
         };
         localStorage.setItem(VERSION + ":::" + url, JSON.stringify(response));
       }
+      setLoading(false);
     }
 
     return __data;
@@ -372,8 +374,16 @@ export default function Explorer({ history }) {
           ranking !== "S" ? `&r=${ranking}` : ""
         }${page ? `&p=${page}` : ""}`}
       </div>
+
       <div id="res_cnt">{resultCount ? resultCount + " results..." : null}</div>
+
       <div className="container">
+        {loading && (
+          <Progress
+            indeterminate
+            value={Number.isFinite(loading) ? loading : null}
+          />
+        )}
         {displayData
           ?.slice(
             page * LIMIT,
