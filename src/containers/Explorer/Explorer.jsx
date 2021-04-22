@@ -229,7 +229,7 @@ export default function Explorer({ history }) {
             Math.min(page * LIMIT + LIMIT, displayData.length)
           )
           .map((stud) => (
-            <ResultCard key={stud.roll} stud={stud} cs={cs} />
+            <ResultCard key={stud.roll} stud={stud} cs={cs} branch={branch} />
           ))}
       </div>
       {Math.floor(displayData?.length / LIMIT) ? (

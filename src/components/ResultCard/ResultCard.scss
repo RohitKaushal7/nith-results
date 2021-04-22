@@ -2,7 +2,7 @@ $card-color: #eee9;
 $rank-color: #673ab7;
 $hash-color: #9c27b0;
 $primary-color: #000;
-$light-color: #777;
+$light-color: #555;
 $info-color: #2196f3;
 
 $c1st: #ffd700;
@@ -59,6 +59,14 @@ a {
       color: $hash-color;
     }
   }
+  .info {
+    display: flex;
+    flex-wrap: wrap;
+    // max-width: 70%;
+    @media (max-width: 640px) {
+      flex-direction: column;
+    }
+  }
   .rollno,
   .branch,
   .year {
@@ -66,7 +74,7 @@ a {
     display: inline-block;
     margin-right: 0.5rem;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   .cgpa {
     display: inline-block;
