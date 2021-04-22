@@ -8,15 +8,12 @@ import ResultCard from "../../components/ResultCard/ResultCard";
 import GlobalContext from "../../context/GlobalContext";
 import "./Explorer.scss";
 
-const LATEST_BATCH = 19;
-const VERSION = "Jan 2021";
+import { denseRanks, ordinalRanks, standardRanks } from "../../utils/ranking";
+import { fetchData, getVersion } from "../../services/api";
+import { downloadCSV } from "../../utils/download";
+
 const LIMIT = 100;
 
-/**
- * This component renders all results of students
- * @param {Object} props
- * @param {Object} props.history - route history
- */
 export default function Explorer({ history }) {
   // CONSTANTS
   const {
@@ -37,8 +34,11 @@ export default function Explorer({ history }) {
     : null;
 
   // STATES
+  const [version, setVersion] = useState(localStorage.getItem("VERSION"));
   const [branch, setBranch] = useState(q_branch || "FULL_COLLEGE");
-  const [batch, setBatch] = useState(q_batch || LATEST_BATCH);
+  const [batch, setBatch] = useState(
+    q_batch || (new Date().getFullYear() - 1).toString()
+  );
   const [ranking, setRanking] = useState(q_r || "S");
   const [searchString, setSearchString] = useState(q_q || "");
   const [cs, setCs] = useState(q_cs || "c");
@@ -57,19 +57,49 @@ export default function Explorer({ history }) {
   // EFFECTS
 
   useEffect(() => {
-    if (window.location.host.includes("localhost")) {
-      return;
-    }
-    fetch("https://api.countapi.xyz/hit/rohitkaushal7/nith_results")
-      .then((res) => res.json())
-      .then((res) => {
-        setHits(res.value);
+    // GET VERSION
+
+    getVersion()
+      .then((version) => {
+        console.log("VERSION - ", version);
+        setVersion(version);
+      })
+      .catch((err) => {
+        console.log("Failed to get Version.");
       });
+
+    if (!window.location.host.includes("localhost")) {
+      fetch("https://api.countapi.xyz/hit/rohitkaushal7/nith_results")
+        .then((res) => res.json())
+        .then((res) => {
+          setHits(res.value);
+        });
+    }
   }, []);
 
   useEffect(() => {
-    console.log("Fetch Data");
-    fetchData(branch, batch)
+    if (!version) return;
+    let _cacheVersion = localStorage.getItem("VERSION");
+    if (_cacheVersion != version) {
+      localStorage.setItem("VERSION", version);
+      console.log("Clearing Cache for New Version.");
+      for (let i = 0; i < 100; ++i) {
+        let key = localStorage.key(i);
+        if (!key) {
+          break;
+        }
+        if (key.includes(":::")) {
+          console.log("CLEARED CACHE - ", key);
+          localStorage.removeItem(key);
+        }
+      }
+    }
+  }, [version]);
+
+  useEffect(() => {
+    if (!version) return;
+
+    fetchData({ batch, branch, setLoading, version })
       .then((_data) => {
         _data = _data.sort((a, b) => {
           if (cs === "c") {
@@ -83,7 +113,7 @@ export default function Explorer({ history }) {
       .catch((err) => {
         console.error("Failed to Fetch. Err - ", err.message);
       });
-  }, [branch, batch]);
+  }, [branch, batch, version]);
 
   useEffect(() => {
     if (!data) return;
@@ -99,13 +129,13 @@ export default function Explorer({ history }) {
 
     switch (ranking) {
       case "S":
-        _data = standardRanks(_data);
+        _data = standardRanks(_data, cs);
         break;
       case "D":
-        _data = denseRanks(_data);
+        _data = denseRanks(_data, cs);
         break;
       case "O":
-        _data = ordinalRanks(_data);
+        _data = ordinalRanks(_data, cs);
         break;
       default:
         break;
@@ -126,9 +156,7 @@ export default function Explorer({ history }) {
     if (!rankedData) return;
     let ss = searchString.toLocaleLowerCase();
     let _displayData = rankedData.filter((stud) => {
-      let str = `${
-        stud.roll
-      } ${stud.name.toLocaleLowerCase()} ${stud.branch.toLowerCase()} cg:${
+      let str = `${stud.roll.toLocaleLowerCase()} ${stud.name.toLocaleLowerCase()} ${stud.branch.toLowerCase()} cg:${
         stud.cgpi
       } sg:${stud.sgpi}`;
       return String(str).includes(ss);
@@ -138,170 +166,6 @@ export default function Explorer({ history }) {
   }, [searchString]);
 
   // FUNCTIONS
-
-  const fetchData = async (branch, batch) => {
-    let url;
-    let next_cursor;
-    let response;
-    let __data;
-
-    if (branch === "FULL_COLLEGE") {
-      url = `FULL_COLLEGE`;
-    } else if (branch === "FULL_YEAR") {
-      url = `FULL_YEAR - ${batch}`;
-    } else {
-      url = `${branch} - ${batch}`;
-      if (next_cursor) {
-        url += `&next_cursor=${next_cursor}`;
-      }
-    }
-
-    setLoading(true);
-
-    let _response = localStorage.getItem(VERSION + ":::" + url);
-    let cacheHit = false;
-
-    if (_response) {
-      try {
-        response = JSON.parse(_response);
-        if (response.expires) {
-          if (new Date(response.expires).getTime() > new Date().getTime()) {
-            cacheHit = true;
-          } else {
-            console.log("Cache Expired - ", VERSION + ":::" + url);
-            localStorage.removeItem(VERSION + ":::" + url);
-          }
-        }
-      } catch (err) {
-        console.log("Parsing Error - ", err.message);
-      }
-    }
-
-    if (cacheHit) {
-      __data = response.data;
-      next_cursor = null;
-      console.log("CACHE HIT", VERSION + ":::" + url);
-      setLoading(false);
-    } else {
-      if (branch === "FULL_COLLEGE") {
-        console.log("FULL COLLEGE");
-        let res;
-        let _data = [];
-        let _next_cursor = "";
-        do {
-          console.log("fetching data from " + _next_cursor);
-          res = await fetch(
-            `https://nithp.herokuapp.com/api/result/student?limit=3000&next_cursor=${_next_cursor}`
-          );
-          let jso = await res.json();
-          _data = _data.concat(jso.data);
-          _next_cursor = jso.pagination.next_cursor;
-
-          let _pro = _data.length / 3000;
-          setLoading(_pro * 100);
-        } while (_next_cursor != "");
-
-        __data = _data;
-        response = {
-          data: _data,
-          pagination: { next_cursor: "" },
-          expires: new Date().getTime() + 30 * 24 * 3600 * 1000,
-        };
-        localStorage.setItem(VERSION + ":::" + url, JSON.stringify(response));
-      } else if (branch === "FULL_YEAR") {
-        console.log("FULL_YEAR");
-        let res;
-        let _data = [];
-        let _next_cursor = "";
-        do {
-          console.log("fetching data from " + _next_cursor);
-          res = await fetch(
-            `https://nithp.herokuapp.com/api/result/student?roll=${batch}%&limit=3000&next_cursor=${_next_cursor}`
-          );
-          let jso = await res.json();
-          _data = _data.concat(jso.data);
-          _next_cursor = jso.pagination.next_cursor;
-
-          let _pro = _data.length / 3000;
-          setLoading(_pro * 100);
-        } while (_next_cursor != "");
-
-        __data = _data;
-        response = {
-          data: _data,
-          pagination: { next_cursor: "" },
-          expires: new Date().getTime() + 30 * 24 * 3600 * 1000,
-        };
-        localStorage.setItem(VERSION + ":::" + url, JSON.stringify(response));
-      } else {
-        let res;
-        let _data = [];
-        let _next_cursor = "";
-        do {
-          console.log("fetching data from " + _next_cursor);
-          res = await fetch(
-            `https://nithp.herokuapp.com/api/result/student?branch=${branch}&roll=${batch}%&limit=200&next_cursor=${_next_cursor}`
-          );
-          let jso = await res.json();
-          _data = _data.concat(jso.data);
-          _next_cursor = jso.pagination.next_cursor;
-
-          let _pro = _data.length / 3000;
-          setLoading(_pro * 100);
-        } while (_next_cursor != "");
-
-        __data = _data;
-        response = {
-          data: _data,
-          pagination: { next_cursor: "" },
-          expires: new Date().getTime() + 30 * 24 * 3600 * 1000,
-        };
-        localStorage.setItem(VERSION + ":::" + url, JSON.stringify(response));
-      }
-      setLoading(false);
-    }
-
-    return __data;
-  };
-
-  const standardRanks = (data) => {
-    let k = 1;
-    data[0].Rank = 1;
-    if (cs == "c") {
-      for (let i = 1; i < data.length; ++i) {
-        if (data[i - 1].cgpi != data[i].cgpi) k = i + 1;
-        data[i].Rank = k;
-      }
-    } else {
-      for (let i = 1; i < data.length; ++i) {
-        if (data[i - 1].sgpi != data[i].sgpi) k = i + 1;
-        data[i].Rank = k;
-      }
-    }
-    return data;
-  };
-  const denseRanks = (data) => {
-    let k = 1;
-    data[0].Rank = 1;
-    if (cs == "c") {
-      for (let i = 1; i < data.length; ++i) {
-        if (data[i - 1].cgpi != data[i].cgpi) k++;
-        data[i].Rank = k;
-      }
-    } else {
-      for (let i = 1; i < data.length; ++i) {
-        if (data[i - 1].sgpi != data[i].sgpi) k++;
-        data[i].Rank = k;
-      }
-    }
-    return data;
-  };
-  const ordinalRanks = (data) => {
-    data.forEach((stud, i) => {
-      stud.Rank = i + 1;
-    });
-    return data;
-  };
 
   const handleCopy = (e) => {
     e.preventDefault();
@@ -317,31 +181,14 @@ export default function Explorer({ history }) {
     }
   };
 
-  const downloadCSV = () => {
-    let text = "Rollno,Name,Branch,Sgpa,Cgpa\n";
-    let __data = JSON.parse(JSON.stringify(data));
-    __data.sort((x, y) => Number(x.roll) - Number(y.roll));
-    for (const st of __data) {
-      text += `${st.roll},${st.name},${st.branch},${st.sgpi},${st.cgpi}\n`;
-    }
-
-    let a = document.createElement("a");
-    a.setAttribute(
-      "href",
-      "data:text/csv;charset=utf-8," + encodeURIComponent(text)
-    );
-    a.setAttribute("download", `${branch}_${batch}.csv`);
-
-    a.style.display = "none";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+  const handleDownloadCSV = () => {
+    downloadCSV(data, branch, batch);
   };
 
   // RENDER
   return (
     <div>
-      <Header lastUpdated="Jan 2021" />
+      <Header lastUpdated={version} />
       <Controls
         branch={branch}
         setBranch={setBranch}
@@ -353,7 +200,7 @@ export default function Explorer({ history }) {
         setRanking={setRanking}
         cs={cs}
         setCs={setCs}
-        downloadCSV={downloadCSV}
+        downloadCSV={handleDownloadCSV}
       />
       {/* <div className="you" id="you" title="">
         <span id="rem">

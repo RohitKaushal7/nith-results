@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
+import { getResultByRollNumber } from "../../services/api";
 import "./SingleResult.scss";
 
 export default function SingleResult({ history, match }) {
   const [result, setResult] = useState();
 
   useEffect(() => {
-    fetch(`https://nithp.herokuapp.com/api/result/student/${match.params.roll}`)
-      .then((res) => res.json())
-      .then((res) => {
-        setResult(res);
-      });
+    getResultByRollNumber(match.params.roll).then((res) => {
+      setResult(res);
+    });
   }, []);
 
   if (!result) {

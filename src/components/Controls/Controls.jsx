@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./Controls.scss";
 
 import searchIcon from "../../assets/search.svg";
+import { getBranches } from "../../services/api";
 
 export default function Controls({
   branch,
@@ -17,29 +18,38 @@ export default function Controls({
   setCs,
   downloadCSV,
 }) {
-  const BATCHES = [
-    { name: 19, value: 19 },
-    { name: 18, value: 18 },
-    { name: 17, value: 17 },
-    { name: 16, value: 16 },
-  ];
-  const BRANCHES = [
-    { name: "FULL_COLLEGE", value: "FULL_COLLEGE" },
-    { name: "FULL_YEAR", value: "FULL_YEAR" },
-    { name: "ARCHITECTURE", value: "ARCHITECTURE" },
-    { name: "CHEMICAL", value: "CHEMICAL" },
-    { name: "CIVIL", value: "CIVIL" },
-    { name: "CSE", value: "CSE" },
-    { name: "CSE_DUAL", value: "CSE_DUAL" },
-    { name: "ECE", value: "ECE" },
-    { name: "ECE_DUAL", value: "ECE_DUAL" },
-    { name: "ELECTRICAL", value: "ELECTRICAL" },
-    { name: "MATERIAL", value: "MATERIAL" },
-    { name: "MECHANICAL", value: "MECHANICAL" },
-  ];
+  // STATES
+  const [branches, setBranches] = useState([]);
+
+  // EFFECTS
+  useEffect(() => {
+    getBranches()
+      .then((branches) => {
+        if (branches) {
+          setBranches([
+            { name: "FULL_COLLEGE", batches: [] },
+            { name: "FULL_YEAR", batches: branches[0].batches },
+            ...branches,
+          ]);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  // FUNCTIONS
 
   const handleBranchChange = (e) => {
     setBranch(e.target.value);
+
+    let _branch = branches.find((b) => b.name == e.target.value);
+    if (
+      e.target.value !== "FULL_COLLEGE" &&
+      !_branch.batches.includes(Number(batch))
+    ) {
+      setBatch(_branch.batches[_branch.batches.length - 1]);
+    }
   };
   const handleBatchChange = (e) => {
     setBatch(e.target.value);
@@ -79,8 +89,8 @@ export default function Controls({
           onChange={handleBranchChange}
         >
           <option disabled>📑 Branch</option>
-          {BRANCHES.map((branch) => (
-            <option key={branch.value} value={branch.value}>
+          {branches.map((branch) => (
+            <option key={branch.name} value={branch.name}>
               {branch.name}
             </option>
           ))}
@@ -96,11 +106,13 @@ export default function Controls({
           onChange={handleBatchChange}
         >
           <option disabled>🎓 Batch</option>
-          {BATCHES.map((batch) => (
-            <option key={batch.value} value={batch.value}>
-              {batch.name}
-            </option>
-          ))}
+          {branches
+            .find((b) => b.name == branch)
+            ?.batches?.map((batch) => (
+              <option key={batch} value={batch}>
+                {batch}
+              </option>
+            ))}
         </select>
       </div>
       <div className="cs" title="sort: CGPA / SGPA" onClick={handleCSChange}>
