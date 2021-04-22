@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import DarkModeToggle from "../../components/DarkModeToggle/DarkModeToggle";
 import GlobalContext from "../../context/GlobalContext";
+import { getVersion } from "../../services/api";
 import Explorer from "../Explorer/Explorer";
 import SingleResult from "../SingleResult/SingleResult";
 
@@ -11,7 +12,19 @@ function App() {
   const [darkMode, setDarkMode] = useState(
     JSON.parse(localStorage.getItem("dark"))
   );
+  const [version, setVersion] = useState(localStorage.getItem("VERSION"));
 
+  // EFFECTS
+  useEffect(() => {
+    getVersion()
+      .then((version) => {
+        console.log("VERSION - ", version);
+        setVersion(version);
+      })
+      .catch((err) => {
+        console.log("Failed to get Version.");
+      });
+  }, []);
   useEffect(() => {
     // let $moon = document.querySelector(".dark_toggle");
     let $cover = document.querySelector(".dark_toggle .cover");
@@ -32,7 +45,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <GlobalContext.Provider value={{ darkMode, setDarkMode }}>
+      <GlobalContext.Provider
+        value={{ darkMode, setDarkMode, version, setVersion }}
+      >
         <DarkModeToggle setDarkMode={setDarkMode} darkMode={darkMode} />
         <Route exact path="/" component={Explorer} />
         <Route exact path="/r/:roll" component={SingleResult} />

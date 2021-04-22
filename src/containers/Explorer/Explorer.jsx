@@ -34,7 +34,6 @@ export default function Explorer({ history }) {
     : null;
 
   // STATES
-  const [version, setVersion] = useState(localStorage.getItem("VERSION"));
   const [branch, setBranch] = useState(q_branch || "FULL_COLLEGE");
   const [batch, setBatch] = useState(
     q_batch || (new Date().getFullYear() - 1).toString()
@@ -52,22 +51,12 @@ export default function Explorer({ history }) {
   const [hits, setHits] = useState();
   const [resultCount, setResultCount] = useState();
 
-  const { darkMode, setDarkMode } = useContext(GlobalContext);
+  const { version } = useContext(GlobalContext);
 
   // EFFECTS
 
   useEffect(() => {
     // GET VERSION
-
-    getVersion()
-      .then((version) => {
-        console.log("VERSION - ", version);
-        setVersion(version);
-      })
-      .catch((err) => {
-        console.log("Failed to get Version.");
-      });
-
     if (!window.location.host.includes("localhost")) {
       fetch("https://api.countapi.xyz/hit/rohitkaushal7/nith_results")
         .then((res) => res.json())
@@ -188,7 +177,7 @@ export default function Explorer({ history }) {
   // RENDER
   return (
     <div>
-      <Header lastUpdated={version} />
+      <Header />
       <Controls
         branch={branch}
         setBranch={setBranch}
