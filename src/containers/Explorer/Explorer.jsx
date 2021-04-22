@@ -152,6 +152,7 @@ export default function Explorer({ history }) {
     });
     setDisplayData(_displayData);
     setResultCount(searchString ? _displayData.length : null);
+    setPage(0);
   }, [searchString]);
 
   // FUNCTIONS
@@ -183,6 +184,8 @@ export default function Explorer({ history }) {
         setBranch={setBranch}
         batch={batch}
         setBatch={setBatch}
+        page={page}
+        setPage={setPage}
         searchString={searchString}
         setSearchString={setSearchString}
         ranking={ranking}

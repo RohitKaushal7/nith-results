@@ -10,6 +10,8 @@ export default function Controls({
   setBranch,
   batch,
   setBatch,
+  setPage,
+  page,
   ranking,
   setRanking,
   searchString,
@@ -42,7 +44,7 @@ export default function Controls({
 
   const handleBranchChange = (e) => {
     setBranch(e.target.value);
-
+    setPage(0);
     let _branch = branches.find((b) => b.name == e.target.value);
     if (
       e.target.value !== "FULL_COLLEGE" &&
@@ -53,6 +55,7 @@ export default function Controls({
   };
   const handleBatchChange = (e) => {
     setBatch(e.target.value);
+    setPage(0);
   };
   const handleSearchStringChange = (e) => {
     setSearchString(e.target.value);
