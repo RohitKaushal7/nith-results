@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import "./Header.scss";
 
 import icon from "../../assets/hero.png";
-import GlobalContext from "../../context/GlobalContext";
+import { useGlobalContext } from "../../context/GlobalContext";
 
 export default function Header({}) {
-  const { version } = useContext(GlobalContext);
+  const { version } = useGlobalContext();
   return (
     <div className="header">
       <img src={icon} alt="" className="logo" />

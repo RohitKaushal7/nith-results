@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import GlobalContext from "../../context/GlobalContext";
+import { useGlobalContext } from "../../context/GlobalContext";
 import "./DarkModeToggle.scss";
 
 export default function DarkModeToggle() {
-  const { darkMode, setDarkMode } = useContext(GlobalContext);
+  const { darkMode, setDarkMode } = useGlobalContext();
   return (
     <div
       className="dark_toggle"

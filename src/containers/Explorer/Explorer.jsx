@@ -5,7 +5,7 @@ import Header from "../../components/Header/Header";
 import Progress from "../../components/Progress";
 import RememberMe from "../../components/RememberMe/RememberMe";
 import ResultCard from "../../components/ResultCard/ResultCard";
-import GlobalContext from "../../context/GlobalContext";
+import { useGlobalContext } from "../../context/GlobalContext";
 import "./Explorer.scss";
 
 import { denseRanks, ordinalRanks, standardRanks } from "../../utils/ranking";
@@ -51,7 +51,7 @@ export default function Explorer({ history }) {
   const [hits, setHits] = useState();
   const [resultCount, setResultCount] = useState();
 
-  const { version } = useContext(GlobalContext);
+  const { version } = useGlobalContext();
 
   // EFFECTS
 
