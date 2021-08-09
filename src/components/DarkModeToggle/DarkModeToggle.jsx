@@ -9,6 +9,7 @@ export default function DarkModeToggle() {
       className="dark_toggle"
       onClick={() => {
         setDarkMode((d) => !d);
+        window.gtag?.("event", "dark_mode_toggle", { to: !darkMode });
       }}
       title="toggle Dark Mode"
     >

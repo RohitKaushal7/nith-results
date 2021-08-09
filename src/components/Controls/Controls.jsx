@@ -62,6 +62,7 @@ export default function Controls({
   };
   const handleRankingChange = (e) => {
     setRanking(e.target.value);
+    window.gtag?.("event", "ranking_changed", { to: e.target.value });
   };
   const handleCSChange = (e) => {
     setCs((cs) => {
@@ -70,6 +71,7 @@ export default function Controls({
       }
       return "c";
     });
+    window.gtag?.("event", "cs_changed", { from: cs });
   };
 
   return (

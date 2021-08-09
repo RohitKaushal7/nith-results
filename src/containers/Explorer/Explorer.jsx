@@ -169,10 +169,14 @@ export default function Explorer({ history }) {
         }${page ? `&p=${page}` : ""}`
       );
     }
+    window.gtag?.("event", "link_copied_from_duck");
   };
 
   const handleDownloadCSV = () => {
     downloadCSV(data, branch, batch);
+    window.gtag?.("event", "download_csv", {
+      data: { branch, batch, cs, ranking, page },
+    });
   };
 
   // RENDER
