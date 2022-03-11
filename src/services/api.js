@@ -61,6 +61,14 @@ export const fetchData = async ({ branch, batch, setLoading, version }) => {
         setLoading(_pro * 100);
       } while (_next_cursor != "");
 
+      // only 5 years old.
+      // ! temporary solution. API should facilitate this.
+      _data = _data.filter(
+        (st) =>
+          Number(st.roll.slice(0, 2)) >=
+          Number(new Date().getFullYear().toString().slice(2)) - 5
+      );
+
       __data = _data;
       response = {
         data: _data,
@@ -132,8 +140,10 @@ export const getResultByRollNumber = async (roll) => {
   let res = await fetch(
     `https://nithp.herokuapp.com/api/result/student/${roll}`
   );
-  let data = await res.json();
-  return data;
+  if (res.ok) {
+    return await res.json();
+  }
+  return null;
 };
 
 export const getBranches = async () => {

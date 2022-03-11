@@ -3,13 +3,13 @@ import Controls from "../../components/Controls/Controls";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Progress from "../../components/Progress";
-import RememberMe from "../../components/RememberMe/RememberMe";
+// import RememberMe from "../../components/RememberMe/RememberMe";
 import ResultCard from "../../components/ResultCard/ResultCard";
 import { useGlobalContext } from "../../context/GlobalContext";
 import "./Explorer.scss";
 
 import { denseRanks, ordinalRanks, standardRanks } from "../../utils/ranking";
-import { fetchData, getVersion } from "../../services/api";
+import { fetchData } from "../../services/api";
 import { downloadCSV } from "../../utils/download";
 
 const LIMIT = 100;

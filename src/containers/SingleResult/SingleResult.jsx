@@ -6,19 +6,28 @@ import "./SingleResult.scss";
 
 export default function SingleResult({ history, match }) {
   const [result, setResult] = useState();
+  const [error, setError] = useState();
 
   useEffect(() => {
     getResultByRollNumber(match.params.roll).then((res) => {
-      setResult(res);
+      if (res) {
+        setResult(res);
+        setError(null);
+      } else {
+        setError({ message: "404 - NOT FOUND" });
+      }
     });
   }, []);
 
+  if (error) {
+    return <div className="loading">{error.message}</div>;
+  }
   if (!result) {
     return <div className="loading">loading...</div>;
   }
 
   let semesters = [8, 7, 6, 5, 4, 3, 2, 1]
-    .map((sem) => result.result.filter((x) => x.sem == sem))
+    .map((sem) => result?.result.filter((x) => x.sem == sem))
     .filter((sem) => sem.length);
 
   return (

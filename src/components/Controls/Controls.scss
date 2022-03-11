@@ -84,10 +84,19 @@
     padding: 0.1rem 0.2rem;
   }
 
+  .clear-cache {
+    display: flex;
+    color: rgb(54, 255, 47);
+    height: 3rem;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+  }
   .csv {
     display: flex;
     color: rgb(54, 255, 47);
-    padding: 0 0.7rem;
     height: 3rem;
     cursor: pointer;
     flex-direction: column;

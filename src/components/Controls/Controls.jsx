@@ -74,6 +74,12 @@ export default function Controls({
     window.gtag?.("event", "cs_changed", { from: cs });
   };
 
+  const handleRefresh = () => {
+    window.gtag?.("event", "clear_cache");
+    localStorage.removeItem("VERSION");
+    window.location.reload();
+  };
+
   return (
     <div className="ctrl">
       <div className="ser">
@@ -136,6 +142,13 @@ export default function Controls({
           <option value="D">Dense '1223'</option>
           <option value="O">Ordinal '1234'</option>
         </select>
+      </div>
+      <div
+        className="clear-cache"
+        onClick={handleRefresh}
+        title="clear local cache"
+      >
+        <span>🔃</span>
       </div>
       <div className="csv" onClick={downloadCSV} title="download result csv">
         <span>🍧</span>

@@ -39,6 +39,6 @@ This is a React App. Requires NodeJs and npm installed.
 ![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
 - Install Ddependencies  
-  `npm install`
+  `pnpm install`
 - Start development server  
   `npm start`
