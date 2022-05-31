@@ -48,6 +48,7 @@ export default function Explorer({ history }) {
   const [rankedData, setRankedData] = useState();
 
   const [loading, setLoading] = useState();
+  const [error, setError] = useState();
   const [hits, setHits] = useState();
   const [resultCount, setResultCount] = useState();
 
@@ -88,6 +89,7 @@ export default function Explorer({ history }) {
   useEffect(() => {
     if (!version) return;
 
+    setError(null);
     fetchData({ batch, branch, setLoading, version })
       .then((_data) => {
         _data = _data.sort((a, b) => {
@@ -101,6 +103,7 @@ export default function Explorer({ history }) {
       })
       .catch((err) => {
         console.error("Failed to Fetch. Err - ", err.message);
+        setError(err.message);
       });
   }, [branch, batch, version]);
 
@@ -226,6 +229,16 @@ export default function Explorer({ history }) {
             indeterminate
             value={Number.isFinite(loading) ? loading : null}
           />
+        )}
+        {error && (
+          <div className="error">
+            <div>{error}</div>
+            <div className="link">
+              <a href="https://nithp.herokuapp.com/api/">
+                API may be temporarily down
+              </a>
+            </div>
+          </div>
         )}
         {displayData
           ?.slice(

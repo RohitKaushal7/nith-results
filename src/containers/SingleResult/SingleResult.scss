@@ -5,15 +5,6 @@ $primary-color: #000;
 $light-color: #777;
 $info-color: #2196f3;
 
-.loading {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #888;
-}
-
 .fullResult {
   width: 100vw;
   min-width: 360px;
@@ -27,6 +18,30 @@ $info-color: #2196f3;
   justify-content: flex-start;
   align-items: flex-start;
   animation: pop 0.5s;
+
+  &.error {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f00;
+    .link {
+      color: $info-color;
+      font-size: 0.8em;
+      line-height: 1.2em;
+    }
+  }
+  &.loading {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+  }
 
   header {
     display: flex;

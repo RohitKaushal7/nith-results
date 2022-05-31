@@ -8,6 +8,20 @@
   height: auto;
   min-height: 30vh;
 }
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f00;
+  .link {
+    color: #2196f3;
+    font-size: 0.8em;
+    line-height: 1.2em;
+  }
+}
+
 .query {
   color: #888;
   font-size: 0.6em;

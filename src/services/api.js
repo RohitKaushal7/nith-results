@@ -43,107 +43,117 @@ export const fetchData = async ({ branch, batch, setLoading, version }) => {
     console.log("CACHE HIT", version + ":::" + url);
     setLoading(false);
   } else {
-    if (branch === "FULL_COLLEGE") {
-      console.log("FULL COLLEGE");
-      let res;
-      let _data = [];
-      let _next_cursor = "";
-      do {
-        console.log("fetching data from " + _next_cursor);
-        res = await fetch(
-          `https://nithp.herokuapp.com/api/result/student?limit=3000&next_cursor=${_next_cursor}`
+    try {
+      if (branch === "FULL_COLLEGE") {
+        console.log("FULL COLLEGE");
+        let res;
+        let _data = [];
+        let _next_cursor = "";
+        do {
+          console.log("fetching data from " + _next_cursor);
+          res = await fetch(
+            `https://nithp.herokuapp.com/api/result/student?limit=3000&next_cursor=${_next_cursor}`
+          );
+          let jso = await res.json();
+          _data = _data.concat(jso.data);
+          _next_cursor = jso.pagination.next_cursor;
+
+          let _pro = _data.length / 3000;
+          setLoading(_pro * 100);
+        } while (_next_cursor != "");
+
+        // only 5 years old.
+        // ! temporary solution. API should facilitate this.
+        _data = _data.filter(
+          (st) =>
+            Number(st.roll.slice(0, 2)) >=
+            Number(new Date().getFullYear().toString().slice(2)) - 5
         );
-        let jso = await res.json();
-        _data = _data.concat(jso.data);
-        _next_cursor = jso.pagination.next_cursor;
 
-        let _pro = _data.length / 3000;
-        setLoading(_pro * 100);
-      } while (_next_cursor != "");
+        __data = _data;
+        response = {
+          data: _data,
+          pagination: { next_cursor: "" },
+          expires: new Date().getTime() + 30 * 24 * 3600 * 1000,
+        };
+        localStorage.setItem(version + ":::" + url, JSON.stringify(response));
+      } else if (branch === "FULL_YEAR") {
+        console.log("FULL_YEAR");
+        let res;
+        let _data = [];
+        let _next_cursor = "";
+        do {
+          console.log("fetching data from " + _next_cursor);
+          res = await fetch(
+            `https://nithp.herokuapp.com/api/result/student?roll=${batch.slice(
+              2
+            )}%&limit=3000&next_cursor=${_next_cursor}`
+          );
+          let jso = await res.json();
+          _data = _data.concat(jso.data);
+          _next_cursor = jso.pagination.next_cursor;
 
-      // only 5 years old.
-      // ! temporary solution. API should facilitate this.
-      _data = _data.filter(
-        (st) =>
-          Number(st.roll.slice(0, 2)) >=
-          Number(new Date().getFullYear().toString().slice(2)) - 5
-      );
+          let _pro = _data.length / 3000;
+          setLoading(_pro * 100);
+        } while (_next_cursor != "");
 
-      __data = _data;
-      response = {
-        data: _data,
-        pagination: { next_cursor: "" },
-        expires: new Date().getTime() + 30 * 24 * 3600 * 1000,
-      };
-      localStorage.setItem(version + ":::" + url, JSON.stringify(response));
-    } else if (branch === "FULL_YEAR") {
-      console.log("FULL_YEAR");
-      let res;
-      let _data = [];
-      let _next_cursor = "";
-      do {
-        console.log("fetching data from " + _next_cursor);
-        res = await fetch(
-          `https://nithp.herokuapp.com/api/result/student?roll=${batch.slice(
-            2
-          )}%&limit=3000&next_cursor=${_next_cursor}`
-        );
-        let jso = await res.json();
-        _data = _data.concat(jso.data);
-        _next_cursor = jso.pagination.next_cursor;
+        __data = _data;
+        response = {
+          data: _data,
+          pagination: { next_cursor: "" },
+          expires: new Date().getTime() + 30 * 24 * 3600 * 1000,
+        };
+        localStorage.setItem(version + ":::" + url, JSON.stringify(response));
+      } else {
+        let res;
+        let _data = [];
+        let _next_cursor = "";
+        do {
+          console.log("fetching data from " + _next_cursor);
+          res = await fetch(
+            `https://nithp.herokuapp.com/api/result/student?branch=${branch}&roll=${batch.slice(
+              2
+            )}%&limit=200&next_cursor=${_next_cursor}`
+          );
+          let jso = await res.json();
+          _data = _data.concat(jso.data);
+          _next_cursor = jso.pagination.next_cursor;
 
-        let _pro = _data.length / 3000;
-        setLoading(_pro * 100);
-      } while (_next_cursor != "");
+          let _pro = _data.length / 3000;
+          setLoading(_pro * 100);
+        } while (_next_cursor != "");
 
-      __data = _data;
-      response = {
-        data: _data,
-        pagination: { next_cursor: "" },
-        expires: new Date().getTime() + 30 * 24 * 3600 * 1000,
-      };
-      localStorage.setItem(version + ":::" + url, JSON.stringify(response));
-    } else {
-      let res;
-      let _data = [];
-      let _next_cursor = "";
-      do {
-        console.log("fetching data from " + _next_cursor);
-        res = await fetch(
-          `https://nithp.herokuapp.com/api/result/student?branch=${branch}&roll=${batch.slice(
-            2
-          )}%&limit=200&next_cursor=${_next_cursor}`
-        );
-        let jso = await res.json();
-        _data = _data.concat(jso.data);
-        _next_cursor = jso.pagination.next_cursor;
-
-        let _pro = _data.length / 3000;
-        setLoading(_pro * 100);
-      } while (_next_cursor != "");
-
-      __data = _data;
-      response = {
-        data: _data,
-        pagination: { next_cursor: "" },
-        expires: new Date().getTime() + 30 * 24 * 3600 * 1000,
-      };
-      localStorage.setItem(version + ":::" + url, JSON.stringify(response));
+        __data = _data;
+        response = {
+          data: _data,
+          pagination: { next_cursor: "" },
+          expires: new Date().getTime() + 30 * 24 * 3600 * 1000,
+        };
+        localStorage.setItem(version + ":::" + url, JSON.stringify(response));
+      }
+    } catch (err) {
+      console.log("Error - ", err.message);
+      throw err;
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   }
 
   return __data;
 };
 
 export const getResultByRollNumber = async (roll) => {
-  let res = await fetch(
-    `https://nithp.herokuapp.com/api/result/student/${roll}`
-  );
-  if (res.ok) {
-    return await res.json();
+  try {
+    let res = await fetch(
+      `https://nithp.herokuapp.com/api/result/student/${roll}`
+    );
+    if (res.ok) {
+      return await res.json();
+    }
+    return null;
+  } catch (err) {
+    return null;
   }
-  return null;
 };
 
 export const getBranches = async () => {

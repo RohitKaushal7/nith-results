@@ -14,16 +14,27 @@ export default function SingleResult({ history, match }) {
         setResult(res);
         setError(null);
       } else {
-        setError({ message: "404 - NOT FOUND" });
+        setError({
+          message: "Failed to Fetch",
+        });
       }
     });
   }, []);
 
   if (error) {
-    return <div className="loading">{error.message}</div>;
+    return (
+      <div className="fullResult error">
+        <div>{error.message}</div>
+        <div className="link">
+          <a href="https://nithp.herokuapp.com/api/">
+            API may be temporarily down
+          </a>
+        </div>
+      </div>
+    );
   }
   if (!result) {
-    return <div className="loading">loading...</div>;
+    return <div className="fullResult loading">loading...</div>;
   }
 
   let semesters = [8, 7, 6, 5, 4, 3, 2, 1]
