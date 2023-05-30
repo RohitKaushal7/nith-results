@@ -15,10 +15,14 @@
   justify-content: center;
   align-items: center;
   color: #f00;
-  .link {
+  max-width: 50rem;
+  text-align: center;
+  .text {
+    color: white;
+  }
+  .link,
+  a {
     color: #2196f3;
-    font-size: 0.8em;
-    line-height: 1.2em;
   }
 }
 

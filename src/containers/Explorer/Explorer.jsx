@@ -87,7 +87,10 @@ export default function Explorer({ history }) {
   }, [version]);
 
   useEffect(() => {
-    if (!version) return;
+    if (!version) {
+      setError("Failed to Fetch");
+      return;
+    }
 
     setError(null);
     fetchData({ batch, branch, setLoading, version })
@@ -233,9 +236,16 @@ export default function Explorer({ history }) {
         {error && (
           <div className="error">
             <div>{error}</div>
-            <div className="link">
-              <a href="https://nithp.herokuapp.com/api/">
-                API may be temporarily down
+            <div className="text">
+              Hey this website stopped working because{" "}
+              <a href="https://devcenter.heroku.com/changelog-items/2461">
+                heroku stopped being free
+              </a>{" "}
+              where the API was hosted. Although there are other free hosting
+              services, I don't have bandwidth to migrate the API. If you want
+              to help,{" "}
+              <a href="https://github.com/RohitKaushal7/nith-results/issues">
+                please consider contributing to the project
               </a>
             </div>
           </div>
