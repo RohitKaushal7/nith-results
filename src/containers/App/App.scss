@@ -44,7 +44,21 @@ body {
   min-width: 360px;
   overflow-x: hidden;
 
+  .notice {
+    color: black;
+    p {
+      color: #222;
+    }
+  }
+
   &.dark {
+    .notice {
+      color: white;
+      p {
+        color: #eee;
+      }
+    }
+
     background: #000005;
     ::-webkit-scrollbar {
       color: #000;

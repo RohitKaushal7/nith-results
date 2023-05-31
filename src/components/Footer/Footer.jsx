@@ -16,6 +16,8 @@ export default function Footer({ hits }) {
       </GitHubButton>
       <span id="me">
         Made with <span className="heart">❤</span> by{" "}
+      </span>
+      <span id="ref">
         <a
           target="_blank"
           rel="noreferrer"
@@ -23,9 +25,6 @@ export default function Footer({ hits }) {
         >
           Developers
         </a>
-      </span>
-      <span id="ref">
-        API : <a href="https://nithp.herokuapp.com/">nithp.herokuapp.com/</a>
       </span>
       <span id="count">{hits ? hits : "hits"}</span>
     </div>

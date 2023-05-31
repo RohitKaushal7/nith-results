@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { getResultByRollNumber } from "../../services/api";
+import sadImg from "../../assets/perry.png";
 import "./SingleResult.scss";
 
 export default function SingleResult({ history, match }) {
@@ -24,20 +25,22 @@ export default function SingleResult({ history, match }) {
   if (error) {
     return (
       <div className="fullResult error">
-        <div>{error.message}</div>
-        <div className="text">
-          Hey this website stopped working because{" "}
-          <a href="https://devcenter.heroku.com/changelog-items/2461">
-            heroku stopped being free
-          </a>{" "}
-          where the API was hosted. Although there are other free hosting
-          services, I don't have time to migrate the API. If you want to help,{" "}
-          <a
-            href="https://github.com/RohitKaushal7/nith-results/issues"
-            className="link"
-          >
-            please consider contributing to the project
-          </a>
+        <div className="notice">
+          <img src={sadImg} alt="" width={200} />
+          <div>
+            <h2>😕 Hey! this project stopped working because...</h2>
+            <p>
+              The results portal on the official NITH results websites now has a
+              human verification captcha, making web scrapping not possible /
+              hard. So we can't programetically create a database of everyone's
+              result. This website can't work unless either there is another way
+              to scrap the results data or NITH itself provides a results API.
+            </p>
+            <p>
+              Although unfortunately this website can no longer work, we had a
+              pretty good achievement of receiving more than 400K pageviews. 😊
+            </p>
+          </div>
         </div>
       </div>
     );

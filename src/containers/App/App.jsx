@@ -10,7 +10,7 @@ import "./App.scss";
 
 function App() {
   const [darkMode, setDarkMode] = useState(
-    JSON.parse(localStorage.getItem("dark"))
+    JSON.parse(localStorage.getItem("dark") || "true")
   );
   const [version, setVersion] = useState(localStorage.getItem("VERSION"));
 

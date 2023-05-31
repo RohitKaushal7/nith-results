@@ -23,13 +23,13 @@ export default function Header({}) {
   const { version } = useGlobalContext();
   return (
     <div className="header">
-      <img src={icon} alt="" className="logo" />
+      {/* <img src={icon} alt="" className="logo" /> */}
       <div className="main-heading">
         <h2>NITH RESULTS</h2>
-        <div className="date">
+        {/* <div className="date">
           {months[new Date(version).getMonth()]}{" "}
           {new Date(version).getFullYear()}
-        </div>
+        </div> */}
       </div>
     </div>
   );
